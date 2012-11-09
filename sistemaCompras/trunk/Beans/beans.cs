@@ -9,10 +9,10 @@ namespace Beans
     {
         private int id;
         private int dni;
-        private String direccion;
-        private String nombre;
+        private string direccion;
+        private string nombre;
         private DateTime fechaNacimiento;
-        private String email;
+        private string email;
         private int telefono;
         private float sueldo;
         private DateTime fechaIngreso;
@@ -34,19 +34,19 @@ namespace Beans
         {
             this.dni = dni;
         }
-        public String getDireccion()
+        public string getDireccion()
         {
             return direccion;
         }
-        public void setDireccion(String direccion)
+        public void setDireccion(string direccion)
         {
             this.direccion = direccion;
         }
-        public String getNombre()
+        public string getNombre()
         {
             return nombre;
         }
-        public void setNombre(String nombre)
+        public void setNombre(string nombre)
         {
             this.nombre = nombre;
         }
@@ -58,11 +58,11 @@ namespace Beans
         {
             this.fechaNacimiento = fechaNacimiento;
         }
-        public String getEmail()
+        public string getEmail()
         {
             return email;
         }
-        public void setEmail(String email)
+        public void setEmail(string email)
         {
             this.email = email;
         }
@@ -103,8 +103,8 @@ namespace Beans
     class Proyecto
     {
         private int id;
-        private String nombre;
-        private String descripcion;
+        private string nombre;
+        private string descripcion;
         private bool eliminado;
 
         public int getId()
@@ -115,19 +115,19 @@ namespace Beans
         {
             this.id = id;
         }
-        public String getNombre()
+        public string getNombre()
         {
             return nombre;
         }
-        public void setNombre(String nombre)
+        public void setNombre(string nombre)
         {
             this.nombre = nombre;
         }
-        public String getDescripcion()
+        public string getDescripcion()
         {
             return descripcion;
         }
-        public void setDescripcion(String descripcion)
+        public void setDescripcion(string descripcion)
         {
             this.descripcion = descripcion;
         }
@@ -138,13 +138,75 @@ namespace Beans
         public void setEliminado(bool eliminado)
         {
             this.eliminado = eliminado;
-        }
-    
-    
-
+        }    
     }
 
-    class
+    class Producto
+    {
+        int id;
+        string descripcion;
+        string nombre;
+        string fabricante;
+        bool eliminado;
+
+        public int getId()
+        {
+            return id;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public string getDescripcion()
+        {
+            return descripcion;
+        }
+        public void setDescripcion(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }
+        public string getNombre()
+        {
+            return nombre;
+        }
+        public void setNombre(string nombre)
+        {
+            this.nombre = nombre;
+        }
+        public string getFabricante()
+        {
+            return fabricante;
+        }
+        public void setFabricante(string fabricante)
+        {
+            this.fabricante = fabricante;
+        }
+        public bool getEliminado()
+        {
+            return eliminado;
+        }
+        public void setEliminado(bool eliminado)
+        {
+            this.eliminado = eliminado;
+        }
+    }
+
+    class Proveedor
+    {
+        int id;
+        int ruc;
+        string razonSocial;
+        string direccion;
+        string paginaWeb;
+        string rubro;
+        string nombreContacto;
+        string emailContacto;
+        int telefonoContacto;
+        bool eliminado;
+
+
+
+    }
 
 
 
