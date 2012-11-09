@@ -17,5 +17,9 @@ namespace sistemaCompras
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new VentanaPrincipal());
         }
+
+    
+
+
     }
 }
