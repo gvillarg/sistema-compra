@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sistemaCompras", "sistemaCompras\sistemaCompras.csproj", "{F7D870D8-277D-4AAB-BEE6-CFBF23D80D6F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ventanas", "sistemaCompras\Ventanas.csproj", "{F7D870D8-277D-4AAB-BEE6-CFBF23D80D6F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Beans", "Beans\Beans.csproj", "{EFFA7D2B-0C8D-4227-8946-3FD51B4B6A06}"
 EndProject

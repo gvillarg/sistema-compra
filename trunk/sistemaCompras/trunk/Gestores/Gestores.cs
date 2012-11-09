@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Beans;
 
 namespace Gestores
 {
-    public class Class1
+    public class GestorUsuario
     {
+        private List<Usuario> 
     }
 }
