@@ -70,7 +70,7 @@ namespace Gestores
     {
         static private List<GestorUnidad> lunidad;
         GestorUnidad gestorUnidad = null;
-        private GestorProducto()
+        private GestorUnidad()
         {
             lunidad = new List<GestorUnidad>();
         }
