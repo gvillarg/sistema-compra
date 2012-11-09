@@ -289,8 +289,47 @@ namespace Beans
     class TipoUsuario
     {
         int id;
+        string descripcion;
 
+        public int getId()
+        {
+            return id;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public string getDescripcion()
+        {
+            return descripcion;
+        }
+        public void setDescripcion(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }    
     }
 
+    class Unidad
+    {
+        int id;
+        string descripcion;
+
+        public int getId()
+        {
+            return id;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public string getDescripcion()
+        {
+            return descripcion;
+        }
+        public void setDescripcion(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }    
+    }
 
 }
