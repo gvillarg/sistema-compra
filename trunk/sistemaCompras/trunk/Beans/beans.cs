@@ -100,7 +100,7 @@ namespace Beans
         }
     }
 
-    class Proyecto
+    public class Proyecto
     {
         private int id;
         private string nombre;
@@ -141,7 +141,7 @@ namespace Beans
         }    
     }
 
-    class Producto
+    public class Producto
     {
         int id;
         string descripcion;
@@ -191,7 +191,7 @@ namespace Beans
         }
     }
 
-    class Proveedor
+    public class Proveedor
     {
         int id;
         int ruc;
@@ -286,7 +286,7 @@ namespace Beans
         }		     
     }
 
-    class TipoUsuario
+    public class TipoUsuario
     {
         int id;
         string descripcion;
@@ -309,7 +309,7 @@ namespace Beans
         }    
     }
 
-    class Unidad
+    public class Unidad
     {
         int id;
         string descripcion;
