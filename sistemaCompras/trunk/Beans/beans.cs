@@ -1,0 +1,102 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Beans
+{
+    class beans
+    {
+        private int id;
+        private int dni;
+        private String direccion;
+        private String nombre;
+        private DateTime fechaNacimiento;
+        private String email;
+        private int telefono;
+        private float sueldo;
+        private DateTime fechaIngreso;
+        private bool eliminado;
+
+        public int getId()
+        {
+            return id;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public int getDni()
+        {
+            return dni;
+        }
+        public void setDni(int dni)
+        {
+            this.dni = dni;
+        }
+        public String getDireccion()
+        {
+            return direccion;
+        }
+        public void setDireccion(String direccion)
+        {
+            this.direccion = direccion;
+        }
+        public String getNombre()
+        {
+            return nombre;
+        }
+        public void setNombre(String nombre)
+        {
+            this.nombre = nombre;
+        }
+        public DateTime getFechaNacimiento()
+        {
+            return fechaNacimiento;
+        }
+        public void setFechaNacimiento(DateTime fechaNacimiento)
+        {
+            this.fechaNacimiento = fechaNacimiento;
+        }
+        public String getEmail()
+        {
+            return email;
+        }
+        public void setEmail(String email)
+        {
+            this.email = email;
+        }
+        public int getTelefono()
+        {
+            return telefono;
+        }
+        public void setTelefono(int telefono)
+        {
+            this.telefono = telefono;
+        }
+        public float getSueldo()
+        {
+            return sueldo;
+        }
+        public void setSueldo(float sueldo)
+        {
+            this.sueldo = sueldo;
+        }
+        public DateTime getFechaIngreso()
+        {
+            return fechaIngreso;
+        }
+        public void setFechaIngreso(DateTime fechaIngreso)
+        {
+            this.fechaIngreso = fechaIngreso;
+        }
+        public bool getEliminado()
+        {
+            return eliminado;
+        }
+        public void setEliminado(bool eliminado)
+        {
+            this.eliminado = eliminado;
+        }
+    }
+}
