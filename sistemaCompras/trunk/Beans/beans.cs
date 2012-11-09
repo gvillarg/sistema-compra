@@ -204,10 +204,93 @@ namespace Beans
         int telefonoContacto;
         bool eliminado;
 
-
-
+        public int getId()
+        {
+            return id;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public int getRuc()
+        {
+            return ruc;
+        }
+        public void setRuc(int ruc)
+        {
+            this.ruc = ruc;
+        }
+        public string getRazonSocial()
+        {
+            return razonSocial;
+        }
+        public void setRazonSocial(string razonSocial)
+        {
+            this.razonSocial = razonSocial;
+        }
+        public string getDireccion()
+        {
+            return direccion;
+        }
+        public void setDireccion(string direccion)
+        {
+            this.direccion = direccion;
+        }
+        public string getPaginaWeb()
+        {
+            return paginaWeb;
+        }
+        public void setPaginaWeb(string paginaWeb)
+        {
+            this.paginaWeb = paginaWeb;
+        }
+        public string getRubro()
+        {
+            return rubro;
+        }
+        public void setRubro(string rubro)
+        {
+            this.rubro = rubro;
+        }
+        public string getNombreContacto()
+        {
+            return nombreContacto;
+        }
+        public void setNombreContacto(string nombreContacto)
+        {
+            this.nombreContacto = nombreContacto;
+        }
+        public string getEmailContacto()
+        {
+            return emailContacto;
+        }
+        public void setEmailContacto(string emailContacto)
+        {
+            this.emailContacto = emailContacto;
+        }
+        public int getTelefonoContacto()
+        {
+            return telefonoContacto;
+        }
+        public void setTelefonoContacto(int telefonoContacto)
+        {
+            this.telefonoContacto = telefonoContacto;
+        }
+        public bool getEliminado()
+        {
+            return eliminado;
+        }
+        public void setEliminado(bool eliminado)
+        {
+            this.eliminado = eliminado;
+        }		     
     }
 
+    class TipoUsuario
+    {
+        int id;
+
+    }
 
 
 }
