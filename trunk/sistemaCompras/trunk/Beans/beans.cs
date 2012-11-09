@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Beans
 {
-    class Usuario
+    public class Usuario
     {
         private int id;
         private int dni;
