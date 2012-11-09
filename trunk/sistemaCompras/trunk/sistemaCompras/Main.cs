@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace sistemaCompras
 {
-    static class Program
+    static class Main
     {
         /// <summary>
         /// The main entry point for the application.
