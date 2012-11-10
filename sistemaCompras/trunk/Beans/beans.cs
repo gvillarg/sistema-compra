@@ -16,6 +16,8 @@ namespace Beans
         private int telefono;
         private float sueldo;
         private DateTime fechaIngreso;
+        private String nombreUsuario;
+        private String contrasena;
         private bool eliminado;
 
         public int getId()
@@ -89,6 +91,22 @@ namespace Beans
         public void setFechaIngreso(DateTime fechaIngreso)
         {
             this.fechaIngreso = fechaIngreso;
+        }
+        public String getNombreUsuario()
+        {
+            return nombreUsuario;
+        }
+        public void setNombreUsuario(String nombreUsuario)
+        {
+            this.nombreUsuario = nombreUsuario;
+        }
+        public String getContrasena()
+        {
+            return contrasena;
+        }
+        public void setContrasena(String contrasena)
+        {
+            this.contrasena = contrasena;
         }
         public bool getEliminado()
         {
