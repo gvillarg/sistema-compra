@@ -258,13 +258,13 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // VentanaPrincipal
