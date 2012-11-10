@@ -22,6 +22,16 @@ namespace sistemaCompras
             ventanaUsuarioDlg.Show();
         }
 
+        private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Console.Out.WriteLine("Hola mundo");
+        }
+
+        private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
