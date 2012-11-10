@@ -61,7 +61,7 @@ namespace sistemaCompras
             {
                 proveedor = lproveedor[i];
                 fila = new String[] {""+proveedor.getId(),""+proveedor.getRuc(),proveedor.getRazonSocial(),
-                    proveedor.getDireccion(),""+proveedor.getPaginaWeb(),proveedor.getRubro(), proveedor.getNombreContacto(), proveedor.getEmailContacto(), proveedor.getTelefonoContacto() };
+                    proveedor.getDireccion(),""+proveedor.getPaginaWeb(),proveedor.getRubro(), proveedor.getNombreContacto(), proveedor.getEmailContacto(), ""+proveedor.getTelefonoContacto()};
                 tablaProveedor.Rows.Add(fila);
             }
         }
