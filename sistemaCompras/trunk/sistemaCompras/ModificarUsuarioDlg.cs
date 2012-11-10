@@ -25,17 +25,27 @@ namespace sistemaCompras
         {
             if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))
             {
-                Usuario u = new Usuario();
-                String dni = txtDni.Text;
+                int dni = int.Parse(txtDni.Text);
                 String nombre = txtNombre.Text;
                 String direccion = txtDireccion.Text;
                 DateTime fechaNacimiento = dtpFechaNacimiento.Value;
                 String email = txtEmail.Text;
                 int telefono = int.Parse(mtxtTelefono.Text);
-                float Sueldo = float.Parse(txtSueldo.Text);
-                String usuario = txtUsuario.Text;
+                float sueldo = float.Parse(txtSueldo.Text);
+                String nombreUsuario = txtUsuario.Text;
                 String contrasena = txtContrasena.Text;
-                gestorUsuario.modificarUsuario(u);
+
+                usuario.setDni(dni);
+                usuario.setNombre(nombre);
+                usuario.setDireccion(direccion);
+                usuario.setFechaNacimiento(fechaNacimiento);
+                usuario.setEmail(email);
+                usuario.setTelefono(telefono);
+                usuario.setSueldo(sueldo);
+                usuario.setNombreUsuario(nombreUsuario);
+                usuario.setContrasena(contrasena);
+
+                gestorUsuario.modificarUsuario(usuario);
                 this.Close();
             }
             else
