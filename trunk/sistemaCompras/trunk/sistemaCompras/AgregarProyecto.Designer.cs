@@ -1,6 +1,6 @@
 ﻿namespace sistemaCompras
 {
-    partial class AgregarProyecto
+    partial class RegistrarProyecto
     {
         /// <summary>
         /// Required designer variable.
@@ -115,7 +115,7 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // AgregarProyecto
+            // RegistrarProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,8 +129,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "AgregarProyecto";
-            this.Text = "AgregarProyecto";
+            this.Name = "RegistrarProyecto";
+            this.Text = "RegistrarProyecto";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
