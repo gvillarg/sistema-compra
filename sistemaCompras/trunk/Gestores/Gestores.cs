@@ -54,7 +54,7 @@ namespace Gestores
         {
             List<Usuario> lista = new List<Usuario>();
             for (int i = 0; i < lusuario.Count; i++)
-                if (!lusuario[i].getEliminado())
+                //if (!lusuario[i].getEliminado())
                     lista.Add(lusuario[i]);
             return lista;
         }

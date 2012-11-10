@@ -61,6 +61,7 @@ namespace sistemaCompras
                 float sueldo = float.Parse(txtSueldo.Text);
                 String nombreUsuario = txtUsuario.Text;
                 String contrasena = txtContrasena.Text;
+                TipoUsuario tipoUsuario = listaTipoUsuario[cmbTipoUsuario.SelectedIndex];
 
                 usuario.setDni(dni);
                 usuario.setNombre(nombre);
@@ -71,8 +72,10 @@ namespace sistemaCompras
                 usuario.setSueldo(sueldo);
                 usuario.setNombreUsuario(nombreUsuario);
                 usuario.setContrasena(contrasena);
+                usuario.setTipoUsuario(tipoUsuario);
 
                 gestorUsuario.modificarUsuario(usuario);
+                padre.actualizarTabla();
                 this.Close();
             }
             else
