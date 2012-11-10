@@ -32,12 +32,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.GrilaProyecto = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.GrilaProyecto)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -71,31 +74,35 @@
             // 
             this.txtId.Location = new System.Drawing.Point(105, 25);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(102, 20);
+            this.txtId.Size = new System.Drawing.Size(64, 20);
             this.txtId.TabIndex = 4;
             // 
-            // textBox1
+            // txtNombre
             // 
-            this.textBox1.Location = new System.Drawing.Point(105, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(258, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtNombre.Location = new System.Drawing.Point(105, 56);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(258, 20);
+            this.txtNombre.TabIndex = 5;
             // 
-            // textBox2
+            // txtDescripcion
             // 
-            this.textBox2.Location = new System.Drawing.Point(105, 91);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(258, 56);
-            this.textBox2.TabIndex = 6;
+            this.txtDescripcion.Location = new System.Drawing.Point(105, 91);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(258, 56);
+            this.txtDescripcion.TabIndex = 6;
             // 
-            // dataGridView1
+            // GrilaProyecto
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(21, 209);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(342, 101);
-            this.dataGridView1.TabIndex = 7;
+            this.GrilaProyecto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.GrilaProyecto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.Nombre,
+            this.Descripcion});
+            this.GrilaProyecto.Location = new System.Drawing.Point(21, 209);
+            this.GrilaProyecto.Name = "GrilaProyecto";
+            this.GrilaProyecto.Size = new System.Drawing.Size(342, 101);
+            this.GrilaProyecto.TabIndex = 7;
             // 
             // button1
             // 
@@ -105,6 +112,7 @@
             this.button1.TabIndex = 8;
             this.button1.Text = "Agregar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -114,6 +122,22 @@
             this.button2.TabIndex = 9;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "Id";
+            this.Id.Name = "Id";
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
             // 
             // RegistrarProyecto
             // 
@@ -122,16 +146,16 @@
             this.ClientSize = new System.Drawing.Size(405, 322);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.GrilaProyecto);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegistrarProyecto";
             this.Text = "RegistrarProyecto";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GrilaProyecto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,10 +167,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtId;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.DataGridView GrilaProyecto;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }
