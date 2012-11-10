@@ -17,13 +17,29 @@ namespace sistemaCompras
         private GestorUsuario gestorUsuario = GestorUsuario.Instancia();
         List<TipoUsuario> listaTipoUsuario;
         private UsuarioDlg padre;
-        public ModificarUsuarioDlg(UsuarioDlg padre,Usuario usuario)
+        public ModificarUsuarioDlg(UsuarioDlg padre, Usuario usuario)
         {
             InitializeComponent();
             this.padre = padre;
             this.usuario = usuario;
             listaTipoUsuario = GestorTipoUsuario.Instancia().SeleccionarListaTipoUsuarios();
             llenarCmbTipoUsuario();
+            llenarCampos();
+        }
+
+        private void llenarCampos()
+        {
+            txtDni.Text = usuario.getDni().ToString();
+            txtNombre.Text = usuario.getNombre();
+            txtDireccion.Text = usuario.getDireccion();
+            dtpFechaNacimiento.Value = usuario.getFechaNacimiento();
+            txtEmail.Text = usuario.getEmail();
+            txtTelefono.Text = usuario.getTelefono().ToString();
+            txtSueldo.Text = usuario.getSueldo().ToString();
+            txtUsuario.Text = usuario.getNombreUsuario();
+            txtContrasena.Text = usuario.getContrasena();
+            txtConfirmarContrasena.Text = usuario.getContrasena();
+            cmbTipoUsuario.SelectedIndex = usuario.getTipoUsuario().getId() - 1;
         }
         private void llenarCmbTipoUsuario()
         {
@@ -31,6 +47,7 @@ namespace sistemaCompras
             for (int i = 0; i < listaTipoUsuario.Count; i++)
                 cmbTipoUsuario.Items.Add(listaTipoUsuario[i].getDescripcion());
         }
+
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))

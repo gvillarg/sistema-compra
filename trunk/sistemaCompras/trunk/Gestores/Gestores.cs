@@ -32,9 +32,8 @@ namespace Gestores
         public void modificarUsuario(Usuario u)
         {
             int i;
-            for (i = 0; u.getId() == lusuario[i].getId(); i++) ;
+            for (i = 0; u.getId() != lusuario[i].getId(); i++) ;
             Usuario u_temp = lusuario[i];
-            u_temp.setId(u.getId());
             u_temp.setDni(u.getDni());
             u_temp.setDireccion(u.getDireccion());
             u_temp.setNombre(u.getNombre());
