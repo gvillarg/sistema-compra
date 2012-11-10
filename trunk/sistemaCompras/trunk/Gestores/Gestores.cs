@@ -16,9 +16,31 @@ namespace Gestores
         }
         public GestorUsuario Instancia()
         {
-            if (gestorUsuario == null)
+            if (gestorUsuario == null;
                 gestorUsuario = new GestorUsuario();
             return gestorUsuario;
+        }
+        public void agregarUsuario(Usuario u)
+        {
+            lusuario.Add(u);
+        }
+        public void modificarUsuario(Usuario u)
+        {
+            int i;
+            for (i = 0; u.getId() == lusuario[i].getId(); i++) ;
+            Usuario u_temp = lusuario[i];
+            u_temp.setId(u.getId());
+            u_temp.setDni(u.getDni());
+            u_temp.setDireccion(u.getDireccion());
+            u_temp.setNombre(u.getNombre());
+            u_temp.setFechaNacimiento(u.getFechaNacimiento());
+            u_temp.setEmail(u.getEmail());
+            u_temp.setTelefono(u.getTelefono());
+            u_temp.setSueldo(u.getSueldo());
+            u_temp.setFechaIngreso(u.getFechaIngreso());
+            u_temp.setNombreUsuario(u.getNombreUsuario());
+            u_temp.setContrasena(u.getContrasena());
+            u_temp.setEliminado(u.getEliminado());
         }
     }
     public class GestorTipoUsuario
