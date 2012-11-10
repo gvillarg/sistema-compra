@@ -46,6 +46,10 @@ namespace Gestores
         {
             lusuario.Remove(u);
         }
+        public List<Usuario> seleccionarUsuarios()
+        {
+            return lusuario;
+        }
     }
     public class GestorTipoUsuario
     {
