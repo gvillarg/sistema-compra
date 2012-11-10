@@ -37,6 +37,8 @@ namespace sistemaCompras
                 int telefono = int.Parse(mtxtTelefono.Text);
                 float Sueldo = float.Parse(txtSueldo.Text);
                 String usuario = txtUsuario.Text;
+                String contrasena = txtContrasena.Text;
+                gestorUsuario.agregarUsuario(u);
             }
             else
                 MessageBox.Show("La contraseña no concuerda");
