@@ -54,7 +54,7 @@ namespace sistemaCompras
         {
             ModificarProveedor modProveedor = new ModificarProveedor();
             modProveedor.ShowDialog(this);
-            this.Hide();
+            modProveedor.referenciarVPrincipal(this);
         }
 
 
