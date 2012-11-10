@@ -43,6 +43,8 @@
             // 
             // tablaUsuario
             // 
+            this.tablaUsuario.AllowUserToAddRows = false;
+            this.tablaUsuario.AllowUserToDeleteRows = false;
             this.tablaUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tablaUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
