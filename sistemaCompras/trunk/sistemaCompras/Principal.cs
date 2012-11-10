@@ -15,8 +15,7 @@ namespace sistemaCompras
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new IniciarSesion());
-            Application.Run(new VentanaPrincipal());
+            Application.Run(new IniciarSesion());            
         }
 
     
