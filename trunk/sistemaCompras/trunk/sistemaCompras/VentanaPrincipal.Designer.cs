@@ -133,21 +133,21 @@
             // agregarToolStripMenuItem2
             // 
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
-            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.agregarToolStripMenuItem2.Text = "Agregar";
+            this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.agregarToolStripMenuItem2.Text = "Registrar Producto";
             this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // modificarToolStripMenuItem2
             // 
             this.modificarToolStripMenuItem2.Name = "modificarToolStripMenuItem2";
-            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.modificarToolStripMenuItem2.Text = "Modificar";
+            this.modificarToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.modificarToolStripMenuItem2.Text = "Modificar Producto";
             // 
             // eliminarToolStripMenuItem2
             // 
             this.eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
-            this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
-            this.eliminarToolStripMenuItem2.Text = "Eliminar";
+            this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.eliminarToolStripMenuItem2.Text = "Eliminar Producto";
             // 
             // proveedorToolStripMenuItem
             // 
@@ -258,13 +258,13 @@
             // acercaDeToolStripMenuItem
             // 
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
-            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             // 
             // VentanaPrincipal
