@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace sistemaCompras
 {
-    public partial class AgregarProyecto : Form
+    public partial class RegistrarProyecto : Form
     {
-        public AgregarProyecto()
+        public RegistrarProyecto()
         {
             InitializeComponent();
         }
