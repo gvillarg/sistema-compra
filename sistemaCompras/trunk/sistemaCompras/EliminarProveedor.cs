@@ -11,6 +11,12 @@ namespace sistemaCompras
 {
     public partial class EliminarProveedor : Form
     {
+        private VentanaPrincipal ventanaPrincipal = null;
+        public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
+        {
+            ventanaPrincipal = vPrincipal;
+        }
+
         public EliminarProveedor()
         {
             InitializeComponent();
