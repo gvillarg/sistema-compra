@@ -111,6 +111,9 @@
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProveedor.resx">
+      <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioDlg.resx">
       <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
     </EmbeddedResource>
