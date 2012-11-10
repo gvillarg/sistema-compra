@@ -42,7 +42,7 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtSueldo = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
@@ -171,13 +171,13 @@
             this.txtEmail.Size = new System.Drawing.Size(147, 20);
             this.txtEmail.TabIndex = 14;
             // 
-            // maskedTextBox1
+            // mtxtTelefono
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(171, 187);
-            this.maskedTextBox1.Mask = "000-000-000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(147, 20);
-            this.maskedTextBox1.TabIndex = 15;
+            this.mtxtTelefono.Location = new System.Drawing.Point(171, 187);
+            this.mtxtTelefono.Mask = "000-000-000";
+            this.mtxtTelefono.Name = "mtxtTelefono";
+            this.mtxtTelefono.Size = new System.Drawing.Size(147, 20);
+            this.mtxtTelefono.TabIndex = 15;
             // 
             // txtSueldo
             // 
@@ -209,6 +209,7 @@
             this.botonAceptar.TabIndex = 19;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
+            this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // botonCancelar
             // 
@@ -218,6 +219,7 @@
             this.botonCancelar.TabIndex = 20;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
+            this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
             // 
             // label10
             // 
@@ -248,7 +250,7 @@
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtSueldo);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.mtxtTelefono);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtDireccion);
@@ -286,7 +288,7 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox mtxtTelefono;
         private System.Windows.Forms.TextBox txtSueldo;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContrasena;
