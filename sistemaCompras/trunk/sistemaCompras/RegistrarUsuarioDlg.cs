@@ -69,7 +69,7 @@ namespace sistemaCompras
                 this.Close();
             }
             else
-                MessageBox.Show("La contraseña no concuerda");
+                MessageBox.Show("El usuario o la contraseña son incorrectos");
         }
     }
 }
