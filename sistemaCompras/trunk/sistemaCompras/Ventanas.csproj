@@ -87,6 +87,9 @@
     <EmbeddedResource Include="AgregarProyecto.resx">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="IniciarSesion.resx">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioDlg.resx">
       <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +101,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RegistrarUsuarioDlg.resx">
       <DependentUpon>RegistrarUsuarioDlg.cs</DependentUpon>
@@ -127,6 +131,9 @@
       <Project>{A23E719E-6310-40D6-AF9A-F1BE3781C67A}</Project>
       <Name>Gestores</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
