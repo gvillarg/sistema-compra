@@ -42,20 +42,44 @@ namespace Gestores
             u_temp.setContrasena(u.getContrasena());
             u_temp.setEliminado(u.getEliminado());
         }
+        public void eliminarUsuario(Usuario u)
+        {
+            lusuario.Remove(u);
+        }
     }
     public class GestorTipoUsuario
     {
-        static private List<TipoUsuario> ltipousuario;
-        GestorTipoUsuario gestorTipoUsuario = null;
+        private List<TipoUsuario> ltipousuario;
+        static private GestorTipoUsuario gestorTipoUsuario = null;
         private GestorTipoUsuario()
         {
             ltipousuario = new List<TipoUsuario>();
+            TipoUsuario tu = new TipoUsuario();
+            tu.setId(1);
+            tu.setDescripcion("Administrador");
+            ltipousuario.Add(tu);
+            tu = new TipoUsuario();
+            tu.setId(2);
+            tu.setDescripcion("Jefe de Proyecto");
+            ltipousuario.Add(tu);
+            tu = new TipoUsuario();
+            tu.setId(3);
+            tu.setDescripcion("Responsable de Compras");
+            ltipousuario.Add(tu);
+            tu = new TipoUsuario();
+            tu.setId(4);
+            tu.setDescripcion("Gerente de Logística");
+            ltipousuario.Add(tu);
         }
         public GestorTipoUsuario Instancia()
         {
             if (gestorTipoUsuario == null)
                 gestorTipoUsuario = new GestorTipoUsuario();
             return gestorTipoUsuario;
+        }
+        public List<TipoUsuario> getListaTipoUsuarios()
+        {
+            return ltipousuario;
         }
     }
     public class GestorProyecto
