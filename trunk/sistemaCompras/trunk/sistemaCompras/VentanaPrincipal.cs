@@ -68,8 +68,8 @@ namespace sistemaCompras
 
         private void modificarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ModificarProducto ventana = new ModificarProducto();
-            ventana.Show();
+            //ModificarProducto ventana = new ModificarProducto();
+            //ventana.Show();
         }
 
 
