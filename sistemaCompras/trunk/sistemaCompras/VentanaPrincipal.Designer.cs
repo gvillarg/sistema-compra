@@ -104,20 +104,20 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.agregarToolStripMenuItem1.Text = "Registrar";
             this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // productoToolStripMenuItem
@@ -165,6 +165,7 @@
             this.agregarToolStripMenuItem3.Name = "agregarToolStripMenuItem3";
             this.agregarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem3.Text = "Registrar";
+            this.agregarToolStripMenuItem3.Click += new System.EventHandler(this.agregarToolStripMenuItem3_Click);
             // 
             // modificarToolStripMenuItem3
             // 
@@ -196,13 +197,13 @@
             // pedidoToolStripMenuItem
             // 
             this.pedidoToolStripMenuItem.Name = "pedidoToolStripMenuItem";
-            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pedidoToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.pedidoToolStripMenuItem.Text = "Pedido";
             // 
             // solicitudToolStripMenuItem
             // 
             this.solicitudToolStripMenuItem.Name = "solicitudToolStripMenuItem";
-            this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.solicitudToolStripMenuItem.Size = new System.Drawing.Size(120, 22);
             this.solicitudToolStripMenuItem.Text = "Solicitud";
             // 
             // reportesToolStripMenuItem
