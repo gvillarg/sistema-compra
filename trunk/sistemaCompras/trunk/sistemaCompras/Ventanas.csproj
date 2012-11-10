@@ -70,7 +70,6 @@
     <Compile Include="IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModificarProducto.cs" />
     <Compile Include="ModificarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,9 +125,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModificarProducto.resx">
-      <DependentUpon>ModificarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProveedor.resx">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
