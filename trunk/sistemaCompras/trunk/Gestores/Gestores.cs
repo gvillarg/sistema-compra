@@ -45,6 +45,7 @@ namespace Gestores
             u_temp.setNombreUsuario(u.getNombreUsuario());
             u_temp.setContrasena(u.getContrasena());
             u_temp.setEliminado(u.getEliminado());
+            u_temp.setTipoUsuario(u.getTipoUsuario());
         }
         public void eliminarUsuario(Usuario u)
         {
