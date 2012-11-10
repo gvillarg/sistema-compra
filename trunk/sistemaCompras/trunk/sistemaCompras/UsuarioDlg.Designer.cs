@@ -53,8 +53,9 @@
             this.colTipoUsuario});
             this.tablaUsuario.Location = new System.Drawing.Point(12, 12);
             this.tablaUsuario.Name = "tablaUsuario";
-            this.tablaUsuario.Size = new System.Drawing.Size(720, 209);
+            this.tablaUsuario.Size = new System.Drawing.Size(723, 209);
             this.tablaUsuario.TabIndex = 0;
+            //this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
             // 
             // colId
             // 
@@ -122,7 +123,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(744, 262);
+            this.ClientSize = new System.Drawing.Size(761, 262);
             this.Controls.Add(this.botonEliminar);
             this.Controls.Add(this.botonModificar);
             this.Controls.Add(this.botonRegistrar);

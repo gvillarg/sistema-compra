@@ -34,5 +34,7 @@ namespace sistemaCompras
                 tablaUsuario.Rows.Add(fila);
             }
         }
+
+
     }
 }

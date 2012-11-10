@@ -93,6 +93,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RegistrarUsuarioDlg.resx">
+      <DependentUpon>RegistrarUsuarioDlg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UsuarioDlg.resx">
       <DependentUpon>UsuarioDlg.cs</DependentUpon>
     </EmbeddedResource>
