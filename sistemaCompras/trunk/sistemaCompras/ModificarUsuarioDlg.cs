@@ -15,14 +15,22 @@ namespace sistemaCompras
     {
         private Usuario usuario;
         private GestorUsuario gestorUsuario = GestorUsuario.Instancia();
+        List<TipoUsuario> listaTipoUsuario;
         private UsuarioDlg padre;
         public ModificarUsuarioDlg(UsuarioDlg padre,Usuario usuario)
         {
             InitializeComponent();
             this.padre = padre;
             this.usuario = usuario;
+            listaTipoUsuario = GestorTipoUsuario.Instancia().SeleccionarListaTipoUsuarios();
+            llenarCmbTipoUsuario();
         }
+        private void llenarCmbTipoUsuario()
+        {
 
+            for (int i = 0; i < listaTipoUsuario.Count; i++)
+                cmbTipoUsuario.Items.Add(listaTipoUsuario[i].getDescripcion());
+        }
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))

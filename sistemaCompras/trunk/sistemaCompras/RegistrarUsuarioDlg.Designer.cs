@@ -50,6 +50,8 @@
             this.txtConfirmarContrasena = new System.Windows.Forms.TextBox();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -186,7 +188,7 @@
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(88, 337);
+            this.botonAceptar.Location = new System.Drawing.Point(89, 396);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(75, 23);
             this.botonAceptar.TabIndex = 19;
@@ -196,7 +198,7 @@
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(172, 337);
+            this.botonCancelar.Location = new System.Drawing.Point(173, 396);
             this.botonCancelar.Name = "botonCancelar";
             this.botonCancelar.Size = new System.Drawing.Size(75, 23);
             this.botonCancelar.TabIndex = 20;
@@ -237,11 +239,30 @@
             this.txtTelefono.Size = new System.Drawing.Size(147, 20);
             this.txtTelefono.TabIndex = 23;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(12, 324);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 13);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Tipo de Usuario";
+            // 
+            // cmbTipoUsuario
+            // 
+            this.cmbTipoUsuario.FormattingEnabled = true;
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(171, 321);
+            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(147, 21);
+            this.cmbTipoUsuario.TabIndex = 25;
+            // 
             // RegistrarUsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 376);
+            this.ClientSize = new System.Drawing.Size(345, 431);
+            this.Controls.Add(this.cmbTipoUsuario);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtConfirmarContrasena);
             this.Controls.Add(this.label10);
@@ -295,5 +316,7 @@
         private System.Windows.Forms.TextBox txtConfirmarContrasena;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cmbTipoUsuario;
     }
 }
