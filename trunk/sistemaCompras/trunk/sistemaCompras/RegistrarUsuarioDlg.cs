@@ -14,9 +14,11 @@ namespace sistemaCompras
     public partial class RegistrarUsuarioDlg : Form
     {
         private GestorUsuario gestorUsuario =  GestorUsuario.Instancia();
-        public RegistrarUsuarioDlg()
+        private UsuarioDlg padre;
+        public RegistrarUsuarioDlg(UsuarioDlg padre)
         {
             InitializeComponent();
+            this.padre = padre;
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace sistemaCompras
                 String direccion = txtDireccion.Text;
                 DateTime fechaNacimiento = dtpFechaNacimiento.Value;
                 String email = txtEmail.Text;
-                int telefono = int.Parse(mtxtTelefono.Text);
+                int telefono = int.Parse(txtTelefono.Text);
                 float sueldo = float.Parse(txtSueldo.Text);
                 String usuario = txtUsuario.Text;
                 String contrasena = txtContrasena.Text;
@@ -50,6 +52,7 @@ namespace sistemaCompras
                 u.setContrasena(contrasena);
 
                 gestorUsuario.agregarUsuario(u);
+                padre.actualizarTabla();
                 this.Close();
             }
             else

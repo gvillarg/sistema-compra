@@ -23,7 +23,7 @@ namespace sistemaCompras
         }
         public void actualizarTabla()
         {
-            for (int i = 1; i < tablaUsuario.Rows.Count; i++)
+            for (int i = 0; i < tablaUsuario.Rows.Count; i++)
                 tablaUsuario.Rows.RemoveAt(i);
 
             gestorUsuario = GestorUsuario.Instancia();
@@ -40,24 +40,30 @@ namespace sistemaCompras
         }
         private void botonRegistrar_Click(object sender, EventArgs e)
         {
-            RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg();
+            RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg(this);
             ventana.Show();            
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n", 
-                "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (seleccionado != null)
             {
-                gestorUsuario.eliminarUsuario(seleccionado);
-                actualizarTabla();                
+                if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
+                    "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    gestorUsuario.eliminarUsuario(seleccionado);
+                    actualizarTabla();
+                }
             }
         }
 
         private void botonModificar_Click(object sender, EventArgs e)
         {
-            ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(seleccionado);
-            ventana.Show();
+            if (seleccionado != null)
+            {
+                ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(seleccionado);
+                ventana.Show();
+            }
         }
 
         private void tablaUsuario_SelectedIndexChanged(object sender, DataGridViewCellEventArgs e)
