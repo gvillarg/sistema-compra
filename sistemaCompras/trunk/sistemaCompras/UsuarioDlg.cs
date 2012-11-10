@@ -75,7 +75,5 @@ namespace sistemaCompras
                 seleccionado = lusuario[e.RowIndex];
             }
         }
-
-
     }
 }
