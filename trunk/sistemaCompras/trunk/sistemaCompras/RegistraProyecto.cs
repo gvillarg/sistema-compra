@@ -14,6 +14,7 @@ namespace sistemaCompras
     public partial class RegistrarProyecto : Form
     {
         private GestorProyecto gestorProyecto = GestorProyecto.Instancia();
+        private int id=0;
 
         public RegistrarProyecto()
         {
@@ -22,7 +23,11 @@ namespace sistemaCompras
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(txtId.Text);
+
+            //int id = Int32.Parse(txtId.Text);
+
+            id = id + 1;
+            txtId.Text = "" + id;
             String nombre = txtNombre.Text;
             String descripcion = txtDescripcion.Text;
 
@@ -30,7 +35,7 @@ namespace sistemaCompras
 
             gestorProyecto.agregarProyecto(proy);
 
-            GrilaProyecto.Rows.Add(txtId.Text,txtNombre.Text,txtDescripcion.Text);
+            GrilaProyecto.Rows.Add(""+id,txtNombre.Text,txtDescripcion.Text);
 
         }
 
