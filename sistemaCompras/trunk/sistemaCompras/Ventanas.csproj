@@ -52,6 +52,12 @@
     <Compile Include="AgregarProyecto.Designer.cs">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
     </Compile>
+    <Compile Include="BuscarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarProveedor.Designer.cs">
+      <DependentUpon>BuscarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="EliminarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </Compile>
     <EmbeddedResource Include="AgregarProyecto.resx">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarProveedor.resx">
+      <DependentUpon>BuscarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarProveedor.resx">
       <DependentUpon>EliminarProveedor.cs</DependentUpon>
