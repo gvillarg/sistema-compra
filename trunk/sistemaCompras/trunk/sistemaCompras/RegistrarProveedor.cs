@@ -15,5 +15,11 @@ namespace sistemaCompras
         {
             InitializeComponent();
         }
+
+        private void bntCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }
