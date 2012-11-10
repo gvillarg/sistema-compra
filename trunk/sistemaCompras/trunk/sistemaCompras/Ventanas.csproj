@@ -105,6 +105,9 @@
     <EmbeddedResource Include="AgregarProyecto.resx">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EliminarProveedor.resx">
+      <DependentUpon>EliminarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
@@ -121,6 +124,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="RegistrarProveedor.resx">
+      <DependentUpon>RegistrarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrarUsuarioDlg.resx">
       <DependentUpon>RegistrarUsuarioDlg.cs</DependentUpon>
     </EmbeddedResource>
