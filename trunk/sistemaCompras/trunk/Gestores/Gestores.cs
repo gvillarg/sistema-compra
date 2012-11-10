@@ -16,7 +16,7 @@ namespace Gestores
         }
         public GestorUsuario Instancia()
         {
-            if (gestorUsuario == null;
+            if (gestorUsuario == null)
                 gestorUsuario = new GestorUsuario();
             return gestorUsuario;
         }
