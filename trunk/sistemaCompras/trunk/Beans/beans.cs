@@ -19,6 +19,7 @@ namespace Beans
         private String nombreUsuario;
         private String contrasena;
         private bool eliminado;
+        private TipoUsuario tipoUsuario;
 
         public int getId()
         {
@@ -115,6 +116,14 @@ namespace Beans
         public void setEliminado(bool eliminado)
         {
             this.eliminado = eliminado;
+        }
+        public TipoUsuario getTipoUsuario()
+        {
+            return tipoUsuario;
+        }
+        public void setTipoUsuario(TipoUsuario tipoUsuario)
+        {
+            this.tipoUsuario = tipoUsuario;
         }
     }
 
