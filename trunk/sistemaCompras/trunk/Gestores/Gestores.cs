@@ -8,12 +8,13 @@ namespace Gestores
 {
     public class GestorUsuario
     {
-        private int sigId = 1;
+        private int sigId;
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
         private GestorUsuario()
         {
             lusuario = new List<Usuario>();
+            sigId = 1;
         }
         static public GestorUsuario Instancia()
         {
