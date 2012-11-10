@@ -34,6 +34,12 @@ namespace sistemaCompras
 
         }
 
+        private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            EliminarProducto ep = new EliminarProducto();
+            ep.Show();
+        }
+
 
     }
 }
