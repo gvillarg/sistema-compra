@@ -52,24 +52,6 @@
     <Compile Include="AgregarProyecto.Designer.cs">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EliminarProducto.Designer.cs">
-      <DependentUpon>EliminarProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ModificarProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModificarProducto.Designer.cs">
-      <DependentUpon>ModificarProducto.cs</DependentUpon>
-    </Compile>
-    <Compile Include="RegistrarProducto.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RegistrarProducto.Designer.cs">
-      <DependentUpon>RegistrarProducto.cs</DependentUpon>
-    </Compile>
     <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,12 +84,6 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="EliminarProducto.resx">
-      <DependentUpon>EliminarProducto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistrarProducto.resx">
-      <DependentUpon>RegistrarProducto.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AgregarProyecto.resx">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
     </EmbeddedResource>
