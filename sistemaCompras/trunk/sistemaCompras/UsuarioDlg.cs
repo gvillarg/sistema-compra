@@ -18,22 +18,29 @@ namespace sistemaCompras
         public UsuarioDlg()
         {
             InitializeComponent();
+            actualizarTabla();
         }
-        private void botonRegistrar_Click(object sender, EventArgs e)
+        public void actualizarTabla()
         {
-            RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg();
-            ventana.Show();
-            gestorUsuario= GestorUsuario.Instancia();
+            for (int i = 1; i < tablaUsuario.Rows.Count; i++)
+                tablaUsuario.Rows.RemoveAt(i);
+
+            gestorUsuario = GestorUsuario.Instancia();
             lusuario = gestorUsuario.seleccionarUsuarios();
-            String []fila;
+            String[] fila;
             Usuario u;
             for (int i = 0; i < lusuario.Count; i++)
             {
-                u=lusuario[i];
+                u = lusuario[i];
                 fila = new String[] {""+u.getId(),u.getNombre(),u.getEmail(),
                     ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
                 tablaUsuario.Rows.Add(fila);
             }
+        }
+        private void botonRegistrar_Click(object sender, EventArgs e)
+        {
+            RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg();
+            ventana.Show();            
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
@@ -45,6 +52,12 @@ namespace sistemaCompras
                 //gestorUsuario.eliminarUsuario();
                 
             }
+        }
+
+        private void botonModificar_Click(object sender, EventArgs e)
+        {
+            ModificarUsuarioDlg ventana = new ModificarUsuarioDlg();
+            ventana.Show();
         }
 
 
