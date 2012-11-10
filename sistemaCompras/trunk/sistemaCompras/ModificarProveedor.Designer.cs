@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.bntModificar = new System.Windows.Forms.Button();
+            this.bntAceptar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -50,6 +50,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,18 +62,18 @@
             this.dataGridView1.Size = new System.Drawing.Size(483, 131);
             this.dataGridView1.TabIndex = 41;
             // 
-            // bntModificar
+            // bntAceptar
             // 
-            this.bntModificar.Location = new System.Drawing.Point(310, 305);
-            this.bntModificar.Name = "bntModificar";
-            this.bntModificar.Size = new System.Drawing.Size(87, 28);
-            this.bntModificar.TabIndex = 40;
-            this.bntModificar.Text = "Modificar";
-            this.bntModificar.UseVisualStyleBackColor = true;
+            this.bntAceptar.Location = new System.Drawing.Point(364, 305);
+            this.bntAceptar.Name = "bntAceptar";
+            this.bntAceptar.Size = new System.Drawing.Size(72, 28);
+            this.bntAceptar.TabIndex = 40;
+            this.bntAceptar.Text = "Aceptar";
+            this.bntAceptar.UseVisualStyleBackColor = true;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(180, 305);
+            this.btnBuscar.Location = new System.Drawing.Point(159, 305);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(77, 28);
             this.btnBuscar.TabIndex = 39;
@@ -116,7 +117,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(67, 310);
+            this.textBox4.Location = new System.Drawing.Point(55, 310);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(98, 20);
             this.textBox4.TabIndex = 33;
@@ -225,22 +226,32 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(424, 305);
+            this.btnCancelar.Location = new System.Drawing.Point(442, 305);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 28);
+            this.btnCancelar.Size = new System.Drawing.Size(72, 28);
             this.btnCancelar.TabIndex = 42;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Location = new System.Drawing.Point(257, 305);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(67, 28);
+            this.btnModificar.TabIndex = 43;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // ModificarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(552, 526);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.bntModificar);
+            this.Controls.Add(this.bntAceptar);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.textBox9);
             this.Controls.Add(this.textBox8);
@@ -271,7 +282,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button bntModificar;
+        private System.Windows.Forms.Button bntAceptar;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox8;
@@ -292,5 +303,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }
