@@ -49,15 +49,14 @@ namespace sistemaCompras
             if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n", 
                 "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
-                //gestorUsuario.eliminarUsuario();
-                
+                gestorUsuario.eliminarUsuario(seleccionado);
+                actualizarTabla();                
             }
         }
 
         private void botonModificar_Click(object sender, EventArgs e)
         {
-            ModificarUsuarioDlg ventana = new ModificarUsuarioDlg();
+            ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(seleccionado);
             ventana.Show();
         }
 
