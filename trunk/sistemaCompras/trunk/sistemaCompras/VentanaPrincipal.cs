@@ -11,11 +11,12 @@ namespace sistemaCompras
 {
     public partial class VentanaPrincipal : Form
     {
+        
         public VentanaPrincipal()
         {
             InitializeComponent();
         }
-
+        
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             UsuarioDlg ventanaUsuarioDlg = new UsuarioDlg();
@@ -45,7 +46,14 @@ namespace sistemaCompras
         private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
             RegistrarProveedor regProveedor = new RegistrarProveedor();
-            regProveedor.ShowDialog();
+            regProveedor.ShowDialog(this);
+            regProveedor.referenciarVPrincipal(this);            
+        }
+
+        private void modificarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ModificarProveedor modProveedor = new ModificarProveedor();
+            modProveedor.ShowDialog(this);
             this.Hide();
         }
 
