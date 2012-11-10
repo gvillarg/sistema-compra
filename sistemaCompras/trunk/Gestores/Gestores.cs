@@ -8,13 +8,13 @@ namespace Gestores
 {
     public class GestorUsuario
     {
-        static private List<Usuario> lusuario;
-        GestorUsuario gestorUsuario = null;
+        private List<Usuario> lusuario;
+        static GestorUsuario gestorUsuario = null;
         private GestorUsuario()
         {
             lusuario = new List<Usuario>();
         }
-        public GestorUsuario Instancia()
+        static public GestorUsuario Instancia()
         {
             if (gestorUsuario == null)
                 gestorUsuario = new GestorUsuario();
@@ -75,7 +75,7 @@ namespace Gestores
             tu.setDescripcion("Gerente de Logística");
             ltipousuario.Add(tu);
         }
-        public GestorTipoUsuario Instancia()
+        static public GestorTipoUsuario Instancia()
         {
             if (gestorTipoUsuario == null)
                 gestorTipoUsuario = new GestorTipoUsuario();
@@ -88,13 +88,13 @@ namespace Gestores
     }
     public class GestorProyecto
     {
-        static private List<GestorProyecto> lproyecto;
-        GestorProyecto gestorProyecto = null;
+        private List<GestorProyecto> lproyecto;
+        static GestorProyecto gestorProyecto = null;
         private GestorProyecto()
         {
             lproyecto = new List<GestorProyecto>();
         }
-        public GestorProyecto Instancia()
+        static public GestorProyecto Instancia()
         {
             if (gestorProyecto == null)
                 gestorProyecto = new GestorProyecto();
@@ -103,13 +103,13 @@ namespace Gestores
     }
     public class GestorProducto
     {
-        static private List<GestorProducto> lproducto;
-        GestorProducto gestorProducto = null;
+        private List<GestorProducto> lproducto;
+        static GestorProducto gestorProducto = null;
         private GestorProducto()
         {
             lproducto = new List<GestorProducto>();
         }
-        public GestorProducto Instancia()
+        static public GestorProducto Instancia()
         {
             if (gestorProducto == null)
                 gestorProducto = new GestorProducto();
@@ -118,13 +118,13 @@ namespace Gestores
     }
     public class GestorUnidad
     {
-        static private List<GestorUnidad> lunidad;
-        GestorUnidad gestorUnidad = null;
+        private List<GestorUnidad> lunidad;
+        static GestorUnidad gestorUnidad = null;
         private GestorUnidad()
         {
             lunidad = new List<GestorUnidad>();
         }
-        public GestorUnidad Instancia()
+        static public GestorUnidad Instancia()
         {
             if (gestorUnidad == null)
                 gestorUnidad = new GestorUnidad();
@@ -133,13 +133,13 @@ namespace Gestores
     }
     public class GestorProveedor
     {
-        static private List<GestorProveedor> lproveedor;
-        GestorProveedor gestorProveedor = null;
+        private List<GestorProveedor> lproveedor;
+        static GestorProveedor gestorProveedor = null;
         private GestorProveedor()
         {
             lproveedor = new List<GestorProveedor>();
         }
-        public GestorProveedor Instancia()
+        static public GestorProveedor Instancia()
         {
             if (gestorProveedor == null)
                 gestorProveedor = new GestorProveedor();
