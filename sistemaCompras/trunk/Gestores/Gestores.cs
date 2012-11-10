@@ -97,12 +97,47 @@ namespace Gestores
     }
     public class GestorProyecto
     {
-        private List<GestorProyecto> lproyecto;
+        private List<Proyecto> lproyecto;
         static GestorProyecto gestorProyecto = null;
+        private int id = 0;
+
         private GestorProyecto()
         {
-            lproyecto = new List<GestorProyecto>();
+            lproyecto = new List<Proyecto>();
         }
+
+        public void agregarProyecto(Proyecto p)
+        {
+            p.setId(id++);
+            p.setEliminado(false);
+            lproyecto.Add(p);
+        }
+
+        public void modificarProyecto(Proyecto p)
+        {
+            int i;
+            for (i = 0; p.getId() == lproyecto[i].getId(); i++) ;
+            Proyecto paux = lproyecto[i];
+            paux.setId(p.getId());
+            paux.setNombre(p.getNombre());
+            paux.setDescripcion(p.getDescripcion());
+            paux.setEliminado(p.getEliminado());
+        }
+
+        public void eliminarProyecto(Proyecto p)
+        {
+            p.setEliminado(true);
+        }
+
+        public List<Proyecto> seleccionarProyectos()
+        {
+            List<Proyecto> proy = new List<Proyecto>();
+            for (int i = 0; i < lproyecto.Count; i++)
+                if (!lproyecto[i].getEliminado())
+                    proy.Add(lproyecto[i]);
+            return proy;
+        }
+
         static public GestorProyecto Instancia()
         {
             if (gestorProyecto == null)
