@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace sistemaCompras
 {
-    static class MainProgram
+    static class Principal
     {
         /// <summary>
         /// The main entry point for the application.
@@ -15,7 +15,7 @@ namespace sistemaCompras
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new VentanaPrincipal());
+            Application.Run(new IniciarSesion());
         }
 
     
