@@ -57,6 +57,13 @@ namespace sistemaCompras
             modProveedor.referenciarVPrincipal(this);
         }
 
+        private void eliminarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            EliminarProveedor elimProveedor = new EliminarProveedor();
+            elimProveedor.ShowDialog(this);
+            elimProveedor.referenciarVPrincipal(this);            
+        }
+
 
     }
 }

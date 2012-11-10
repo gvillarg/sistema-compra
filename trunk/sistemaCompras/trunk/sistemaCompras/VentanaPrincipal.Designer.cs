@@ -179,6 +179,7 @@
             this.eliminarToolStripMenuItem3.Name = "eliminarToolStripMenuItem3";
             this.eliminarToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.eliminarToolStripMenuItem3.Text = "Eliminar";
+            this.eliminarToolStripMenuItem3.Click += new System.EventHandler(this.eliminarToolStripMenuItem3_Click);
             // 
             // unidadToolStripMenuItem
             // 
