@@ -23,6 +23,7 @@ namespace sistemaCompras
             this.padre = padre;
             listaTipoUsuario = gestorTipoUsuario.SeleccionarListaTipoUsuarios();
             llenarCmbTipoUsuario();
+            cmbTipoUsuario.SelectedIndex = 2;
         }
 
         private void llenarCmbTipoUsuario()

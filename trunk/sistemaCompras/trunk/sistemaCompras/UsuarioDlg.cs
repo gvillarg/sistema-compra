@@ -23,8 +23,8 @@ namespace sistemaCompras
         }
         public void actualizarTabla()
         {
-            for (int i = 0; i < tablaUsuario.Rows.Count; i++)
-                tablaUsuario.Rows.RemoveAt(i);
+            while(tablaUsuario.Rows.Count>0)
+                tablaUsuario.Rows.RemoveAt(0);
 
             gestorUsuario = GestorUsuario.Instancia();
             lusuario = gestorUsuario.seleccionarUsuarios();
