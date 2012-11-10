@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.tablaUsuario = new System.Windows.Forms.DataGridView();
+            this.botonRegistrar = new System.Windows.Forms.Button();
+            this.botonModificar = new System.Windows.Forms.Button();
+            this.botonEliminar = new System.Windows.Forms.Button();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.botonRegistrar = new System.Windows.Forms.Button();
-            this.botonModificar = new System.Windows.Forms.Button();
-            this.botonEliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,41 +56,8 @@
             this.tablaUsuario.Location = new System.Drawing.Point(12, 12);
             this.tablaUsuario.Name = "tablaUsuario";
             this.tablaUsuario.Size = new System.Drawing.Size(723, 209);
-            this.tablaUsuario.TabIndex = 0;           
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.Width = 50;
-            // 
-            // colNombre
-            // 
-            this.colNombre.HeaderText = "Nombre";
-            this.colNombre.Name = "colNombre";
-            this.colNombre.Width = 150;
-            // 
-            // colEmail
-            // 
-            this.colEmail.HeaderText = "Email";
-            this.colEmail.Name = "colEmail";
-            this.colEmail.Width = 130;
-            // 
-            // colTelefono
-            // 
-            this.colTelefono.HeaderText = "Telefono";
-            this.colTelefono.Name = "colTelefono";
-            // 
-            // colSueldo
-            // 
-            this.colSueldo.HeaderText = "Sueldo";
-            this.colSueldo.Name = "colSueldo";
-            // 
-            // colTipoUsuario
-            // 
-            this.colTipoUsuario.HeaderText = "Tipo de Usuario";
-            this.colTipoUsuario.Name = "colTipoUsuario";
-            this.colTipoUsuario.Width = 150;
+            this.tablaUsuario.TabIndex = 0;
+            this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
             // 
             // botonRegistrar
             // 
@@ -122,6 +89,46 @@
             this.botonEliminar.UseVisualStyleBackColor = true;
             this.botonEliminar.Click += new System.EventHandler(this.botonEliminar_Click);
             // 
+            // colId
+            // 
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Width = 50;
+            // 
+            // colNombre
+            // 
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            this.colNombre.Width = 150;
+            // 
+            // colEmail
+            // 
+            this.colEmail.HeaderText = "Email";
+            this.colEmail.Name = "colEmail";
+            this.colEmail.ReadOnly = true;
+            this.colEmail.Width = 130;
+            // 
+            // colTelefono
+            // 
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
+            // 
+            // colSueldo
+            // 
+            this.colSueldo.HeaderText = "Sueldo";
+            this.colSueldo.Name = "colSueldo";
+            this.colSueldo.ReadOnly = true;
+            // 
+            // colTipoUsuario
+            // 
+            this.colTipoUsuario.HeaderText = "Tipo de Usuario";
+            this.colTipoUsuario.Name = "colTipoUsuario";
+            this.colTipoUsuario.ReadOnly = true;
+            this.colTipoUsuario.Width = 150;
+            // 
             // UsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,14 +148,14 @@
         #endregion
 
         private System.Windows.Forms.DataGridView tablaUsuario;
+        private System.Windows.Forms.Button botonRegistrar;
+        private System.Windows.Forms.Button botonModificar;
+        private System.Windows.Forms.Button botonEliminar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoUsuario;
-        private System.Windows.Forms.Button botonRegistrar;
-        private System.Windows.Forms.Button botonModificar;
-        private System.Windows.Forms.Button botonEliminar;
     }
 }
