@@ -14,6 +14,7 @@ namespace sistemaCompras
     public partial class UsuarioDlg : Form
     {
         private List<Usuario> lusuario;
+        private GestorUsuario gestorUsuario;
         public UsuarioDlg()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace sistemaCompras
         {
             RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg();
             ventana.Show();
-            GestorUsuario gestorUsuario= GestorUsuario.Instancia();
+            gestorUsuario= GestorUsuario.Instancia();
             lusuario = gestorUsuario.seleccionarUsuarios();
             String []fila;
             Usuario u;
@@ -32,6 +33,17 @@ namespace sistemaCompras
                 fila = new String[] {""+u.getId(),u.getNombre(),u.getEmail(),
                     ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
                 tablaUsuario.Rows.Add(fila);
+            }
+        }
+
+        private void botonEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n", 
+                "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                //gestorUsuario.eliminarUsuario();
+                
             }
         }
 

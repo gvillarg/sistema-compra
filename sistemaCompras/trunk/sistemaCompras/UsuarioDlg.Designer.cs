@@ -55,7 +55,6 @@
             this.tablaUsuario.Name = "tablaUsuario";
             this.tablaUsuario.Size = new System.Drawing.Size(723, 209);
             this.tablaUsuario.TabIndex = 0;
-            //this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
             // 
             // colId
             // 
@@ -118,6 +117,7 @@
             this.botonEliminar.TabIndex = 3;
             this.botonEliminar.Text = "Eliminar";
             this.botonEliminar.UseVisualStyleBackColor = true;
+            this.botonEliminar.Click += new System.EventHandler(this.botonEliminar_Click);
             // 
             // UsuarioDlg
             // 
