@@ -14,11 +14,22 @@ namespace sistemaCompras
     public partial class RegistrarUsuarioDlg : Form
     {
         private GestorUsuario gestorUsuario =  GestorUsuario.Instancia();
+        private GestorTipoUsuario gestorTipoUsuario = GestorTipoUsuario.Instancia();
+        List<TipoUsuario> listaTipoUsuario;
         private UsuarioDlg padre;
         public RegistrarUsuarioDlg(UsuarioDlg padre)
         {
             InitializeComponent();
             this.padre = padre;
+            listaTipoUsuario = gestorTipoUsuario.SeleccionarListaTipoUsuarios();
+            llenarCmbTipoUsuario();
+        }
+
+        private void llenarCmbTipoUsuario()
+        {
+
+            for (int i = 0; i < listaTipoUsuario.Count; i++)
+                cmbTipoUsuario.Items.Add(listaTipoUsuario[i].getDescripcion());
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)
@@ -40,6 +51,7 @@ namespace sistemaCompras
                 float sueldo = float.Parse(txtSueldo.Text);
                 String usuario = txtUsuario.Text;
                 String contrasena = txtContrasena.Text;
+                TipoUsuario tipoUsuario=listaTipoUsuario[cmbTipoUsuario.SelectedIndex];
 
                 u.setDni(dni);
                 u.setNombre(nombre);
@@ -50,6 +62,7 @@ namespace sistemaCompras
                 u.setSueldo(sueldo);
                 u.setNombreUsuario(usuario);
                 u.setContrasena(contrasena);
+                u.setTipoUsuario(tipoUsuario);
 
                 gestorUsuario.agregarUsuario(u);
                 padre.actualizarTabla();

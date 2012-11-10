@@ -90,7 +90,7 @@ namespace Gestores
                 gestorTipoUsuario = new GestorTipoUsuario();
             return gestorTipoUsuario;
         }
-        public List<TipoUsuario> getListaTipoUsuarios()
+        public List<TipoUsuario> SeleccionarListaTipoUsuarios()
         {
             return ltipousuario;
         }

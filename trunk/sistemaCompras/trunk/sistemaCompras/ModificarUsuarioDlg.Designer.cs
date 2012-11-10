@@ -50,6 +50,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtConfirmarContrasena
@@ -71,7 +73,7 @@
             // 
             // botonCancelar
             // 
-            this.botonCancelar.Location = new System.Drawing.Point(173, 334);
+            this.botonCancelar.Location = new System.Drawing.Point(174, 354);
             this.botonCancelar.Name = "botonCancelar";
             this.botonCancelar.Size = new System.Drawing.Size(75, 23);
             this.botonCancelar.TabIndex = 42;
@@ -81,7 +83,7 @@
             // 
             // botonAceptar
             // 
-            this.botonAceptar.Location = new System.Drawing.Point(89, 334);
+            this.botonAceptar.Location = new System.Drawing.Point(90, 354);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(75, 23);
             this.botonAceptar.TabIndex = 41;
@@ -237,11 +239,30 @@
             this.txtTelefono.Size = new System.Drawing.Size(147, 20);
             this.txtTelefono.TabIndex = 45;
             // 
+            // cmbTipoUsuario
+            // 
+            this.cmbTipoUsuario.FormattingEnabled = true;
+            this.cmbTipoUsuario.Location = new System.Drawing.Point(172, 318);
+            this.cmbTipoUsuario.Name = "cmbTipoUsuario";
+            this.cmbTipoUsuario.Size = new System.Drawing.Size(147, 21);
+            this.cmbTipoUsuario.TabIndex = 47;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(13, 321);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(82, 13);
+            this.label11.TabIndex = 46;
+            this.label11.Text = "Tipo de Usuario";
+            // 
             // ModificarUsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(348, 369);
+            this.ClientSize = new System.Drawing.Size(348, 389);
+            this.Controls.Add(this.cmbTipoUsuario);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtConfirmarContrasena);
             this.Controls.Add(this.label10);
@@ -295,5 +316,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.ComboBox cmbTipoUsuario;
+        private System.Windows.Forms.Label label11;
     }
 }
