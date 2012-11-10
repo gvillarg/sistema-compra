@@ -25,6 +25,8 @@ namespace Gestores
         public void agregarUsuario(Usuario u)
         {
             u.setId(sigId++);
+            u.setEliminado(false);
+            u.setFechaIngreso(System.DateTime.Now);
             lusuario.Add(u);
         }
         public void modificarUsuario(Usuario u)
@@ -47,7 +49,7 @@ namespace Gestores
         }
         public void eliminarUsuario(Usuario u)
         {
-            lusuario.Remove(u);
+            u.setEliminado(true);
         }
         public List<Usuario> seleccionarUsuarios()
         {
