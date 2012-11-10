@@ -42,9 +42,9 @@ namespace sistemaCompras
             proveedor.setNombreContacto(txtNombreContacto.Text);
             proveedor.setEmailContacto(txtEmailContacto.Text);
             proveedor.setTelefonoContacto(int.Parse(txtTelefonoContacto.Text));
+            proveedor.setEliminado(false);
 
-            gestorUsuario.
-
+            gestorUsuario.agregarProveedor(proveedor);
         }
 
 
