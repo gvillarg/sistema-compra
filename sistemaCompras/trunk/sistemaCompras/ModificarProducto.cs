@@ -8,8 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using Beans;
 
-namespace sistemaCompras
-{
+namespace sistemaCompras { }
+/*{
     public partial class ModificarProducto : Form
     {
         public ModificarProducto()
@@ -79,3 +79,4 @@ namespace sistemaCompras
         
     }
 }
+    */
