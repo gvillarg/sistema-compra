@@ -193,14 +193,16 @@ namespace Gestores
 
         public void agregarProveedor(Proveedor proveedor)
         {
-            proveedor.setId(sigId++);
-            
-            lproveedor.Add(proveedor);
-
-            
-            
-            u.setFechaIngreso(System.DateTime.Now);
-            lusuario.Add(u);
+            proveedor.setId(sigId++);            
+            lproveedor.Add(proveedor);                                             
+        }
+        public List<Proveedor> seleccionarProveedores()
+        {
+            List<Proveedor> lista = new List<Proveedor>();
+            for (int i = 0; i < lproveedor.Count; i++)
+                if (!lproveedor[i].getEliminado())
+                    lista.Add(lproveedor[i]);
+            return lista;
         }
     }
 }
