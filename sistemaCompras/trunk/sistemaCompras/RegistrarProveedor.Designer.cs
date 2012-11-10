@@ -48,8 +48,8 @@
             this.txtTelefonoContacto = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tablaProveedor = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -216,20 +216,20 @@
             this.bntCancelar.UseVisualStyleBackColor = true;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
-            // dataGridView1
+            // tablaProveedor
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(27, 376);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(483, 131);
-            this.dataGridView1.TabIndex = 20;
+            this.tablaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tablaProveedor.Location = new System.Drawing.Point(27, 376);
+            this.tablaProveedor.Name = "tablaProveedor";
+            this.tablaProveedor.Size = new System.Drawing.Size(483, 131);
+            this.tablaProveedor.TabIndex = 20;
             // 
             // RegistrarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 526);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.tablaProveedor);
             this.Controls.Add(this.bntCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtTelefonoContacto);
@@ -252,7 +252,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistrarProveedor";
             this.Text = "Registrar Proveedor";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tablaProveedor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -280,6 +280,6 @@
         private System.Windows.Forms.TextBox txtTelefonoContacto;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button bntCancelar;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView tablaProveedor;
     }
 }

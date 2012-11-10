@@ -45,8 +45,25 @@ namespace sistemaCompras
             proveedor.setEliminado(false);
 
             gestorUsuario.agregarProveedor(proveedor);
-        }
 
+        }
+        public void actualizarTabla()
+        {
+            for (int i = 0; i < tablaProveedor.Rows.Count; i++)
+                tablaProveedor.Rows.RemoveAt(i);
+
+            gestorProveedor = GestorProveedor.Instancia();
+            lproveedor = gestorProveedor.seleccionarProveedores();
+            String[] fila;
+            Usuario u;
+            for (int i = 0; i < lusuario.Count; i++)
+            {
+                u = lusuario[i];
+                fila = new String[] {""+u.getId(),u.getNombre(),u.getEmail(),
+                    ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
+                tablaUsuario.Rows.Add(fila);
+            }
+        }
 
     }
 }

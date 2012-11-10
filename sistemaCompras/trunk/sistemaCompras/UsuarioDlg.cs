@@ -41,7 +41,7 @@ namespace sistemaCompras
         private void botonRegistrar_Click(object sender, EventArgs e)
         {
             RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg(this);
-            ventana.Show();            
+            ventana.Show();          
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
