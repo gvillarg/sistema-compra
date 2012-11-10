@@ -40,6 +40,13 @@ namespace sistemaCompras
             //ep.Show();
         }
 
+        private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            RegistrarProveedor regProveedor = new RegistrarProveedor();
+            regProveedor.ShowDialog();
+            this.Hide();
+        }
+
 
     }
 }
