@@ -52,11 +52,11 @@
     <Compile Include="AgregarProyecto.Designer.cs">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="IniciarSesion.Designer.cs">
+      <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
     <Compile Include="ModificarUsuarioDlg.cs">
@@ -86,9 +86,6 @@
     </Compile>
     <EmbeddedResource Include="AgregarProyecto.resx">
       <DependentUpon>AgregarProyecto.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioDlg.resx">
       <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
