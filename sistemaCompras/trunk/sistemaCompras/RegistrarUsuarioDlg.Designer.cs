@@ -40,9 +40,7 @@
             this.txtDni = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
             this.txtEmail = new System.Windows.Forms.TextBox();
-            this.mtxtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.txtSueldo = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.txtContrasena = new System.Windows.Forms.TextBox();
@@ -50,6 +48,8 @@
             this.botonCancelar = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.txtConfirmarContrasena = new System.Windows.Forms.TextBox();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -155,29 +155,12 @@
             this.txtDireccion.Size = new System.Drawing.Size(147, 57);
             this.txtDireccion.TabIndex = 11;
             // 
-            // dtpFechaNacimiento
-            // 
-            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaNacimiento.Location = new System.Drawing.Point(171, 130);
-            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
-            this.dtpFechaNacimiento.Size = new System.Drawing.Size(147, 20);
-            this.dtpFechaNacimiento.TabIndex = 13;
-            this.dtpFechaNacimiento.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
-            // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(171, 156);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(147, 20);
             this.txtEmail.TabIndex = 14;
-            // 
-            // mtxtTelefono
-            // 
-            this.mtxtTelefono.Location = new System.Drawing.Point(171, 187);
-            this.mtxtTelefono.Mask = "000-000-000";
-            this.mtxtTelefono.Name = "mtxtTelefono";
-            this.mtxtTelefono.Size = new System.Drawing.Size(147, 20);
-            this.mtxtTelefono.TabIndex = 15;
             // 
             // txtSueldo
             // 
@@ -234,15 +217,32 @@
             // 
             this.txtConfirmarContrasena.Location = new System.Drawing.Point(171, 295);
             this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
-            this.txtConfirmarContrasena.PasswordChar = '6';
+            this.txtConfirmarContrasena.PasswordChar = '*';
             this.txtConfirmarContrasena.Size = new System.Drawing.Size(147, 20);
             this.txtConfirmarContrasena.TabIndex = 22;
+            // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(171, 130);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(147, 20);
+            this.dtpFechaNacimiento.TabIndex = 13;
+            this.dtpFechaNacimiento.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(171, 187);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(147, 20);
+            this.txtTelefono.TabIndex = 23;
             // 
             // RegistrarUsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 376);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtConfirmarContrasena);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.botonCancelar);
@@ -250,7 +250,6 @@
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtSueldo);
-            this.Controls.Add(this.mtxtTelefono);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.txtDireccion);
@@ -286,9 +285,7 @@
         private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.MaskedTextBox mtxtTelefono;
         private System.Windows.Forms.TextBox txtSueldo;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.TextBox txtContrasena;
@@ -296,5 +293,7 @@
         private System.Windows.Forms.Button botonCancelar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtConfirmarContrasena;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
+        private System.Windows.Forms.TextBox txtTelefono;
     }
 }

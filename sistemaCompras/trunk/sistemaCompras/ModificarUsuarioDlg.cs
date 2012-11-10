@@ -30,7 +30,7 @@ namespace sistemaCompras
                 String direccion = txtDireccion.Text;
                 DateTime fechaNacimiento = dtpFechaNacimiento.Value;
                 String email = txtEmail.Text;
-                int telefono = int.Parse(mtxtTelefono.Text);
+                int telefono = int.Parse(txtTelefono.Text);
                 float sueldo = float.Parse(txtSueldo.Text);
                 String nombreUsuario = txtUsuario.Text;
                 String contrasena = txtContrasena.Text;
