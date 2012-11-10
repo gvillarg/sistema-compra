@@ -61,9 +61,9 @@ namespace sistemaCompras
             ventana.Show();
         }
 
-        private void tablaUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void tablaUsuario_SelectedIndexChanged(object sender, DataGridViewCellEventArgs e)
         {
-            tablaUsuario.SelectedRows.
+            seleccionado=lusuario[e.RowIndex];
         }
 
 
