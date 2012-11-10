@@ -11,14 +11,20 @@ namespace sistemaCompras
 {
     public partial class RegistrarProveedor : Form
     {
+        private VentanaPrincipal ventanaPrincipal = null;
+        public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
+        {
+            ventanaPrincipal = vPrincipal;
+        }
+
         public RegistrarProveedor()
         {
             InitializeComponent();
-        }
+        }        
 
         private void bntCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
+        {            
+            this.Dispose();
         }
 
     }
