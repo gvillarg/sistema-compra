@@ -18,7 +18,6 @@ namespace sistemaCompras
         {
             InitializeComponent();
         }
-
         private void botonRegistrar_Click(object sender, EventArgs e)
         {
             RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg();
@@ -33,7 +32,7 @@ namespace sistemaCompras
                 fila = new String[] {""+u.getId(),u.getNombre(),u.getEmail(),
                     ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
                 tablaUsuario.Rows.Add(fila);
-        }
+            }
         }
     }
 }
