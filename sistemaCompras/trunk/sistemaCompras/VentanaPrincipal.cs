@@ -16,16 +16,10 @@ namespace sistemaCompras
             InitializeComponent();
         }
 
-        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form1 ventana = new Form1();
-            ventana.Show();
-        }
-
         private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UsuarioDlg ventana = new UsuarioDlg();
-            ventana.Show();
+            UsuarioDlg ventanaUsuarioDlg = new UsuarioDlg();
+            ventanaUsuarioDlg.Show();
         }
 
 
