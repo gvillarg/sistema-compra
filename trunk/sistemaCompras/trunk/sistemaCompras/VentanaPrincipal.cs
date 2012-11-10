@@ -31,7 +31,9 @@ namespace sistemaCompras
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            RegistrarProyecto regProyecto = new RegistrarProyecto();
+            regProyecto.ShowDialog();
+            this.Hide();
         }
 
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
