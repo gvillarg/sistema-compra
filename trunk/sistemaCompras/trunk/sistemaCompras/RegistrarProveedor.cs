@@ -13,7 +13,8 @@ namespace sistemaCompras
 {
     public partial class RegistrarProveedor : Form
     {
-        private GestorProveedor gestorUsuario = GestorProveedor.Instancia();
+        private GestorProveedor gestorProveedor = GestorProveedor.Instancia();
+        private List<Proveedor> lproveedor;
         private VentanaPrincipal ventanaPrincipal = null;
         public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
         {
@@ -44,7 +45,7 @@ namespace sistemaCompras
             proveedor.setTelefonoContacto(int.Parse(txtTelefonoContacto.Text));
             proveedor.setEliminado(false);
 
-            gestorUsuario.agregarProveedor(proveedor);
+            gestorProveedor.agregarProveedor(proveedor);
 
         }
         public void actualizarTabla()
@@ -55,13 +56,13 @@ namespace sistemaCompras
             gestorProveedor = GestorProveedor.Instancia();
             lproveedor = gestorProveedor.seleccionarProveedores();
             String[] fila;
-            Usuario u;
-            for (int i = 0; i < lusuario.Count; i++)
+            Proveedor proveedor;
+            for (int i = 0; i < lproveedor.Count; i++)
             {
-                u = lusuario[i];
-                fila = new String[] {""+u.getId(),u.getNombre(),u.getEmail(),
-                    ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
-                tablaUsuario.Rows.Add(fila);
+                proveedor = lproveedor[i];
+                fila = new String[] {""+proveedor.getId(),""+proveedor.getRuc(),proveedor.getRazonSocial(),
+                    proveedor.getDireccion(),""+proveedor.getPaginaWeb(),proveedor.getRubro(), proveedor.getNombreContacto(), proveedor.getEmailContacto(), proveedor.getTelefonoContacto() };
+                tablaProveedor.Rows.Add(fila);
             }
         }
 
