@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,14 +38,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.txtRazon = new System.Windows.Forms.TextBox();
+            this.txtDireccion = new System.Windows.Forms.TextBox();
+            this.txtRUC = new System.Windows.Forms.TextBox();
+            this.txtPagWeb = new System.Windows.Forms.TextBox();
+            this.txtRubro = new System.Windows.Forms.TextBox();
+            this.txtNombreContacto = new System.Windows.Forms.TextBox();
+            this.txtEmailContacto = new System.Windows.Forms.TextBox();
+            this.txtTelefonoContacto = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -70,12 +70,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "RUC";
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtId.Location = new System.Drawing.Point(167, 23);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(117, 20);
+            this.txtId.TabIndex = 2;
             // 
             // label3
             // 
@@ -140,61 +140,61 @@
             this.label9.TabIndex = 9;
             this.label9.Text = "Teléfono de Contacto";
             // 
-            // textBox2
+            // txtRazon
             // 
-            this.textBox2.Location = new System.Drawing.Point(167, 54);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(343, 20);
-            this.textBox2.TabIndex = 10;
+            this.txtRazon.Location = new System.Drawing.Point(167, 54);
+            this.txtRazon.Name = "txtRazon";
+            this.txtRazon.Size = new System.Drawing.Size(343, 20);
+            this.txtRazon.TabIndex = 10;
             // 
-            // textBox3
+            // txtDireccion
             // 
-            this.textBox3.Location = new System.Drawing.Point(167, 90);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(343, 20);
-            this.textBox3.TabIndex = 11;
+            this.txtDireccion.Location = new System.Drawing.Point(167, 90);
+            this.txtDireccion.Name = "txtDireccion";
+            this.txtDireccion.Size = new System.Drawing.Size(343, 20);
+            this.txtDireccion.TabIndex = 11;
             // 
-            // textBox4
+            // txtRUC
             // 
-            this.textBox4.Location = new System.Drawing.Point(345, 23);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(165, 20);
-            this.textBox4.TabIndex = 12;
+            this.txtRUC.Location = new System.Drawing.Point(345, 23);
+            this.txtRUC.Name = "txtRUC";
+            this.txtRUC.Size = new System.Drawing.Size(165, 20);
+            this.txtRUC.TabIndex = 12;
             // 
-            // textBox5
+            // txtPagWeb
             // 
-            this.textBox5.Location = new System.Drawing.Point(167, 125);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(343, 20);
-            this.textBox5.TabIndex = 13;
+            this.txtPagWeb.Location = new System.Drawing.Point(167, 125);
+            this.txtPagWeb.Name = "txtPagWeb";
+            this.txtPagWeb.Size = new System.Drawing.Size(343, 20);
+            this.txtPagWeb.TabIndex = 13;
             // 
-            // textBox6
+            // txtRubro
             // 
-            this.textBox6.Location = new System.Drawing.Point(167, 161);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(117, 20);
-            this.textBox6.TabIndex = 14;
+            this.txtRubro.Location = new System.Drawing.Point(167, 161);
+            this.txtRubro.Name = "txtRubro";
+            this.txtRubro.Size = new System.Drawing.Size(117, 20);
+            this.txtRubro.TabIndex = 14;
             // 
-            // textBox7
+            // txtNombreContacto
             // 
-            this.textBox7.Location = new System.Drawing.Point(167, 196);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(343, 20);
-            this.textBox7.TabIndex = 15;
+            this.txtNombreContacto.Location = new System.Drawing.Point(167, 196);
+            this.txtNombreContacto.Name = "txtNombreContacto";
+            this.txtNombreContacto.Size = new System.Drawing.Size(343, 20);
+            this.txtNombreContacto.TabIndex = 15;
             // 
-            // textBox8
+            // txtEmailContacto
             // 
-            this.textBox8.Location = new System.Drawing.Point(167, 229);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(343, 20);
-            this.textBox8.TabIndex = 16;
+            this.txtEmailContacto.Location = new System.Drawing.Point(167, 229);
+            this.txtEmailContacto.Name = "txtEmailContacto";
+            this.txtEmailContacto.Size = new System.Drawing.Size(343, 20);
+            this.txtEmailContacto.TabIndex = 16;
             // 
-            // textBox9
+            // txtTelefonoContacto
             // 
-            this.textBox9.Location = new System.Drawing.Point(167, 263);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(117, 20);
-            this.textBox9.TabIndex = 17;
+            this.txtTelefonoContacto.Location = new System.Drawing.Point(167, 263);
+            this.txtTelefonoContacto.Name = "txtTelefonoContacto";
+            this.txtTelefonoContacto.Size = new System.Drawing.Size(117, 20);
+            this.txtTelefonoContacto.TabIndex = 17;
             // 
             // btnAceptar
             // 
@@ -204,6 +204,7 @@
             this.btnAceptar.TabIndex = 18;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // bntCancelar
             // 
@@ -231,14 +232,14 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bntCancelar);
             this.Controls.Add(this.btnAceptar);
-            this.Controls.Add(this.textBox9);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtTelefonoContacto);
+            this.Controls.Add(this.txtEmailContacto);
+            this.Controls.Add(this.txtNombreContacto);
+            this.Controls.Add(this.txtRubro);
+            this.Controls.Add(this.txtPagWeb);
+            this.Controls.Add(this.txtRUC);
+            this.Controls.Add(this.txtDireccion);
+            this.Controls.Add(this.txtRazon);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -246,7 +247,7 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "RegistrarProveedor";
@@ -261,7 +262,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -269,14 +270,14 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox txtRazon;
+        private System.Windows.Forms.TextBox txtDireccion;
+        private System.Windows.Forms.TextBox txtRUC;
+        private System.Windows.Forms.TextBox txtPagWeb;
+        private System.Windows.Forms.TextBox txtRubro;
+        private System.Windows.Forms.TextBox txtNombreContacto;
+        private System.Windows.Forms.TextBox txtEmailContacto;
+        private System.Windows.Forms.TextBox txtTelefonoContacto;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button bntCancelar;
         private System.Windows.Forms.DataGridView dataGridView1;
