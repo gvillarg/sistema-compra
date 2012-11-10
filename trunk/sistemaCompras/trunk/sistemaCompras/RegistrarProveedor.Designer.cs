@@ -172,7 +172,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(167, 161);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(343, 20);
+            this.textBox6.Size = new System.Drawing.Size(117, 20);
             this.textBox6.TabIndex = 14;
             // 
             // textBox7
@@ -193,7 +193,7 @@
             // 
             this.textBox9.Location = new System.Drawing.Point(167, 263);
             this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(343, 20);
+            this.textBox9.Size = new System.Drawing.Size(117, 20);
             this.textBox9.TabIndex = 17;
             // 
             // button1
