@@ -148,6 +148,7 @@
             this.eliminarToolStripMenuItem2.Name = "eliminarToolStripMenuItem2";
             this.eliminarToolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.eliminarToolStripMenuItem2.Text = "Eliminar Producto";
+            this.eliminarToolStripMenuItem2.Click += new System.EventHandler(this.eliminarToolStripMenuItem2_Click);
             // 
             // proveedorToolStripMenuItem
             // 

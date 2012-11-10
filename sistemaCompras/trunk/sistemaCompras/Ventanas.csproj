@@ -102,6 +102,9 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EliminarProducto.resx">
+      <DependentUpon>EliminarProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrarProducto.resx">
       <DependentUpon>RegistrarProducto.cs</DependentUpon>
     </EmbeddedResource>
