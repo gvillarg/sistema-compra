@@ -147,17 +147,57 @@ namespace Gestores
     }
     public class GestorProducto
     {
-        private List<GestorProducto> lproducto;
+        private List<Producto> lproducto;
         static GestorProducto gestorProducto = null;
         private GestorProducto()
         {
-            lproducto = new List<GestorProducto>();
+            lproducto = new List<Producto>();
         }
+
+        public List<Producto> getLproducto()
+        {
+            return this.lproducto;
+        }
+
         static public GestorProducto Instancia()
         {
             if (gestorProducto == null)
                 gestorProducto = new GestorProducto();
             return gestorProducto;
+        }
+
+        public void agregarProducto(Producto prod)
+        {
+            this.lproducto.Add(prod);
+        }
+
+        public void eliminarProducto(int id)
+        {
+            int i;
+            for (i = 0; i < this.lproducto.Count; i++)
+            {
+                if (this.lproducto[i].getId() == id)
+                {
+                    this.lproducto[i].setEliminado(true);
+                    break;
+                }
+            }
+        }
+
+        public void modificarProducto(Producto prod)
+        {
+            int i;
+            for (i = 0; i < this.lproducto.Count; i++)
+            {
+                if (this.lproducto[i].getId() == prod.getId())
+                {
+                    this.lproducto[i].setNombre(prod.getNombre());
+                    this.lproducto[i].setDescripcion(prod.getDescripcion());
+                    this.lproducto[i].setFabricante(prod.getFabricante());
+                    this.lproducto[i].setEliminado(prod.getEliminado());
+                    break;
+                }
+            }
         }
     }
     public class GestorUnidad
