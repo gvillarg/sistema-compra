@@ -28,6 +28,8 @@ namespace sistemaCompras
             //Console.Out.WriteLine("Hola mundo");
             //RegistrarProducto ap = new RegistrarProducto();
             //ap.Show();
+            RegistrarProducto ventana = new RegistrarProducto();
+            ventana.Show();
         }
 
         private void agregarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -39,8 +41,8 @@ namespace sistemaCompras
 
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            //EliminarProducto ep = new EliminarProducto();
-            //ep.Show();
+            EliminarProducto ep = new EliminarProducto();
+            ep.Show();
         }
 
         private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
@@ -62,6 +64,12 @@ namespace sistemaCompras
             EliminarProveedor elimProveedor = new EliminarProveedor();
             elimProveedor.ShowDialog(this);
             elimProveedor.referenciarVPrincipal(this);            
+        }
+
+        private void modificarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            ModificarProducto ventana = new ModificarProducto();
+            ventana.Show();
         }
 
 
