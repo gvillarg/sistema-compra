@@ -15,9 +15,11 @@ namespace sistemaCompras
     {
         private Usuario usuario;
         private GestorUsuario gestorUsuario = GestorUsuario.Instancia();
-        public ModificarUsuarioDlg(Usuario usuario)
+        private UsuarioDlg padre;
+        public ModificarUsuarioDlg(UsuarioDlg padre,Usuario usuario)
         {
             InitializeComponent();
+            this.padre = padre;
             this.usuario = usuario;
         }
 

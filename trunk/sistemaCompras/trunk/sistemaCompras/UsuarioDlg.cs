@@ -61,7 +61,7 @@ namespace sistemaCompras
         {
             if (seleccionado != null)
             {
-                ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(seleccionado);
+                ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(this,seleccionado);
                 ventana.Show();
             }
         }
