@@ -11,6 +11,12 @@ namespace sistemaCompras
 {
     public partial class ModificarProveedor : Form
     {
+        private VentanaPrincipal ventanaPrincipal = null;
+        public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
+        {
+            ventanaPrincipal = vPrincipal;
+        }
+
         public ModificarProveedor()
         {
             InitializeComponent();
