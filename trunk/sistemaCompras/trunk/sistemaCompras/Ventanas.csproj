@@ -58,7 +58,7 @@
     <Compile Include="IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="Main.cs" />
+    <Compile Include="Principal.cs" />
     <Compile Include="ModificarUsuarioDlg.cs">
       <SubType>Form</SubType>
     </Compile>
