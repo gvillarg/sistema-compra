@@ -104,19 +104,20 @@
             // agregarToolStripMenuItem1
             // 
             this.agregarToolStripMenuItem1.Name = "agregarToolStripMenuItem1";
-            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.agregarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.agregarToolStripMenuItem1.Text = "Agregar";
+            this.agregarToolStripMenuItem1.Click += new System.EventHandler(this.agregarToolStripMenuItem1_Click);
             // 
             // modificarToolStripMenuItem1
             // 
             this.modificarToolStripMenuItem1.Name = "modificarToolStripMenuItem1";
-            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.modificarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.modificarToolStripMenuItem1.Text = "Modificar";
             // 
             // eliminarToolStripMenuItem1
             // 
             this.eliminarToolStripMenuItem1.Name = "eliminarToolStripMenuItem1";
-            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.eliminarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.eliminarToolStripMenuItem1.Text = "Eliminar";
             // 
             // productoToolStripMenuItem
@@ -134,6 +135,7 @@
             this.agregarToolStripMenuItem2.Name = "agregarToolStripMenuItem2";
             this.agregarToolStripMenuItem2.Size = new System.Drawing.Size(125, 22);
             this.agregarToolStripMenuItem2.Text = "Agregar";
+            this.agregarToolStripMenuItem2.Click += new System.EventHandler(this.agregarToolStripMenuItem2_Click);
             // 
             // modificarToolStripMenuItem2
             // 
