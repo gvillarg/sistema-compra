@@ -8,6 +8,7 @@ namespace Gestores
 {
     public class GestorUsuario
     {
+        private int sigId = 1;
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
         private GestorUsuario()
@@ -22,6 +23,7 @@ namespace Gestores
         }
         public void agregarUsuario(Usuario u)
         {
+            u.setId(sigId++);
             lusuario.Add(u);
         }
         public void modificarUsuario(Usuario u)
