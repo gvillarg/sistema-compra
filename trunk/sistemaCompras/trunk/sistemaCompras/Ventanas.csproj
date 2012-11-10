@@ -59,6 +59,12 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs" />
+    <Compile Include="ModificarUsuarioDlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarUsuarioDlg.Designer.cs">
+      <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrarUsuarioDlg.cs">
       <SubType>Form</SubType>
@@ -83,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarUsuarioDlg.resx">
+      <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
