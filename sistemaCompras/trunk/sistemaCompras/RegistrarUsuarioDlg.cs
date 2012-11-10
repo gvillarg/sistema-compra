@@ -39,6 +39,7 @@ namespace sistemaCompras
                 String usuario = txtUsuario.Text;
                 String contrasena = txtContrasena.Text;
                 gestorUsuario.agregarUsuario(u);
+                this.Close();
             }
             else
                 MessageBox.Show("La contraseña no concuerda");

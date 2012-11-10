@@ -15,6 +15,7 @@ namespace sistemaCompras
     {
         private List<Usuario> lusuario;
         private GestorUsuario gestorUsuario;
+        private Usuario seleccionado = null;
         public UsuarioDlg()
         {
             InitializeComponent();
@@ -58,6 +59,11 @@ namespace sistemaCompras
         {
             ModificarUsuarioDlg ventana = new ModificarUsuarioDlg();
             ventana.Show();
+        }
+
+        private void tablaUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            tablaUsuario.SelectedRows.
         }
 
 
