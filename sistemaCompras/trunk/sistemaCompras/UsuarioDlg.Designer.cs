@@ -56,8 +56,7 @@
             this.tablaUsuario.Location = new System.Drawing.Point(12, 12);
             this.tablaUsuario.Name = "tablaUsuario";
             this.tablaUsuario.Size = new System.Drawing.Size(723, 209);
-            this.tablaUsuario.TabIndex = 0;
-            this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
+            this.tablaUsuario.TabIndex = 0;           
             // 
             // colId
             // 
