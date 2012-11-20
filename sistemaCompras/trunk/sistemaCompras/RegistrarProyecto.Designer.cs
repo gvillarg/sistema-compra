@@ -55,7 +55,7 @@
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(104, 29);
             this.btnRegistrar.TabIndex = 17;
-            this.btnRegistrar.Text = "&Agregar";
+            this.btnRegistrar.Text = "&Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
