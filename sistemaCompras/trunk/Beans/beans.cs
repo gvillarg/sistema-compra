@@ -168,30 +168,31 @@ namespace Beans
         }    
     }
 
-    public class Producto: Unidad
+    public class Producto
     {
-        //int id;
-        //string descripcion;
+        int id;
+        string descripcion;
         string nombre;
         string fabricante;
         bool eliminado;
+        Unidad unidad;
 
-        //public int getId()
-        //{
-        //    return id;
-        //}
-        //public void setId(int id)
-        //{
-        //    this.id = id;
-        //}
-        //public string getDescripcion()
-        //{
-        //    return descripcion;
-        //}
-        //public void setDescripcion(string descripcion)
-        //{
-        //    this.descripcion = descripcion;
-        //}
+        public int getId()
+        {
+            return id;
+        }
+        public void setId(int id)
+        {
+            this.id = id;
+        }
+        public string getDescripcion()
+        {
+            return descripcion;
+        }
+        public void setDescripcion(string descripcion)
+        {
+            this.descripcion = descripcion;
+        }
         public string getNombre()
         {
             return nombre;
