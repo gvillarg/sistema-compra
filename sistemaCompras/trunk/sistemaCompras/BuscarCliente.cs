@@ -47,7 +47,8 @@ namespace sistemaCompras
                 dataGridView1.DataSource = ds.Tables["proyecto"];                
             }
             catch (Exception ex)
-            {               
+            {
+                Console.WriteLine(ex.ToString());
             }
         }
 
