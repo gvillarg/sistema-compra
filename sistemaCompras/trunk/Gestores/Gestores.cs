@@ -61,6 +61,11 @@ namespace Gestores
                     lista.Add(lusuario[i]);
             return lista;
         }
+
+        public void filtrarUsuario(string p, Usuario usuario)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class GestorTipoUsuario
     {

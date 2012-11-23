@@ -14,7 +14,7 @@ namespace sistemaCompras
     public partial class UsuarioDlg : Form
     {
         private List<Usuario> lusuario;
-        private GestorUsuario gestorUsuario;
+        private GestorUsuario gestorUsuario=GestorUsuario.Instancia();
         private Usuario seleccionado = null;
         private int modo;
         public UsuarioDlg(int modo)
@@ -28,7 +28,6 @@ namespace sistemaCompras
             while(tablaUsuario.Rows.Count>0)
                 tablaUsuario.Rows.RemoveAt(0);
 
-            gestorUsuario = GestorUsuario.Instancia();
             lusuario = gestorUsuario.seleccionarUsuarios();
             String[] fila;
             Usuario u;
@@ -78,6 +77,11 @@ namespace sistemaCompras
             {
                 seleccionado = lusuario[e.RowIndex];
             }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex]);
         }
     }
 }
