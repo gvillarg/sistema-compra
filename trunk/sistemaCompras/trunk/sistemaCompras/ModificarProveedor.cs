@@ -11,6 +11,8 @@ namespace sistemaCompras
 {
     public partial class ModificarProveedor : Form
     {
+        
+
         public ModificarProveedor()
         {
             InitializeComponent();

@@ -57,6 +57,7 @@
             this.bntAceptar.TabIndex = 40;
             this.bntAceptar.Text = "Aceptar";
             this.bntAceptar.UseVisualStyleBackColor = true;
+            this.bntAceptar.Click += new System.EventHandler(this.bntAceptar_Click);
             // 
             // btnBuscar
             // 
@@ -66,6 +67,7 @@
             this.btnBuscar.TabIndex = 39;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtId
             // 
