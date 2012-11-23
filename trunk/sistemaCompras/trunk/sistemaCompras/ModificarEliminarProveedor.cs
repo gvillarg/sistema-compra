@@ -17,9 +17,10 @@ namespace sistemaCompras
             ventanaPrincipal = vPrincipal;
         }
 
-        public ModificarEliminarProveedor()
+        public ModificarEliminarProveedor(string titulo)
         {
             InitializeComponent();
+            Text = titulo;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
