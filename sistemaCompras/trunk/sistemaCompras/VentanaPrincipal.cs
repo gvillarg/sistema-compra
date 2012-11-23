@@ -48,14 +48,14 @@ namespace sistemaCompras
 
         private void modificarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            ModificarProveedor modProveedor = new ModificarProveedor();
+            ModificarEliminarProveedor modProveedor = new ModificarEliminarProveedor("Modificar Proveedor");
             modProveedor.ShowDialog(this);
             modProveedor.referenciarVPrincipal(this);
         }
 
         private void eliminarToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            EliminarProveedor elimProveedor = new EliminarProveedor();
+            ModificarEliminarProveedor elimProveedor = new ModificarEliminarProveedor("Eliminar Proveedor");
             elimProveedor.ShowDialog(this);
             elimProveedor.referenciarVPrincipal(this);            
         }
