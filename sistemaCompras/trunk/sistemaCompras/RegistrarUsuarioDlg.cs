@@ -69,18 +69,26 @@ namespace sistemaCompras
                 u.setContrasena(contrasena);
                 u.setTipoUsuario(tipoUsuario);
 
-                gestorUsuario.agregarUsuario(u);
-                this.Close();
+                if (gestorUsuario.agregarUsuario(u))
+                {
+                    MessageBox.Show("Usuario Agregado");
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error");
             }
             else
-                MessageBox.Show("El usuario o la contraseña son incorrectos");
+                MessageBox.Show("Los datos no son correctos");
         }
 
         private bool validarDatos()
         {
             bool error;
             error = validador.validarEmail(txtEmail);
-
+            error = error || validador.validarNumeroEntero(txtDni);
+            error = error || validador.validarNumeroEntero(txtTelefono);
+            error = error || validador.validarNumeroReal(txtSueldo);
+            error = error || validador.validarContrasena(txtContrasena, txtConfirmarContrasena);
 
             return error;
         }
@@ -94,9 +102,6 @@ namespace sistemaCompras
         {
             validador.validarNumeroEntero(txtTelefono);
         }
-
-        
-        
 
         private void txtSueldo_TextChanged(object sender, EventArgs e)
         {
