@@ -32,10 +32,12 @@ namespace sistemaCompras
 
         private void llenarCampos()
         {
+            txtId.Text = usuario.getId().ToString();
             txtDni.Text = usuario.getDni().ToString();
             txtNombre.Text = usuario.getNombre();
             txtDireccion.Text = usuario.getDireccion();
             dtpFechaNacimiento.Value = usuario.getFechaNacimiento();
+            dtpFechaIngreso.Value = usuario.getFechaIngreso();
             txtEmail.Text = usuario.getEmail();
             txtTelefono.Text = usuario.getTelefono().ToString();
             txtSueldo.Text = usuario.getSueldo().ToString();

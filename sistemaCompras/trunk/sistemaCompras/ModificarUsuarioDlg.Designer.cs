@@ -54,7 +54,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dtpFechaIngreso = new System.Windows.Forms.DateTimePicker();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -275,13 +275,13 @@
             this.label12.TabIndex = 50;
             this.label12.Text = "Id";
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(172, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(147, 20);
-            this.textBox1.TabIndex = 51;
+            this.txtId.Enabled = false;
+            this.txtId.Location = new System.Drawing.Point(172, 13);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(147, 20);
+            this.txtId.TabIndex = 51;
             // 
             // label13
             // 
@@ -313,7 +313,7 @@
             this.ClientSize = new System.Drawing.Size(348, 449);
             this.Controls.Add(this.dtpFechaIngreso);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cmbTipoUsuario);
             this.Controls.Add(this.label11);
@@ -374,7 +374,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dtpFechaIngreso;
         private System.Windows.Forms.ErrorProvider errorProvider;
