@@ -16,10 +16,12 @@ namespace sistemaCompras
         private List<Usuario> lusuario;
         private GestorUsuario gestorUsuario;
         private Usuario seleccionado = null;
-        public UsuarioDlg()
+        private int modo;
+        public UsuarioDlg(int modo)
         {
             InitializeComponent();
             actualizarTabla();
+            this.modo = modo;
         }
         public void actualizarTabla()
         {
@@ -40,21 +42,23 @@ namespace sistemaCompras
         }
         private void botonRegistrar_Click(object sender, EventArgs e)
         {
-            RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg(this);
-            ventana.Show();          
+            //RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg(this);
+            //ventana.Show();          
         }
 
         private void botonEliminar_Click(object sender, EventArgs e)
         {
-            if (seleccionado != null)
-            {
-                if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
-                    "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    gestorUsuario.eliminarUsuario(seleccionado);
-                    actualizarTabla();
-                }
-            }
+            
+            
+            //if (seleccionado != null)
+            //{
+            //    if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
+            //        "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            //    {
+            //        gestorUsuario.eliminarUsuario(seleccionado);
+            //        actualizarTabla();
+            //    }
+            //}
         }
 
         private void botonModificar_Click(object sender, EventArgs e)
