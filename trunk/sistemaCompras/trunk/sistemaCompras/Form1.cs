@@ -37,8 +37,8 @@ namespace sistemaCompras
                 da.Fill(ds, "Proyecto");
                 dataGridView1.DataSource = ds.Tables["proyecto"];
             }
-            catch(Exception ex) { 
-                
+            catch(Exception ex) {
+                Console.WriteLine(ex.ToString());
             }
 
         }
