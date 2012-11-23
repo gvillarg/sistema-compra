@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Beans;
 using Gestores;
-
+using Validadores;
 namespace sistemaCompras
 {
     public partial class RegistrarProveedor : Form
@@ -16,6 +16,7 @@ namespace sistemaCompras
         private GestorProveedor gestorProveedor = GestorProveedor.Instancia();
         private List<Proveedor> lproveedor;
         private VentanaPrincipal ventanaPrincipal = null;
+        private Validador validador;
         public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
         {
             ventanaPrincipal = vPrincipal;
@@ -24,6 +25,7 @@ namespace sistemaCompras
         public RegistrarProveedor()
         {
             InitializeComponent();
+            validador = new Validador(errorProvider);
         }        
 
         private void bntCancelar_Click(object sender, EventArgs e)
@@ -51,20 +53,12 @@ namespace sistemaCompras
         }
         public void actualizarTabla()
         {
-            for (int i = 0; i < tablaProveedor.Rows.Count; i++)
-                tablaProveedor.Rows.RemoveAt(i);
+        
+        }
 
-            gestorProveedor = GestorProveedor.Instancia();
-            lproveedor = gestorProveedor.seleccionarProveedores();
-            String[] fila;
-            Proveedor proveedor;
-            for (int i = 0; i < lproveedor.Count; i++)
-            {
-                proveedor = lproveedor[i];
-                fila = new String[] {""+proveedor.getId(),proveedor.getRazonSocial(), ""+proveedor.getRuc(),
-                    proveedor.getDireccion() };
-                tablaProveedor.Rows.Add(fila);
-            }
+        private void txtRUC_TextChanged(object sender, EventArgs e)
+        {
+            validador.validarNumeroEntero(txtRUC);
         }
 
     }
