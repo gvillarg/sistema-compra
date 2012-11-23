@@ -8,11 +8,13 @@ using System.Text;
 using System.Windows.Forms;
 using Beans;
 using Gestores;
+using Validadores;
 
 namespace sistemaCompras
 {
     public partial class RegistrarUsuarioDlg : Form
     {
+        private Validador validador;
         private GestorUsuario gestorUsuario =  GestorUsuario.Instancia();
         private GestorTipoUsuario gestorTipoUsuario = GestorTipoUsuario.Instancia();
         List<TipoUsuario> listaTipoUsuario;
@@ -23,6 +25,7 @@ namespace sistemaCompras
             listaTipoUsuario = gestorTipoUsuario.SeleccionarListaTipoUsuarios();
             llenarCmbTipoUsuario();
             cmbTipoUsuario.SelectedIndex = 2;
+            validador = new Validador(errorProvider1);
         }
 
         private void llenarCmbTipoUsuario()
@@ -40,10 +43,6 @@ namespace sistemaCompras
         private void botonAceptar_Click(object sender, EventArgs e)
         {
             bool error = validarDatos();
-
-
-
-
             //if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))
             if(!error)
             {
@@ -79,72 +78,31 @@ namespace sistemaCompras
 
         private bool validarDatos()
         {
-            throw new NotImplementedException();
+            bool error;
+            error = validador.validarEmail(txtEmail);
+
+
+            return error;
         }
 
         private void txtDni_TextChanged(object sender, EventArgs e)
         {
-            validarNumeroEntero(txtDni);
+            validador.validarNumeroEntero(txtDni);
         }
 
         private void txtTelefono_TextChanged(object sender, EventArgs e)
         {
-            validarNumeroEntero(txtTelefono);
+            validador.validarNumeroEntero(txtTelefono);
         }
 
-        private void validarNumeroEntero(TextBox txtBox)
+        
+        
+
+        private void txtSueldo_TextChanged(object sender, EventArgs e)
         {
-            string text = txtBox.Text;
-            bool hasDigit = true;
-            foreach (char letter in text)
-            {
-                if (!char.IsDigit(letter))
-                {
-                    hasDigit = false;
-                    break;
-                }
-            }
-            // Call SetError or Clear on the ErrorProvider.
-            if (!hasDigit)
-            {
-                errorProvider1.SetError(txtBox, "Debe contener un número");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
+            validador.validarNumeroReal(txtSueldo);
         }
-        private bool validarNumeroReal(TextBox txtBox)
-        {
-            bool error;
-            string text = txtBox.Text;
-            bool hasDigit = true;
-            int numPuntos=0;
-            foreach (char letter in text)
-            {
-                if (!char.IsDigit(letter))
-                {
-                    if (letter == '.')
-                        numPuntos++;
-                    else
-                    {
-                        hasDigit = false;
-                        break;
-                    }
-                }
-            }
-            error = !hasDigit || (numPuntos >= 2);
-            Console.Out.WriteLine("Has Digit: " + hasDigit + " Numero de Puntos: " + numPuntos);
-            // Call SetError or Clear on the ErrorProvider.
-            if (error)
-            {
-                errorProvider1.SetError(txtBox, "Debe contener un número");
-            }
-            else
-            {
-                errorProvider1.Clear();
-            }
-            return error;
-        }
+  
+        
     }
 }

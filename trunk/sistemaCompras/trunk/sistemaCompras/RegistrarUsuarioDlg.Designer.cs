@@ -174,6 +174,7 @@
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(147, 20);
             this.txtSueldo.TabIndex = 16;
+            this.txtSueldo.TextChanged += new System.EventHandler(this.txtSueldo_TextChanged);
             // 
             // txtUsuario
             // 
