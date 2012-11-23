@@ -39,7 +39,13 @@ namespace sistemaCompras
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))
+            bool error = validarDatos();
+
+
+
+
+            //if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))
+            if(!error)
             {
                 Usuario u = new Usuario();
                 int dni = int.Parse(txtDni.Text);
@@ -69,6 +75,76 @@ namespace sistemaCompras
             }
             else
                 MessageBox.Show("El usuario o la contraseña son incorrectos");
+        }
+
+        private bool validarDatos()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            validarNumeroEntero(txtDni);
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            validarNumeroEntero(txtTelefono);
+        }
+
+        private void validarNumeroEntero(TextBox txtBox)
+        {
+            string text = txtBox.Text;
+            bool hasDigit = true;
+            foreach (char letter in text)
+            {
+                if (!char.IsDigit(letter))
+                {
+                    hasDigit = false;
+                    break;
+                }
+            }
+            // Call SetError or Clear on the ErrorProvider.
+            if (!hasDigit)
+            {
+                errorProvider1.SetError(txtBox, "Debe contener un número");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+        }
+        private bool validarNumeroReal(TextBox txtBox)
+        {
+            bool error;
+            string text = txtBox.Text;
+            bool hasDigit = true;
+            int numPuntos=0;
+            foreach (char letter in text)
+            {
+                if (!char.IsDigit(letter))
+                {
+                    if (letter == '.')
+                        numPuntos++;
+                    else
+                    {
+                        hasDigit = false;
+                        break;
+                    }
+                }
+            }
+            error = !hasDigit || (numPuntos >= 2);
+            Console.Out.WriteLine("Has Digit: " + hasDigit + " Numero de Puntos: " + numPuntos);
+            // Call SetError or Clear on the ErrorProvider.
+            if (error)
+            {
+                errorProvider1.SetError(txtBox, "Debe contener un número");
+            }
+            else
+            {
+                errorProvider1.Clear();
+            }
+            return error;
         }
     }
 }
