@@ -228,13 +228,11 @@ namespace Gestores
         }
     }
     public class GestorProveedor
-    {
-        private List<Proveedor> lproveedor;
+    {        
         private int sigId;
         static GestorProveedor gestorProveedor = null;
         private GestorProveedor()
-        {
-            lproveedor = new List<Proveedor>();
+        {            
             sigId = 1;
         }
         static public GestorProveedor Instancia()
@@ -247,15 +245,17 @@ namespace Gestores
         public void agregarProveedor(Proveedor proveedor)
         {
             proveedor.setId(sigId++);            
-            lproveedor.Add(proveedor);                                             
+            //lproveedor.Add(proveedor);                                             
         }
+
+        public void modificarProveedor()
+        {
+
+        }
+
         public List<Proveedor> seleccionarProveedores()
         {
-            List<Proveedor> lista = new List<Proveedor>();
-            for (int i = 0; i < lproveedor.Count; i++)
-                if (!lproveedor[i].getEliminado())
-                    lista.Add(lproveedor[i]);
-            return lista;
+            return null;
         }
     }
 }
