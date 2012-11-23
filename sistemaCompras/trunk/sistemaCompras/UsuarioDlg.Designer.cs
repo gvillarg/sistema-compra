@@ -29,15 +29,19 @@
         private void InitializeComponent()
         {
             this.tablaUsuario = new System.Windows.Forms.DataGridView();
-            this.botonRegistrar = new System.Windows.Forms.Button();
-            this.botonModificar = new System.Windows.Forms.Button();
-            this.botonEliminar = new System.Windows.Forms.Button();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -53,41 +57,11 @@
             this.colTelefono,
             this.colSueldo,
             this.colTipoUsuario});
-            this.tablaUsuario.Location = new System.Drawing.Point(12, 12);
+            this.tablaUsuario.Location = new System.Drawing.Point(12, 70);
             this.tablaUsuario.Name = "tablaUsuario";
-            this.tablaUsuario.Size = new System.Drawing.Size(723, 209);
+            this.tablaUsuario.Size = new System.Drawing.Size(723, 228);
             this.tablaUsuario.TabIndex = 0;
             this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
-            // 
-            // botonRegistrar
-            // 
-            this.botonRegistrar.Location = new System.Drawing.Point(159, 227);
-            this.botonRegistrar.Name = "botonRegistrar";
-            this.botonRegistrar.Size = new System.Drawing.Size(75, 23);
-            this.botonRegistrar.TabIndex = 1;
-            this.botonRegistrar.Text = "Registrar";
-            this.botonRegistrar.UseVisualStyleBackColor = true;
-            this.botonRegistrar.Click += new System.EventHandler(this.botonRegistrar_Click);
-            // 
-            // botonModificar
-            // 
-            this.botonModificar.Location = new System.Drawing.Point(333, 227);
-            this.botonModificar.Name = "botonModificar";
-            this.botonModificar.Size = new System.Drawing.Size(75, 23);
-            this.botonModificar.TabIndex = 2;
-            this.botonModificar.Text = "Modificar";
-            this.botonModificar.UseVisualStyleBackColor = true;
-            this.botonModificar.Click += new System.EventHandler(this.botonModificar_Click);
-            // 
-            // botonEliminar
-            // 
-            this.botonEliminar.Location = new System.Drawing.Point(503, 227);
-            this.botonEliminar.Name = "botonEliminar";
-            this.botonEliminar.Size = new System.Drawing.Size(75, 23);
-            this.botonEliminar.TabIndex = 3;
-            this.botonEliminar.Text = "Eliminar";
-            this.botonEliminar.UseVisualStyleBackColor = true;
-            this.botonEliminar.Click += new System.EventHandler(this.botonEliminar_Click);
             // 
             // colId
             // 
@@ -129,33 +103,104 @@
             this.colTipoUsuario.ReadOnly = true;
             this.colTipoUsuario.Width = 150;
             // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Location = new System.Drawing.Point(278, 41);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(75, 23);
+            this.btnAceptar.TabIndex = 2;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.botonModificar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(429, 41);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 3;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.botonEliminar_Click);
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(129, 6);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtNombre.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(79, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Nombre";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(360, 9);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 13);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Tipo de Usuario";
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Location = new System.Drawing.Point(448, 5);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.TabIndex = 7;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(129, 41);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 8;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
             // UsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(761, 262);
-            this.Controls.Add(this.botonEliminar);
-            this.Controls.Add(this.botonModificar);
-            this.Controls.Add(this.botonRegistrar);
+            this.ClientSize = new System.Drawing.Size(761, 315);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.cmbTipo);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.tablaUsuario);
             this.Name = "UsuarioDlg";
             this.Text = "Usuario";
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView tablaUsuario;
-        private System.Windows.Forms.Button botonRegistrar;
-        private System.Windows.Forms.Button botonModificar;
-        private System.Windows.Forms.Button botonEliminar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn colEmail;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSueldo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoUsuario;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
