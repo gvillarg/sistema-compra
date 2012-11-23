@@ -7,6 +7,7 @@ namespace Beans
 {
     public class Usuario
     {
+
         private int id;
         private int dni;
         private string direccion;
