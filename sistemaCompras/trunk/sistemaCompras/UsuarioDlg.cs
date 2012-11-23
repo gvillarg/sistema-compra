@@ -22,6 +22,10 @@ namespace sistemaCompras
             InitializeComponent();
             actualizarTabla();
             this.modo = modo;
+            if (modo == 0)
+                this.Text = "Modificar Usuario";
+            else
+                this.Text = "Eliminar Usuario";
         }
         public void actualizarTabla()
         {
@@ -39,35 +43,7 @@ namespace sistemaCompras
                 tablaUsuario.Rows.Add(fila);
             }
         }
-        private void botonRegistrar_Click(object sender, EventArgs e)
-        {
-            //RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg(this);
-            //ventana.Show();          
-        }
 
-        private void botonEliminar_Click(object sender, EventArgs e)
-        {
-            
-            
-            //if (seleccionado != null)
-            //{
-            //    if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
-            //        "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
-            //        gestorUsuario.eliminarUsuario(seleccionado);
-            //        actualizarTabla();
-            //    }
-            //}
-        }
-
-        private void botonModificar_Click(object sender, EventArgs e)
-        {
-            if (seleccionado != null)
-            {
-                ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(this,seleccionado);
-                ventana.Show();
-            }
-        }
 
 
 
@@ -81,7 +57,47 @@ namespace sistemaCompras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex]);
+                gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex],cbMostrarEliminados.Checked);
+
+        }
+
+        private void botonAceptar_Click(object sender, EventArgs e)
+        {
+            if (modo == 0)
+            {
+
+                if (seleccionado != null)
+                {
+                    ModificarUsuarioDlg ventana = new ModificarUsuarioDlg(this, seleccionado);
+                    ventana.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un Usuario");
+                }
+            }
+            else
+            {
+                if (seleccionado != null)
+                {
+                    if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
+                        "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        gestorUsuario.eliminarUsuario(seleccionado);
+                        actualizarTabla();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un Usuario");
+                }
+            }
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

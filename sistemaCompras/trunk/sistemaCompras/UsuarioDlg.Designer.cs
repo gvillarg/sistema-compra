@@ -42,6 +42,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.cbMostrarEliminados = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaUsuario)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             this.colTipoUsuario});
             this.tablaUsuario.Location = new System.Drawing.Point(12, 70);
             this.tablaUsuario.Name = "tablaUsuario";
-            this.tablaUsuario.Size = new System.Drawing.Size(723, 228);
+            this.tablaUsuario.Size = new System.Drawing.Size(724, 228);
             this.tablaUsuario.TabIndex = 0;
             this.tablaUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaUsuario_CellContentClick);
             // 
@@ -111,7 +112,7 @@
             this.btnAceptar.TabIndex = 2;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
-            this.btnAceptar.Click += new System.EventHandler(this.botonModificar_Click);
+            this.btnAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -121,11 +122,11 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.botonEliminar_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(129, 6);
+            this.txtNombre.Location = new System.Drawing.Point(62, 7);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(121, 20);
             this.txtNombre.TabIndex = 4;
@@ -133,7 +134,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(79, 9);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 5;
@@ -142,7 +143,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 9);
+            this.label2.Location = new System.Drawing.Point(199, 10);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 13);
             this.label2.TabIndex = 6;
@@ -151,7 +152,7 @@
             // cmbTipo
             // 
             this.cmbTipo.FormattingEnabled = true;
-            this.cmbTipo.Location = new System.Drawing.Point(448, 5);
+            this.cmbTipo.Location = new System.Drawing.Point(311, 6);
             this.cmbTipo.Name = "cmbTipo";
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 7;
@@ -166,11 +167,22 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // cbMostrarEliminados
+            // 
+            this.cbMostrarEliminados.AutoSize = true;
+            this.cbMostrarEliminados.Location = new System.Drawing.Point(471, 10);
+            this.cbMostrarEliminados.Name = "cbMostrarEliminados";
+            this.cbMostrarEliminados.Size = new System.Drawing.Size(114, 17);
+            this.cbMostrarEliminados.TabIndex = 10;
+            this.cbMostrarEliminados.Text = "Mostrar Eliminados";
+            this.cbMostrarEliminados.UseVisualStyleBackColor = true;
+            // 
             // UsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(761, 315);
+            this.Controls.Add(this.cbMostrarEliminados);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.cmbTipo);
             this.Controls.Add(this.label2);
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.CheckBox cbMostrarEliminados;
     }
 }

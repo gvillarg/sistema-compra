@@ -62,7 +62,7 @@ namespace Gestores
             return lista;
         }
 
-        public void filtrarUsuario(string p, Usuario usuario)
+        public void filtrarUsuario(string nombre, Usuario usuario,bool incEliminado)
         {
             throw new NotImplementedException();
         }
