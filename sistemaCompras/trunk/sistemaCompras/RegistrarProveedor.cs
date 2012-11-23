@@ -13,10 +13,10 @@ namespace sistemaCompras
 {
     public partial class RegistrarProveedor : Form
     {
-        private GestorProveedor gestorProveedor = GestorProveedor.Instancia();
-        private List<Proveedor> lproveedor;
+        private GestorProveedor gestorProveedor = GestorProveedor.Instancia();        
         private VentanaPrincipal ventanaPrincipal = null;
         private Validador validador;
+
         public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
         {
             ventanaPrincipal = vPrincipal;
@@ -47,7 +47,7 @@ namespace sistemaCompras
             proveedor.setTelefonoContacto(int.Parse(txtTelefonoContacto.Text));
             proveedor.setEliminado(false);
 
-            gestorProveedor.agregarProveedor(proveedor);
+            //gestorProveedor.agregarProveedor(proveedor);
             actualizarTabla();
 
         }

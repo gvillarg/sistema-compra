@@ -28,5 +28,24 @@ namespace sistemaCompras
             this.Close();
         }
 
+        private void bntAceptar_Click(object sender, EventArgs e)
+        {
+            if (Text.Equals("Modificar Proveedor"))
+            {
+                ModificarProveedor modProveedor = new ModificarProveedor();
+                modProveedor.ShowDialog(this);
+                modProveedor.referenciarVPrincipal(this);
+
+            }
+            else //Eliminar Proveedor
+            {
+
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
