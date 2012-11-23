@@ -8,12 +8,14 @@ using System.Text;
 using System.Windows.Forms;
 using Beans;
 using Gestores;
+using Validadores;
 
 namespace sistemaCompras
 {
     public partial class ModificarUsuarioDlg : Form
     {
         private Usuario usuario;
+        private Validador validador;
         private GestorUsuario gestorUsuario = GestorUsuario.Instancia();
         List<TipoUsuario> listaTipoUsuario;
         private UsuarioDlg padre;
@@ -25,6 +27,7 @@ namespace sistemaCompras
             listaTipoUsuario = GestorTipoUsuario.Instancia().SeleccionarListaTipoUsuarios();
             llenarCmbTipoUsuario();
             llenarCampos();
+            validador = new Validador(errorProvider);
         }
 
         private void llenarCampos()
@@ -50,7 +53,13 @@ namespace sistemaCompras
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            if (txtContrasena.Text.Equals(txtConfirmarContrasena.Text))
+            bool error = false;
+            error = error || validador.validarNumeroEntero(txtDni);
+            error = error || validador.validarNumeroEntero(txtTelefono)||validador.validarNumeroReal(txtSueldo);
+            error = error || validador.validarEmail(txtEmail)||validador.validarContrasena(txtConfirmarContrasena,txtContrasena);
+
+            
+            if (!error)
             {
                 int dni = int.Parse(txtDni.Text);
                 String nombre = txtNombre.Text;
@@ -74,17 +83,39 @@ namespace sistemaCompras
                 usuario.setContrasena(contrasena);
                 usuario.setTipoUsuario(tipoUsuario);
 
-                gestorUsuario.modificarUsuario(usuario);
-                padre.actualizarTabla();
-                this.Close();
+
+
+                if (gestorUsuario.modificarUsuario(usuario))
+                {
+                    padre.actualizarTabla();
+                    MessageBox.Show("UsuarioModificado");
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error");
             }
             else
-                MessageBox.Show("La contraseña no concuerda");
+                MessageBox.Show("Los datos no son correctos");
         }
 
         private void botonCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtDni_TextChanged(object sender, EventArgs e)
+        {
+            validador.validarNumeroEntero(txtDni);
+        }
+
+        private void txtTelefono_TextChanged(object sender, EventArgs e)
+        {
+            validador.validarNumeroEntero(txtTelefono);
+        }
+
+        private void txtSueldo_TextChanged(object sender, EventArgs e)
+        {
+            validador.validarNumeroReal(txtSueldo);
         }
     }
 }
