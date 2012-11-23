@@ -31,8 +31,9 @@ namespace Gestores
             lusuario.Add(u);
             return resultado;
         }
-        public void modificarUsuario(Usuario u)
+        public bool modificarUsuario(Usuario u)
         {
+            bool resultado = true;
             int i;
             for (i = 0; u.getId() != lusuario[i].getId(); i++) ;
             Usuario u_temp = lusuario[i];
@@ -48,10 +49,14 @@ namespace Gestores
             u_temp.setContrasena(u.getContrasena());
             u_temp.setEliminado(u.getEliminado());
             u_temp.setTipoUsuario(u.getTipoUsuario());
+
+            return resultado;
         }
-        public void eliminarUsuario(Usuario u)
+        public bool eliminarUsuario(Usuario u)
         {
+            bool resultado = true;
             u.setEliminado(true);
+            return resultado;
         }
         public List<Usuario> seleccionarUsuarios()
         {
