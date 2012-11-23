@@ -61,11 +61,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AgregarProyecto.cs">
+    <Compile Include="BuscarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AgregarProyecto.Designer.cs">
-      <DependentUpon>AgregarProyecto.cs</DependentUpon>
+    <Compile Include="BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BuscarDescripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarDescripcion.Designer.cs">
+      <DependentUpon>BuscarDescripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="EliminarProducto.cs">
       <SubType>Form</SubType>
@@ -79,6 +85,12 @@
     <Compile Include="EliminarProveedor.Designer.cs">
       <DependentUpon>EliminarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="IniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,13 +103,19 @@
     <Compile Include="ModificarProveedor.Designer.cs">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Principal.cs" />
+    <Compile Include="ModificarProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProyecto.Designer.cs">
+      <DependentUpon>ModificarProyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="ModificarUsuarioDlg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ModificarUsuarioDlg.Designer.cs">
       <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Principal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegistrarProducto.cs">
       <SubType>Form</SubType>
@@ -111,11 +129,22 @@
     <Compile Include="RegistrarProveedor.Designer.cs">
       <DependentUpon>RegistrarProveedor.cs</DependentUpon>
     </Compile>
+    <Compile Include="RegistrarProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrarProyecto.Designer.cs">
+      <DependentUpon>RegistrarProyecto.cs</DependentUpon>
+    </Compile>
     <Compile Include="RegistrarUsuarioDlg.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="RegistrarUsuarioDlg.Designer.cs">
       <DependentUpon>RegistrarUsuarioDlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistemas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Sistemas.xsd</DependentUpon>
     </Compile>
     <Compile Include="UsuarioDlg.cs">
       <SubType>Form</SubType>
@@ -129,8 +158,11 @@
     <Compile Include="VentanaPrincipal.Designer.cs">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="AgregarProyecto.resx">
-      <DependentUpon>AgregarProyecto.cs</DependentUpon>
+    <EmbeddedResource Include="BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BuscarDescripcion.resx">
+      <DependentUpon>BuscarDescripcion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EliminarProducto.resx">
       <DependentUpon>EliminarProducto.cs</DependentUpon>
@@ -138,11 +170,17 @@
     <EmbeddedResource Include="EliminarProveedor.resx">
       <DependentUpon>EliminarProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProveedor.resx">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarProyecto.resx">
+      <DependentUpon>ModificarProyecto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarUsuarioDlg.resx">
       <DependentUpon>ModificarUsuarioDlg.cs</DependentUpon>
@@ -163,6 +201,9 @@
     <EmbeddedResource Include="RegistrarProveedor.resx">
       <DependentUpon>RegistrarProveedor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="RegistrarProyecto.resx">
+      <DependentUpon>RegistrarProyecto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistrarUsuarioDlg.resx">
       <DependentUpon>RegistrarUsuarioDlg.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +213,7 @@
     <EmbeddedResource Include="VentanaPrincipal.resx">
       <DependentUpon>VentanaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -181,6 +223,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Sistemas.xsc">
+      <DependentUpon>Sistemas.xsd</DependentUpon>
+    </None>
+    <None Include="Sistemas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Sistemas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Sistemas.xss">
+      <DependentUpon>Sistemas.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Beans\Beans.csproj">
@@ -220,6 +273,9 @@
       <ProductName>Windows Installer 3.1</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
