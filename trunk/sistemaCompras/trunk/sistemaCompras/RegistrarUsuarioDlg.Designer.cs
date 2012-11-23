@@ -143,7 +143,7 @@
             this.txtDni.Location = new System.Drawing.Point(171, 34);
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(147, 20);
-            this.txtDni.TabIndex = 9;
+            this.txtDni.TabIndex = 2;
             this.txtDni.TextChanged += new System.EventHandler(this.txtDni_TextChanged);
             // 
             // txtNombre
@@ -151,7 +151,7 @@
             this.txtNombre.Location = new System.Drawing.Point(171, 60);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(147, 20);
-            this.txtNombre.TabIndex = 10;
+            this.txtNombre.TabIndex = 3;
             // 
             // txtDireccion
             // 
@@ -159,21 +159,21 @@
             this.txtDireccion.Multiline = true;
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(147, 57);
-            this.txtDireccion.TabIndex = 11;
+            this.txtDireccion.TabIndex = 4;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(171, 178);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(147, 20);
-            this.txtEmail.TabIndex = 14;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtSueldo
             // 
             this.txtSueldo.Location = new System.Drawing.Point(171, 239);
             this.txtSueldo.Name = "txtSueldo";
             this.txtSueldo.Size = new System.Drawing.Size(147, 20);
-            this.txtSueldo.TabIndex = 16;
+            this.txtSueldo.TabIndex = 8;
             this.txtSueldo.TextChanged += new System.EventHandler(this.txtSueldo_TextChanged);
             // 
             // txtUsuario
@@ -181,7 +181,7 @@
             this.txtUsuario.Location = new System.Drawing.Point(171, 265);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(147, 20);
-            this.txtUsuario.TabIndex = 17;
+            this.txtUsuario.TabIndex = 9;
             // 
             // txtContrasena
             // 
@@ -189,14 +189,14 @@
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '*';
             this.txtContrasena.Size = new System.Drawing.Size(147, 20);
-            this.txtContrasena.TabIndex = 18;
+            this.txtContrasena.TabIndex = 10;
             // 
             // botonAceptar
             // 
             this.botonAceptar.Location = new System.Drawing.Point(86, 352);
             this.botonAceptar.Name = "botonAceptar";
             this.botonAceptar.Size = new System.Drawing.Size(75, 23);
-            this.botonAceptar.TabIndex = 19;
+            this.botonAceptar.TabIndex = 13;
             this.botonAceptar.Text = "Aceptar";
             this.botonAceptar.UseVisualStyleBackColor = true;
             this.botonAceptar.Click += new System.EventHandler(this.botonAceptar_Click);
@@ -206,7 +206,7 @@
             this.botonCancelar.Location = new System.Drawing.Point(170, 352);
             this.botonCancelar.Name = "botonCancelar";
             this.botonCancelar.Size = new System.Drawing.Size(75, 23);
-            this.botonCancelar.TabIndex = 20;
+            this.botonCancelar.TabIndex = 14;
             this.botonCancelar.Text = "Cancelar";
             this.botonCancelar.UseVisualStyleBackColor = true;
             this.botonCancelar.Click += new System.EventHandler(this.botonCancelar_Click);
@@ -226,7 +226,7 @@
             this.txtConfirmarContrasena.Name = "txtConfirmarContrasena";
             this.txtConfirmarContrasena.PasswordChar = '*';
             this.txtConfirmarContrasena.Size = new System.Drawing.Size(147, 20);
-            this.txtConfirmarContrasena.TabIndex = 22;
+            this.txtConfirmarContrasena.TabIndex = 11;
             // 
             // dtpFechaNacimiento
             // 
@@ -234,7 +234,7 @@
             this.dtpFechaNacimiento.Location = new System.Drawing.Point(171, 152);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(147, 20);
-            this.dtpFechaNacimiento.TabIndex = 13;
+            this.dtpFechaNacimiento.TabIndex = 5;
             this.dtpFechaNacimiento.Value = new System.DateTime(1980, 1, 1, 0, 0, 0, 0);
             // 
             // txtTelefono
@@ -242,7 +242,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(171, 209);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(147, 20);
-            this.txtTelefono.TabIndex = 23;
+            this.txtTelefono.TabIndex = 7;
             this.txtTelefono.TextChanged += new System.EventHandler(this.txtTelefono_TextChanged);
             // 
             // label11
@@ -260,7 +260,7 @@
             this.cmbTipoUsuario.Location = new System.Drawing.Point(171, 6);
             this.cmbTipoUsuario.Name = "cmbTipoUsuario";
             this.cmbTipoUsuario.Size = new System.Drawing.Size(147, 21);
-            this.cmbTipoUsuario.TabIndex = 25;
+            this.cmbTipoUsuario.TabIndex = 1;
             // 
             // errorProvider1
             // 
