@@ -79,12 +79,6 @@
     <Compile Include="EliminarProducto.Designer.cs">
       <DependentUpon>EliminarProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="EliminarProveedor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="EliminarProveedor.Designer.cs">
-      <DependentUpon>EliminarProveedor.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +90,12 @@
     </Compile>
     <Compile Include="IniciarSesion.Designer.cs">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarEliminarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarEliminarProveedor.Designer.cs">
+      <DependentUpon>ModificarEliminarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="ModificarProveedor.cs">
       <SubType>Form</SubType>
@@ -167,14 +167,14 @@
     <EmbeddedResource Include="EliminarProducto.resx">
       <DependentUpon>EliminarProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="EliminarProveedor.resx">
-      <DependentUpon>EliminarProveedor.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="IniciarSesion.resx">
       <DependentUpon>IniciarSesion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModificarEliminarProveedor.resx">
+      <DependentUpon>ModificarEliminarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ModificarProveedor.resx">
       <DependentUpon>ModificarProveedor.cs</DependentUpon>
