@@ -22,12 +22,14 @@ namespace Gestores
                 gestorUsuario = new GestorUsuario();
             return gestorUsuario;
         }
-        public void agregarUsuario(Usuario u)
+        public bool agregarUsuario(Usuario u)
         {
+            bool resultado = true;
             u.setId(sigId++);
             u.setEliminado(false);
             u.setFechaIngreso(System.DateTime.Now);
             lusuario.Add(u);
+            return resultado;
         }
         public void modificarUsuario(Usuario u)
         {

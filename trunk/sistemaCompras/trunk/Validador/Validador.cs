@@ -67,6 +67,34 @@ namespace Validadores
             }
             return error;
         }
+        public bool validarContrasena(TextBox txtBox,TextBox txtBox2)
+        {
+            bool error;
+            string text = txtBox.Text;
+            string text2 = txtBox2.Text;
+            int numArrobas = 0;
+            char lastLetter = ' ';
+            foreach (char letter in text)
+            {
+                lastLetter = letter;
+                if (letter == '@')
+                {
+                    numArrobas++;
+                }
+            }
+            error = !string.Equals(text, text2);
+            //Console.Out.WriteLine("Has Digit: " + hasDigit + " Numero de Puntos: " + numPuntos);
+            // Call SetError or Clear on the ErrorProvider.
+            if (error)
+            {
+                errorProvider.SetError(txtBox, "Contraseña Incorrecta");
+            }
+            else
+            {
+                errorProvider.Clear();
+            }
+            return error;
+        }
 
         public bool validarNumeroReal(TextBox txtBox)
         {
