@@ -11,8 +11,11 @@ namespace sistemaCompras
 {
     public partial class ModificarProveedor : Form
     {
-        
-
+        private ModificarEliminarProveedor modElimProvedor= null;
+        public void referenciarVModElimProveedor(ModificarEliminarProveedor vModProveedor)
+        {
+            modElimProvedor = vModProveedor;
+        }
         public ModificarProveedor()
         {
             InitializeComponent();
