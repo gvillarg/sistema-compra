@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -48,12 +49,8 @@
             this.txtTelefonoContacto = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.bntCancelar = new System.Windows.Forms.Button();
-            this.tablaProveedor = new System.Windows.Forms.DataGridView();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.tablaProveedor)).BeginInit();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -164,6 +161,7 @@
             this.txtRUC.Name = "txtRUC";
             this.txtRUC.Size = new System.Drawing.Size(165, 20);
             this.txtRUC.TabIndex = 12;
+            this.txtRUC.TextChanged += new System.EventHandler(this.txtRUC_TextChanged);
             // 
             // txtPagWeb
             // 
@@ -220,47 +218,15 @@
             this.bntCancelar.UseVisualStyleBackColor = true;
             this.bntCancelar.Click += new System.EventHandler(this.bntCancelar_Click);
             // 
-            // tablaProveedor
+            // errorProvider
             // 
-            this.tablaProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tablaProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Id,
-            this.RazonSocial,
-            this.RUC,
-            this.Direccion});
-            this.tablaProveedor.Location = new System.Drawing.Point(27, 376);
-            this.tablaProveedor.Name = "tablaProveedor";
-            this.tablaProveedor.Size = new System.Drawing.Size(483, 131);
-            this.tablaProveedor.TabIndex = 20;
-            // 
-            // Direccion
-            // 
-            this.Direccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            // 
-            // RUC
-            // 
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razon Social";
-            this.RazonSocial.Name = "RazonSocial";
-            // 
-            // Id
-            // 
-            this.Id.HeaderText = "Id";
-            this.Id.Name = "Id";
-            this.Id.Width = 163;
+            this.errorProvider.ContainerControl = this;
             // 
             // RegistrarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(538, 526);
-            this.Controls.Add(this.tablaProveedor);
+            this.ClientSize = new System.Drawing.Size(538, 364);
             this.Controls.Add(this.bntCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.txtTelefonoContacto);
@@ -283,7 +249,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistrarProveedor";
             this.Text = "Registrar Proveedor";
-            ((System.ComponentModel.ISupportInitialize)(this.tablaProveedor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -311,10 +277,6 @@
         private System.Windows.Forms.TextBox txtTelefonoContacto;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button bntCancelar;
-        private System.Windows.Forms.DataGridView tablaProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
