@@ -17,12 +17,6 @@ namespace sistemaCompras
             InitializeComponent();
         }
         
-        private void usuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            UsuarioDlg ventanaUsuarioDlg = new UsuarioDlg();
-            ventanaUsuarioDlg.Show();
-        }
-
         private void agregarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             //Console.Out.WriteLine("Hola mundo");
@@ -70,6 +64,24 @@ namespace sistemaCompras
         {
             //ModificarProducto ventana = new ModificarProducto();
             //ventana.Show();
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistrarUsuarioDlg ventana = new RegistrarUsuarioDlg();
+            ventana.Show();    
+        }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuarioDlg ventanaUsuarioDlg = new UsuarioDlg(0);
+            ventanaUsuarioDlg.Show();
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UsuarioDlg ventanaUsuarioDlg = new UsuarioDlg(1);
+            ventanaUsuarioDlg.Show();
         }
 
 

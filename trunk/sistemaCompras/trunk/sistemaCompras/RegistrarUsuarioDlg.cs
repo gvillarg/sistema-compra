@@ -16,11 +16,10 @@ namespace sistemaCompras
         private GestorUsuario gestorUsuario =  GestorUsuario.Instancia();
         private GestorTipoUsuario gestorTipoUsuario = GestorTipoUsuario.Instancia();
         List<TipoUsuario> listaTipoUsuario;
-        private UsuarioDlg padre;
-        public RegistrarUsuarioDlg(UsuarioDlg padre)
+
+        public RegistrarUsuarioDlg()
         {
             InitializeComponent();
-            this.padre = padre;
             listaTipoUsuario = gestorTipoUsuario.SeleccionarListaTipoUsuarios();
             llenarCmbTipoUsuario();
             cmbTipoUsuario.SelectedIndex = 2;
@@ -66,7 +65,6 @@ namespace sistemaCompras
                 u.setTipoUsuario(tipoUsuario);
 
                 gestorUsuario.agregarUsuario(u);
-                padre.actualizarTabla();
                 this.Close();
             }
             else

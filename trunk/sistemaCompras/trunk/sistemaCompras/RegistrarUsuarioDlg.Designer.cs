@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,6 +53,8 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.cmbTipoUsuario = new System.Windows.Forms.ComboBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -256,11 +259,15 @@
             this.cmbTipoUsuario.Size = new System.Drawing.Size(147, 21);
             this.cmbTipoUsuario.TabIndex = 25;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // RegistrarUsuarioDlg
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 389);
+            this.ClientSize = new System.Drawing.Size(394, 389);
             this.Controls.Add(this.cmbTipoUsuario);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.txtTelefono);
@@ -287,6 +294,7 @@
             this.Controls.Add(this.label1);
             this.Name = "RegistrarUsuarioDlg";
             this.Text = "RegistrarUsuarioDlg";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,5 +326,6 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox cmbTipoUsuario;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
