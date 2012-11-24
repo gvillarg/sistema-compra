@@ -6,12 +6,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.OleDb;
+using System.Data;
+using Gestores;
 
 namespace sistemaCompras
 {
     public partial class ModificarEliminarProveedor : Form
     {
+        private GestorProveedor gestorProveedor = GestorProveedor.Instancia();        
         private VentanaPrincipal ventanaPrincipal = null;
+        OleDbDataReader reader = null;
         public void referenciarVPrincipal(VentanaPrincipal vPrincipal)
         {
             ventanaPrincipal = vPrincipal;
@@ -33,12 +38,8 @@ namespace sistemaCompras
             if (Text.Equals("Modificar Proveedor"))
             {
                 ModificarProveedor modProveedor = new ModificarProveedor();
-                modProveedor.ShowDialog(this);
-
-                //modProveedor.referenciarVPrincipal(this);
-
+                modProveedor.ShowDialog(this);                
                 modProveedor.referenciarVModElimProveedor(this);
-
 
 
             }
@@ -51,7 +52,19 @@ namespace sistemaCompras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            reader = gestorProveedor.filtrarProveedores(txtId.Text, txtRuc.Text, txtRazonSocial.Text);
+            dgvProveedor.Rows.Clear();
+            int fila = 0;
+            while (reader.Read())
+            {
+                fila = dgvProveedor.Rows.Add();
+                dgvProveedor.Rows[fila].Cells[0].Value = reader.GetInt32(0);
+                dgvProveedor.Rows[fila].Cells[1].Value = reader.GetString(1);
+                dgvProveedor.Rows[fila].Cells[2].Value = reader.GetInt32(5);
+                dgvProveedor.Rows[fila].Cells[3].Value = reader.GetInt32(2);
+                dgvProduct.Rows[reglon].Cells["gpriceV"].Value = productReader.GetDecimal(3);
+                dgvProduct.Rows[reglon].Cells["gPriceC"].Value = productReader.GetDecimal(4);                
+            }
         }
     }
 }
