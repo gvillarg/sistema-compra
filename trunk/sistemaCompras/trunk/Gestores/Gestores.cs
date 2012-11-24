@@ -531,12 +531,37 @@ namespace Gestores
 
         }
 
-        public OleDbDataReader filtrarProveedores(int id, int ruc, string razonSocial)
+        public OleDbDataReader filtrarProveedores(string txtId, string txtRuc, string txtRazonSocial)
         {
+            string cadena= "";
+            string cadenaId = "";
+            string cadenaRuc ="";
+            string cadenaRazonSocial = "";
             OleDbConnection conn = new OleDbConnection(connectionString);
 
+            if (txtId.Equals("") && txtRuc.Equals("") && txtRazonSocial.Equals(""))
+            {
+                cadena = "";
+            }
+            else
+            {
+                cadena = " WHERE ";
+            }
+            if (!txtId.Equals(""))
+            {
+                cadenaId = " ID = " + txtId.ToString();
+            }
+            if (!txtRuc.Equals(""))
+            {
+                cadenaRuc = " ruc = " + txtRuc.ToString();
+            }
+            if (!txtRazonSocial.Equals(""))
+            {
+                cadenaRazonSocial = " razonSocial LIKE " + txtRazonSocial;
+            }            
+            
             OleDbCommand comando = new OleDbCommand("SELECT (ID, ruc, razonSocial, direccion, paginaWeb, rubro, nombreContacto, emailContacto, telefonoContacto, eliminado) "+ 
-                                                    "FROM Proveedor WHERE ID = "+ id.ToString()+ " AND ruc = " + ruc  + " AND razonSocial LIKE " + razonSocial);
+                                                    "FROM Proveedor "+ cadena + cadenaId + cadenaRuc + cadenaRazonSocial);
             conn.Open();
             OleDbDataReader reader = comando.ExecuteReader();
             conn.Close();
