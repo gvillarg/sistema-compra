@@ -57,7 +57,7 @@ namespace sistemaCompras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-              //  gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex],cbMostrarEliminados.Checked);
+            gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex], cbMostrarEliminados.Checked);
 
         }
 
