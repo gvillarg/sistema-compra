@@ -12,7 +12,7 @@ namespace Gestores
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\alulab11\Downloads\ComprasDB.accdb
         //string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\..\\..\\..\\Gestores\\DB\\ComprasDB.accdb";
-        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\alulab11.INF\Documents\Visual Studio 2010\Projects\sistemaCompras(1)\Gestores\DB\ComprasDB.accdb";
+        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Guti\Documents\Visual Studio 2010\Projects\sistemaCompras\Gestores\DB\ComprasDB.accdb";
 
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
@@ -41,8 +41,8 @@ namespace Gestores
             //OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
             //                                            "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
 
-            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,fechaIngreso,nombreUsuario,contrasena,tipoUsuario) "+
-                                                        "values(@dni,@nombre,@fechaNacimiento,@email,@fechaIngreso,@nombreUsuario,@contrasena,@tipoUsuario)");
+            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
+                                                        "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
 
             
             //OleDbParameter paramDni0
@@ -53,12 +53,12 @@ namespace Gestores
                 new OleDbParameter("@nombre",u.getNombre()),
                 new OleDbParameter("@fechaNacimiento",u.getFechaNacimiento()),
                 new OleDbParameter("@email",u.getEmail()),
-                //new OleDbParameter("@telefono",u.getTelefono()),
-                ////new OleDbParameter("@sueldo",u.getSueldo()),
-                new OleDbParameter("@fechaIngreso",u.getFechaIngreso()),
+                new OleDbParameter("@telefono",u.getTelefono()),
+                new OleDbParameter("@sueldo",u.getSueldo()),
+                //new OleDbParameter("@fechaIngreso",u.getFechaIngreso()),
                 new OleDbParameter("@nombreUsuario",u.getNombreUsuario()),
                 new OleDbParameter("@contrasena",u.getContrasena()),
-                ////new OleDbParameter("@eliminado",u.getEliminado()),
+                new OleDbParameter("@eliminado",u.getEliminado()),
                 new OleDbParameter("@tipoUsuario",u.getTipoUsuario().getId()),
             });
             comando.Connection = conn;
@@ -136,6 +136,21 @@ namespace Gestores
                 u.setId(r.GetInt32(0));
                 u.setDni(r.GetInt32(1));
                 u.setNombre(r.GetString(2));
+                u.setFechaNacimiento(r.GetDateTime(3));
+                u.setEmail(r.GetString(4));
+                u.setTelefono(r.GetInt32(5));
+                u.setSueldo(r.GetDouble(6));
+                u.setFechaIngreso(r.GetDateTime(7));
+                u.setNombreUsuario(r.GetString(8));
+                u.setContrasena(r.GetString(9));
+                u.setEliminado(r.GetBoolean(10));
+
+                TipoUsuario tu = new TipoUsuario();
+                tu.setId(r.GetInt32(11));
+                tu.setDescripcion(r.GetString(13));
+
+                u.setTipoUsuario(tu);
+
                 lista.Add(u);
             }
 
