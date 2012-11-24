@@ -624,7 +624,8 @@ namespace Gestores
     public class GestorProveedor
     {
         private int sigId;
-        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";        
+        //string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";
+        private string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./DB/ComprasDB.accdb";
         static GestorProveedor gestorProveedor = null;
         private GestorProveedor()
         {            
