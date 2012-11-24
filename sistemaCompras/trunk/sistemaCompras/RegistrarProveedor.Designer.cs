@@ -191,6 +191,7 @@
             this.txtEmailContacto.Name = "txtEmailContacto";
             this.txtEmailContacto.Size = new System.Drawing.Size(343, 20);
             this.txtEmailContacto.TabIndex = 16;
+            this.txtEmailContacto.TextChanged += new System.EventHandler(this.txtEmailContacto_TextChanged);
             // 
             // txtTelefonoContacto
             // 
@@ -198,6 +199,7 @@
             this.txtTelefonoContacto.Name = "txtTelefonoContacto";
             this.txtTelefonoContacto.Size = new System.Drawing.Size(117, 20);
             this.txtTelefonoContacto.TabIndex = 17;
+            this.txtTelefonoContacto.TextChanged += new System.EventHandler(this.txtTelefonoContacto_TextChanged);
             // 
             // btnAceptar
             // 

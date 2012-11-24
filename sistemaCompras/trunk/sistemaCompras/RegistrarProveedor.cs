@@ -34,32 +34,59 @@ namespace sistemaCompras
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
-        {            
-            Proveedor proveedor = new Proveedor();
-            proveedor.setId(int.Parse(txtId.Text));
-            proveedor.setRuc(int.Parse(txtRUC.Text));
-            proveedor.setRazonSocial(txtRazon.Text);
-            proveedor.setPaginaWeb(txtPagWeb.Text);
-            proveedor.setRubro(txtRubro.Text);
-            proveedor.setDireccion(txtDireccion.Text);
-            proveedor.setNombreContacto(txtNombreContacto.Text);
-            proveedor.setEmailContacto(txtEmailContacto.Text);
-            proveedor.setTelefonoContacto(int.Parse(txtTelefonoContacto.Text));
-            proveedor.setEliminado(false);
+        {          
+            if (!validarDatos())
+            {
+                Proveedor proveedor = new Proveedor();                
+                proveedor.setRuc(Int32.Parse(txtRUC.Text));
+                proveedor.setRazonSocial(txtRazon.Text);
+                proveedor.setPaginaWeb(txtPagWeb.Text);
+                proveedor.setRubro(txtRubro.Text);
+                proveedor.setDireccion(txtDireccion.Text);
+                proveedor.setNombreContacto(txtNombreContacto.Text);
+                proveedor.setEmailContacto(txtEmailContacto.Text);
+                proveedor.setTelefonoContacto(Int32.Parse(txtTelefonoContacto.Text));
+                proveedor.setEliminado(false);
 
-            //gestorProveedor.agregarProveedor(proveedor);
-            actualizarTabla();
-
+                if (gestorProveedor.agregarProveedor(proveedor))
+                {
+                    MessageBox.Show("Proveedor agregado correctamente");
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Ha ocurrido un error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Los datos no son correctos");
+            }
         }
-        public void actualizarTabla()
+
+        private bool validarDatos()
         {
-        
-        }
+            bool error;
+            error = validador.validarNumeroEntero(txtRUC);
+            error = error || validador.validarNumeroEntero(txtTelefonoContacto);
+            error = error || validador.validarEmail(txtEmailContacto); 
+            return error;
+        }        
 
         private void txtRUC_TextChanged(object sender, EventArgs e)
         {
             validador.validarNumeroEntero(txtRUC);
         }
+
+        private void txtTelefonoContacto_TextChanged(object sender, EventArgs e)
+        {
+            validador.validarNumeroEntero(txtTelefonoContacto);
+        }
+
+        private void txtEmailContacto_TextChanged(object sender, EventArgs e)
+        {
+            validador.validarEmail(txtEmailContacto);
+        }        
 
     }
 }
