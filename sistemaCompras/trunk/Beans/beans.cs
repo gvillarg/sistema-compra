@@ -176,7 +176,7 @@ namespace Beans
         {
             return fechaInicio;
         }
-        public void setNombre(DateTime fechaI)
+        public void setFechaInicio(DateTime fechaI)
         {
             this.fechaInicio = fechaI;
         }
