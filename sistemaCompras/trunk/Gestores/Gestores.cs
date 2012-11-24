@@ -10,13 +10,17 @@ namespace Gestores
 {
     public class GestorUsuario
     {
-        //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\alulab11\Downloads\ComprasDB.accdb
+        //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=.\DB\ComprasDB.accdb
         //string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\..\\..\\..\\Gestores\\DB\\ComprasDB.accdb";
-        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Guti\Documents\Visual Studio 2010\Projects\sistemaCompras\Gestores\DB\ComprasDB.accdb";        
+        private string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./DB/ComprasDB.accdb";
+       
+
+
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
         private GestorUsuario()
         {
+            
             lusuario = new List<Usuario>();
 
         }
@@ -29,7 +33,7 @@ namespace Gestores
         public bool agregarUsuario(Usuario u)
         {
             bool resultado = true;
-
+            
             u.setEliminado(false);
             //u.setFechaIngreso(System.DateTime.Now);
             //Console.WriteLine(u.getFechaNacimiento());
@@ -161,7 +165,6 @@ namespace Gestores
             OleDbConnection conn = new OleDbConnection(connectionString);
             OleDbCommand comando = new OleDbCommand("select * from Usuario, TipoUsuario WHERE Usuario.tipoUsuario=TipoUsuario.ID and Usuario.eliminado=false");
             comando.Connection = conn;
-
             OleDbDataReader r=null;
             try
             {
@@ -203,70 +206,9 @@ namespace Gestores
             return lista;
         }
 
-        public List<Usuario> filtrarUsuarios(string nombre, TipoUsuario tipoUsuario,bool incEliminado)
+        public void filtrarUsuario(string nombre, Usuario usuario,bool incEliminado)
         {
-            List<Usuario> lista = new List<Usuario>();
-            //for (int i = 0; i < lusuario.Count; i++)
-            //    if (!lusuario[i].getEliminado())
-            //        lista.Add(lusuario[i]);
-            OleDbConnection conn = new OleDbConnection(connectionString);
-            String sqlString = "select * from Usuario, TipoUsuario "
-                            + "WHERE (Usuario.tipoUsuario=TipoUsuario.ID) "
-                            + "and (Usuario.eliminado=false or @incEliminado) "
-                            + "and (Usuario.nombre like @nombre) ";
-            if(tipoUsuario!=null)
-                sqlString=sqlString+"and (Usuario.tipoUsuario=@tipoUsuario)";
-
-            
-            OleDbCommand comando = new OleDbCommand(sqlString);
-            comando.Parameters.AddRange(new OleDbParameter[]
-            {
-                new OleDbParameter("@incEliminado",incEliminado),
-                new OleDbParameter("@nombre",nombre)
-            });
-            if(tipoUsuario!=null)
-                comando.Parameters.AddWithValue("@tipoUsuario", tipoUsuario.getId());
-
-            comando.Connection = conn;
-            OleDbDataReader r = null;
-            try
-            {
-                Console.WriteLine(connectionString);
-                conn.Open();
-                Console.WriteLine("Conexion hecha");
-                r = comando.ExecuteReader();
-                Console.WriteLine("Seleccionar Usuario: ");
-                while (r.Read())
-                {
-                    Usuario u = new Usuario();
-                    u.setId(r.GetInt32(0));
-                    u.setDni(r.GetInt32(1));
-                    u.setNombre(r.GetString(2));
-                    u.setFechaNacimiento(r.GetDateTime(3));
-                    u.setEmail(r.GetString(4));
-                    u.setTelefono(r.GetInt32(5));
-                    u.setSueldo(r.GetDouble(6));
-                    u.setFechaIngreso(r.GetDateTime(7));
-                    u.setNombreUsuario(r.GetString(8));
-                    u.setContrasena(r.GetString(9));
-                    u.setEliminado(r.GetBoolean(10));
-
-                    TipoUsuario tu = new TipoUsuario();
-                    tu.setId(r.GetInt32(11));
-                    tu.setDescripcion(r.GetString(13));
-
-                    u.setTipoUsuario(tu);
-
-                    lista.Add(u);
-                }
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-                Console.WriteLine("Error!");
-            }
-            finally { r.Close(); conn.Close(); }
-            return lista;
+            throw new NotImplementedException();
         }
 
     }
@@ -283,15 +225,15 @@ namespace Gestores
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(2);
-            tu.setDescripcion("Gerente de Logística");
-            ltipousuario.Add(tu);
-            tu = new TipoUsuario();
-            tu.setId(3);
             tu.setDescripcion("Jefe de Proyecto");
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
-            tu.setId(4);
+            tu.setId(3);
             tu.setDescripcion("Responsable de Compras");
+            ltipousuario.Add(tu);
+            tu = new TipoUsuario();
+            tu.setId(4);
+            tu.setDescripcion("Gerente de Logística");
             ltipousuario.Add(tu);
         }
         static public GestorTipoUsuario Instancia()
@@ -359,6 +301,7 @@ namespace Gestores
     {
         private List<Producto> lproducto;
         static GestorProducto gestorProducto = null;
+        private string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./DB/ComprasDB.accdb";
         private GestorProducto()
         {
             lproducto = new List<Producto>();
@@ -366,6 +309,45 @@ namespace Gestores
 
         public List<Producto> getLproducto()
         {
+            //return this.lproducto;
+
+            //this.lproducto.Add(prod);
+            bool resultado = true;
+
+            //Producto prod = new Producto()            .setEliminado(false);
+
+
+            OleDbConnection conn = new OleDbConnection(this.connectionString);
+            OleDbCommand comando = new OleDbCommand("select nombre, descripcion, fabricante from productos", conn);
+           
+            comando.Connection = conn;
+            int res = 0;
+            try
+            {
+
+                conn.Open();
+                OleDbDataReader lector = comando.ExecuteReader();
+                res = comando.ExecuteNonQuery();
+
+                while (lector.Read())
+                {
+                    Producto p = new Producto();
+                    
+                    p.setNombre(lector.GetValue(0).ToString());
+                    p.setFabricante(lector.GetValue(2).ToString());
+                    p.setDescripcion(lector.GetValue(1).ToString());
+                    p.setEliminado(false);
+                    this.lproducto.Add(p);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error!");
+            }
+            finally { conn.Close(); }
+            resultado = res == 1;
+            //return resultado;
+
             return this.lproducto;
         }
 
@@ -378,7 +360,41 @@ namespace Gestores
 
         public void agregarProducto(Producto prod)
         {
-            this.lproducto.Add(prod);
+            //this.lproducto.Add(prod);
+            bool resultado = true;
+
+            prod.setEliminado(false);
+            
+
+            OleDbConnection conn = new OleDbConnection(this.connectionString);
+            OleDbCommand comando = new OleDbCommand("insert into producto(descripcion,nombre,fabricante,eliminado) " +
+                                                        "values(@descripcion,@nombre,@fabricante,@eliminado)");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@descripcion",prod.getDescripcion()),
+                new OleDbParameter("@nombre",prod.getNombre()),
+                new OleDbParameter("@fabricante",prod.getFabricante()),
+                new OleDbParameter("@eliminado",prod.getEliminado()),
+           
+            });
+            comando.Connection = conn;
+            int res = 0;
+            try
+            {
+                
+                conn.Open();
+                
+                res = comando.ExecuteNonQuery();
+                
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Error!");
+            }
+            finally { conn.Close(); }
+            resultado = res == 1;
+            //return resultado;
         }
 
         public void eliminarProducto(int id)
@@ -468,7 +484,7 @@ namespace Gestores
     public class GestorProveedor
     {
         private int sigId;
-        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";
+        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";        
         static GestorProveedor gestorProveedor = null;
         private GestorProveedor()
         {            
@@ -529,43 +545,6 @@ namespace Gestores
         {
 
 
-        }
-
-        public OleDbDataReader filtrarProveedores(string txtId, string txtRuc, string txtRazonSocial)
-        {
-            string cadena= "";
-            string cadenaId = "";
-            string cadenaRuc ="";
-            string cadenaRazonSocial = "";
-            OleDbConnection conn = new OleDbConnection(connectionString);
-
-            if (txtId.Equals("") && txtRuc.Equals("") && txtRazonSocial.Equals(""))
-            {
-                cadena = "";
-            }
-            else
-            {
-                cadena = " WHERE ";
-            }
-            if (!txtId.Equals(""))
-            {
-                cadenaId = " ID = " + txtId.ToString();
-            }
-            if (!txtRuc.Equals(""))
-            {
-                cadenaRuc = " ruc = " + txtRuc.ToString();
-            }
-            if (!txtRazonSocial.Equals(""))
-            {
-                cadenaRazonSocial = " razonSocial LIKE " + "'"+ txtRazonSocial+"'" ;
-            }            
-            
-            OleDbCommand comando = new OleDbCommand("SELECT (ID, ruc, razonSocial, direccion, paginaWeb, rubro, nombreContacto, emailContacto, telefonoContacto, eliminado) "+ 
-                                                    "FROM Proveedor "+ cadena + cadenaId + cadenaRuc + cadenaRazonSocial);
-            conn.Open();
-            OleDbDataReader reader = comando.ExecuteReader();
-            conn.Close();
-            return reader;
         }
 
         public List<Proveedor> seleccionarProveedores()
