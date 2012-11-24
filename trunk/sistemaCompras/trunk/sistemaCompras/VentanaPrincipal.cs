@@ -30,7 +30,7 @@ namespace sistemaCompras
         {
             RegistrarProyecto regProyecto = new RegistrarProyecto();
             regProyecto.ShowDialog();
-            this.Hide();
+            //this.Hide();
         }
 
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -92,8 +92,16 @@ namespace sistemaCompras
             Application.Exit();
         }
 
-    
+        private void modificarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModificarEliminarProyecto modProveedor = new ModificarEliminarProyecto("Modificar Proyecto");
+            modProveedor.ShowDialog(this);
+        }
 
-       
+        private void eliminarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModificarEliminarProyecto modProveedor = new ModificarEliminarProyecto("Eliminar Proyecto");
+            modProveedor.ShowDialog(this);
+        }                
     }
 }

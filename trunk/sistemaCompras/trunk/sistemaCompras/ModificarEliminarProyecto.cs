@@ -59,12 +59,13 @@ namespace sistemaCompras
             //BuscarCliente testDialog = new BuscarCliente();
             //testDialog.SetRefPersonal(this);
             //testDialog.ShowDialog(this);
-            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Access\Sistemas.accdb");
-            
-            if(txtDescripcion.Text==""){
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Access\ComprasDB.accdb");
+
+            if (txtDescripcion.Text == "")
+            {
                 try
                 {
-                    OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Proyecto WHERE Nombre LIKE" + "'%" + txtNombre.Text + "%'", con);
+                    OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Proyecto WHERE nombre LIKE" + "'%" + txtNombre.Text + "%'", con);
 
                     da.Fill(ds, "Proyecto");
                     dataGridView1.DataSource = ds.Tables["proyecto"];
@@ -75,10 +76,10 @@ namespace sistemaCompras
                 }
             }
 
-            if (txtNombre.Text == "")
+            else if (txtNombre.Text == "")
             {
                 try
-                {              
+                {
                     OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Proyecto WHERE Nombre LIKE" + "'%" + txtDescripcion.Text + "%'", con);
 
                     da.Fill(ds, "Proyecto");
@@ -89,6 +90,24 @@ namespace sistemaCompras
                     Console.WriteLine(ex.ToString());
                 }
             }
+
+            else
+            {
+                try
+                {
+                    OleDbDataAdapter da = new OleDbDataAdapter("SELECT * FROM Proyecto", con);
+
+                    da.Fill(ds, "Proyecto");
+                    dataGridView1.DataSource = ds.Tables["proyecto"];
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.ToString());
+                }
+            }
+
+            //dataGridView1.Rows.Clear();
+
         }
 
         public void setProjectSearch(string nombre, string descripcion)
