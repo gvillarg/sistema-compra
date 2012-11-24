@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Beans;
+using System.IO;
 
 namespace Gestores
 {
     public class GestorUsuario
     {
 
-        string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\alulab11.INF\Downloads";
+        string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source="+Directory.GetCurrentDirectory()+"\\";
         private int sigId;
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
