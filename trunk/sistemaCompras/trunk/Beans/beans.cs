@@ -134,6 +134,9 @@ namespace Beans
         private string nombre;
         private string descripcion;
         private bool eliminado;
+        private DateTime fechaInicio;
+        private DateTime fechaFin;
+
 
         public int getId()
         {
@@ -143,6 +146,7 @@ namespace Beans
         {
             this.id = id;
         }
+
         public string getNombre()
         {
             return nombre;
@@ -166,7 +170,26 @@ namespace Beans
         public void setEliminado(bool eliminado)
         {
             this.eliminado = eliminado;
-        }    
+        }
+
+        public DateTime getFechaInicio()
+        {
+            return fechaInicio;
+        }
+        public void setNombre(DateTime fechaI)
+        {
+            this.fechaInicio = fechaI;
+        }
+
+        public DateTime getFechaFin()
+        {
+            return fechaFin;
+        }
+        public void setFechaFin(DateTime fechaF)
+        {
+            this.fechaFin = fechaF;
+        }
+
     }
 
     public class Producto
