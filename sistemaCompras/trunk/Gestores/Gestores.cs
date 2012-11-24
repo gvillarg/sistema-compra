@@ -33,8 +33,8 @@ namespace Gestores
 
             u.setEliminado(false);
             //u.setFechaIngreso(System.DateTime.Now);
-            Console.WriteLine(u.getFechaNacimiento());
-            Console.WriteLine(u.getFechaIngreso());
+            //Console.WriteLine(u.getFechaNacimiento());
+            //Console.WriteLine(u.getFechaIngreso());
             //lusuario.Add(u);
 
             OleDbConnection conn = new OleDbConnection(connectionString);
@@ -84,22 +84,53 @@ namespace Gestores
         public bool modificarUsuario(Usuario u)
         {
             bool resultado = true;
-            int i;
-            for (i = 0; u.getId() != lusuario[i].getId(); i++) ;
-            Usuario u_temp = lusuario[i];
-            u_temp.setDni(u.getDni());
-            u_temp.setDireccion(u.getDireccion());
-            u_temp.setNombre(u.getNombre());
-            u_temp.setFechaNacimiento(u.getFechaNacimiento());
-            u_temp.setEmail(u.getEmail());
-            u_temp.setTelefono(u.getTelefono());
-            u_temp.setSueldo(u.getSueldo());
-            u_temp.setFechaIngreso(u.getFechaIngreso());
-            u_temp.setNombreUsuario(u.getNombreUsuario());
-            u_temp.setContrasena(u.getContrasena());
-            u_temp.setEliminado(u.getEliminado());
-            u_temp.setTipoUsuario(u.getTipoUsuario());
 
+            //u.setFechaIngreso(System.DateTime.Now);
+            //Console.WriteLine(u.getFechaNacimiento());
+            //Console.WriteLine(u.getFechaIngreso());
+            //lusuario.Add(u);
+
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            //OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
+            //                                            "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
+
+            OleDbCommand comando = new OleDbCommand("UPDATE Usuario SET dni=@dni,nombre=@nombre,fechaNacimiento=@fechaNacimiento,email=@email,telefono=@telefono, "+
+                                                    "sueldo=@sueldo,nombreUsuario=@nombreUsuario,contrasena=@contrasena,tipoUsuario=@tipoUsuario " +
+                                                    "WHERE id=@id");
+
+
+            //OleDbParameter paramDni0
+            //comando.Parameters.Add(new OleDbParameter("@dni",u.getDni()));
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@dni",u.getDni()),
+                new OleDbParameter("@nombre",u.getNombre()),
+                new OleDbParameter("@fechaNacimiento",u.getFechaNacimiento()),
+                new OleDbParameter("@email",u.getEmail()),
+                new OleDbParameter("@telefono",u.getTelefono()),
+                new OleDbParameter("@sueldo",u.getSueldo()),
+                //new OleDbParameter("@fechaIngreso",u.getFechaIngreso()),
+                new OleDbParameter("@nombreUsuario",u.getNombreUsuario()),
+                new OleDbParameter("@contrasena",u.getContrasena()),
+                //new OleDbParameter("@eliminado",u.getEliminado()),
+                new OleDbParameter("@tipoUsuario",u.getTipoUsuario().getId()),
+                new OleDbParameter("@id",u.getId())
+            });
+            comando.Connection = conn;
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                resultado = comando.ExecuteNonQuery() == 1;
+                Console.WriteLine("Usuario Eliminado ");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+            finally { conn.Close(); }
+            int x = System.Console.Read();
             return resultado;
         }
         public bool eliminarUsuario(Usuario u)
