@@ -9,12 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestores", "Gestores\Gestor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validadores", "Validador\Validadores.csproj", "{BA855E0B-2C64-4827-BCF0-035F23944607}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{A0F23F95-3802-4C1A-9283-F3928F4BA309}"
-	ProjectSection(SolutionItems) = preProject
-		Gestores\DB\ComprasDB.accdb = Gestores\DB\ComprasDB.accdb
-		Gestores\DB\ComprasDB.laccdb = Gestores\DB\ComprasDB.laccdb
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
