@@ -93,6 +93,7 @@ namespace sistemaCompras
 
                 if (gestorUsuario.modificarUsuario(usuario))
                 {
+                    padre.filtrarUsuarios();
                     padre.actualizarTabla();
                     MessageBox.Show("UsuarioModificado");
                     this.Close();

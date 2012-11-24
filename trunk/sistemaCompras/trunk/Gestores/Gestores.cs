@@ -203,9 +203,70 @@ namespace Gestores
             return lista;
         }
 
-        public void filtrarUsuario(string nombre, Usuario usuario,bool incEliminado)
+        public List<Usuario> filtrarUsuarios(string nombre, TipoUsuario tipoUsuario,bool incEliminado)
         {
-            throw new NotImplementedException();
+            List<Usuario> lista = new List<Usuario>();
+            //for (int i = 0; i < lusuario.Count; i++)
+            //    if (!lusuario[i].getEliminado())
+            //        lista.Add(lusuario[i]);
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            String sqlString = "select * from Usuario, TipoUsuario "
+                            + "WHERE (Usuario.tipoUsuario=TipoUsuario.ID) "
+                            + "and (Usuario.eliminado=false or @incEliminado) "
+                            + "and (Usuario.nombre like @nombre) ";
+            if(tipoUsuario!=null)
+                sqlString=sqlString+"and (Usuario.tipoUsuario=@tipoUsuario)";
+
+            
+            OleDbCommand comando = new OleDbCommand(sqlString);
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@incEliminado",incEliminado),
+                new OleDbParameter("@nombre",nombre)
+            });
+            if(tipoUsuario!=null)
+                comando.Parameters.AddWithValue("@tipoUsuario", tipoUsuario.getId());
+
+            comando.Connection = conn;
+            OleDbDataReader r = null;
+            try
+            {
+                Console.WriteLine(connectionString);
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                r = comando.ExecuteReader();
+                Console.WriteLine("Seleccionar Usuario: ");
+                while (r.Read())
+                {
+                    Usuario u = new Usuario();
+                    u.setId(r.GetInt32(0));
+                    u.setDni(r.GetInt32(1));
+                    u.setNombre(r.GetString(2));
+                    u.setFechaNacimiento(r.GetDateTime(3));
+                    u.setEmail(r.GetString(4));
+                    u.setTelefono(r.GetInt32(5));
+                    u.setSueldo(r.GetDouble(6));
+                    u.setFechaIngreso(r.GetDateTime(7));
+                    u.setNombreUsuario(r.GetString(8));
+                    u.setContrasena(r.GetString(9));
+                    u.setEliminado(r.GetBoolean(10));
+
+                    TipoUsuario tu = new TipoUsuario();
+                    tu.setId(r.GetInt32(11));
+                    tu.setDescripcion(r.GetString(13));
+
+                    u.setTipoUsuario(tu);
+
+                    lista.Add(u);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+            finally { r.Close(); conn.Close(); }
+            return lista;
         }
 
     }
@@ -222,15 +283,15 @@ namespace Gestores
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(2);
-            tu.setDescripcion("Jefe de Proyecto");
+            tu.setDescripcion("Gerente de Logística");
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(3);
-            tu.setDescripcion("Responsable de Compras");
+            tu.setDescripcion("Jefe de Proyecto");
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(4);
-            tu.setDescripcion("Gerente de Logística");
+            tu.setDescripcion("Responsable de Compras");
             ltipousuario.Add(tu);
         }
         static public GestorTipoUsuario Instancia()

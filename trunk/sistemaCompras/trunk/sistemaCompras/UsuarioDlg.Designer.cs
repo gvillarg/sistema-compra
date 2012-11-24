@@ -213,8 +213,8 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbTipo;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.CheckBox cbMostrarEliminados;
+        private System.Windows.Forms.ComboBox cmbTipo;
     }
 }
