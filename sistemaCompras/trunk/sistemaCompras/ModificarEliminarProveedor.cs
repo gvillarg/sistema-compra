@@ -52,7 +52,7 @@ namespace sistemaCompras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            reader = gestorProveedor.filtrarProveedores(txtId.Text, txtRuc.Text, txtRazonSocial.Text);
+            //reader = gestorProveedor.filtrarProveedores(txtId.Text, txtRuc.Text, txtRazonSocial.Text);
             dgvProveedor.Rows.Clear();
             int fila = 0;
             while (reader.Read())
