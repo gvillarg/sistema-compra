@@ -66,7 +66,7 @@ namespace sistemaCompras
                 this.prod.setFabricante(this.txtFab.Text);
                 Gestores.GestorProducto.Instancia().modificarProducto(this.prod);
                 MessageBox.Show("Se actualizo el producto " + this.prod.getNombre());
-                this.Close();
+                //this.Close();
             }
 
             //Producto p = new Producto();

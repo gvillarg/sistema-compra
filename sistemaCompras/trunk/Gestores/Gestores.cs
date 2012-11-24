@@ -266,6 +266,31 @@ namespace Gestores
             }
             return null;
         }
+
+        public List<Producto> getProductosLikeNombre(String nombre)
+        {
+            List<Producto> lp = new List<Producto>();
+            if (!nombre.Equals(""))
+            {
+                
+                int i = 0;
+                for (i = 0; i < this.lproducto.Count(); i++)
+                {
+                    if (this.lproducto[i].getNombre().Contains(nombre))
+                    {
+                        lp.Add(this.lproducto[i]);
+                    }
+
+                }
+            }
+            else
+            {
+                lp = this.lproducto;
+            }
+
+            return lp;
+        }
+
     }
     public class GestorUnidad
     {

@@ -10,6 +10,7 @@ using Beans;
 using Gestores;
 namespace sistemaCompras
 {
+    
     public partial class RegistrarProducto : Form
     {
         public RegistrarProducto()
@@ -32,13 +33,15 @@ namespace sistemaCompras
             p.setNombre(this.txtNombre.Text);
             p.setEliminado(false);
             GestorProducto.Instancia().agregarProducto(p);
-            this.txtId.Text = "";
-            this.txtDescrip.Text = "";
-            this.txtFab.Text = "";
-            this.txtNombre.Text = "";
+            
+
 
         }
+        public bool validaCampos()
+        {
 
+            return true;
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -48,5 +51,13 @@ namespace sistemaCompras
         {
 
         }
+
+        public void blankFields() {
+            this.txtId.Text = "";
+            this.txtDescrip.Text = "";
+            this.txtFab.Text = "";
+            this.txtNombre.Text = "";
+        }
+        
     }
 }

@@ -23,7 +23,9 @@ namespace sistemaCompras
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.refrescarTabla(Gestores.GestorProducto.Instancia().getLproducto());
+            // cambiar esto por la busqueda
+            //this.refrescarTabla(Gestores.GestorProducto.Instancia().getLproducto());
+            this.refrescarTabla(Gestores.GestorProducto.Instancia().getProductosLikeNombre(this.txtNombre.Text));
         }
 
         public void refrescarTabla(List<Producto> lp) {
@@ -71,6 +73,7 @@ namespace sistemaCompras
             {
 
             }
+            this.Close();
         }
 
         
