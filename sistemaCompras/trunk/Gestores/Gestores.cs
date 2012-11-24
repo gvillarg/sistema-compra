@@ -246,6 +246,21 @@ namespace Gestores
                     break;
                 }
             }
+
+
+        }
+
+        public Producto getProductoById(int id)
+        {
+            int i;
+            for (i = 0; i < this.lproducto.Count(); i++)
+            {
+                if (this.lproducto[i].getId() == id)
+                {
+                    return this.lproducto[i];
+                }
+            }
+            return null;
         }
     }
     public class GestorUnidad
