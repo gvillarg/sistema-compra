@@ -8,6 +8,8 @@ namespace Gestores
 {
     public class GestorUsuario
     {
+
+        string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\alulab11.INF\Downloads";
         private int sigId;
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
