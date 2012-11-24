@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,6 +15,7 @@ namespace sistemaCompras
         public IniciarSesion()
         {
             InitializeComponent();
+            //label3.Text=Directory.GetCurrentDirectory()+"\\..\\..\\";
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
