@@ -57,7 +57,7 @@ namespace sistemaCompras
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-                gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex],cbMostrarEliminados.Checked);
+              //  gestorUsuario.filtrarUsuario(txtNombre.Text, lusuario[cmbTipo.SelectedIndex],cbMostrarEliminados.Checked);
 
         }
 
@@ -83,11 +83,11 @@ namespace sistemaCompras
                     if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
                         "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        if (gestorUsuario.eliminarUsuario(seleccionado))
-                        {
-                            MessageBox.Show("Usuario Eliminado");
-                            actualizarTabla();
-                        }
+                        //if (gestorUsuario.eliminarUsuario(seleccionado))
+                        //{
+                        //    MessageBox.Show("Usuario Eliminado");
+                        //    actualizarTabla();
+                        //}
                     }
                 }
                 else

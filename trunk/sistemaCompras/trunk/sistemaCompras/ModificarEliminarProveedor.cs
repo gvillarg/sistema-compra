@@ -34,6 +34,9 @@ namespace sistemaCompras
             {
                 ModificarProveedor modProveedor = new ModificarProveedor();
                 modProveedor.ShowDialog(this);
+
+                //modProveedor.referenciarVPrincipal(this);
+
                 modProveedor.referenciarVModElimProveedor(this);
 
 

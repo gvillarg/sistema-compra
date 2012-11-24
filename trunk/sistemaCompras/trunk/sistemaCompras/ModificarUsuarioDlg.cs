@@ -87,14 +87,14 @@ namespace sistemaCompras
 
 
 
-                if (gestorUsuario.modificarUsuario(usuario))
-                {
-                    padre.actualizarTabla();
-                    MessageBox.Show("UsuarioModificado");
-                    this.Close();
-                }
-                else
-                    MessageBox.Show("Ha ocurrido un error");
+                //if (gestorUsuario.modificarUsuario(usuario))
+                //{
+                //    padre.actualizarTabla();
+                //    MessageBox.Show("UsuarioModificado");
+                //    this.Close();
+                //}
+                //else
+                //    MessageBox.Show("Ha ocurrido un error");
             }
             else
                 MessageBox.Show("Los datos no son correctos");
