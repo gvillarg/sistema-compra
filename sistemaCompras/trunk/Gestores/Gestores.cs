@@ -557,7 +557,7 @@ namespace Gestores
             }
             if (!txtRazonSocial.Equals(""))
             {
-                cadenaRazonSocial = " razonSocial LIKE " + txtRazonSocial;
+                cadenaRazonSocial = " razonSocial LIKE " + "'"+ txtRazonSocial+"'" ;
             }            
             
             OleDbCommand comando = new OleDbCommand("SELECT (ID, ruc, razonSocial, direccion, paginaWeb, rubro, nombreContacto, emailContacto, telefonoContacto, eliminado) "+ 
