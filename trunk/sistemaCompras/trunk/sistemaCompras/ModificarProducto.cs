@@ -17,7 +17,7 @@ namespace sistemaCompras
         {
             InitializeComponent();
             this.prod = Gestores.GestorProducto.Instancia().getProductoById(id);
-            //this.refrescarTabla();
+            //this.refrescarTabla
         }
 
         private void button2_Click(object sender, EventArgs e)
