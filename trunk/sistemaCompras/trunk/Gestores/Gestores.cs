@@ -405,8 +405,9 @@ namespace Gestores
         }
     }
     public class GestorProveedor
-    {        
+    {
         private int sigId;
+        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";        
         static GestorProveedor gestorProveedor = null;
         private GestorProveedor()
         {            
@@ -419,14 +420,53 @@ namespace Gestores
             return gestorProveedor;
         }
 
-        public void agregarProveedor(Proveedor proveedor)
+        public bool agregarProveedor(Proveedor proveedor)
         {
-            proveedor.setId(sigId++);            
-            //lproveedor.Add(proveedor);                                             
+            bool resultado = true;                      
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            OleDbCommand comando = new OleDbCommand("INSERT INTO Proveedor(ruc, razonSocial, direccion, paginaWeb, rubro, nombreContacto, emailContacto, telefonoContacto, eliminado) "+
+                                                     "VALUES (@ruc, @razonSocial, @direccion, @paginaWeb, @rubro, @nombreContacto, @emailContacto, @telefonoContacto, @eliminado)");
+            
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@ruc", proveedor.getRuc()),
+                new OleDbParameter("@razonSocial", proveedor.getRazonSocial()),
+                new OleDbParameter("@direccion", proveedor.getDireccion()),
+                new OleDbParameter("@paginaWeb", proveedor.getPaginaWeb()),
+                new OleDbParameter("@rubro", proveedor.getRubro()),
+                new OleDbParameter("@nombreContacto", proveedor.getNombreContacto()),
+                new OleDbParameter("@emailContacto", proveedor.getEmailContacto()),
+                new OleDbParameter("@telefonoContacto", proveedor.getTelefonoContacto()),
+                new OleDbParameter("@eliminado", proveedor.getEliminado()),
+            });
+
+            comando.Connection = conn;
+            int res = 0;
+            try
+            {
+                Console.WriteLine(connectionString);
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                res = comando.ExecuteNonQuery();
+                Console.WriteLine("Proveedor Insertado: " + res);
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }            
+            resultado = res == 1;
+            return resultado;                                
         }
 
-        public void modificarProveedor()
+        public void modificarProveedor(Proveedor proveedor)
         {
+
+        }
+
+        public void eliminarProveedor(Proveedor proveedor)
+        {
+
 
         }
 
