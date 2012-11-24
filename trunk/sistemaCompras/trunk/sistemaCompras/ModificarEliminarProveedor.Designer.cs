@@ -36,7 +36,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblId = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtRuc = new System.Windows.Forms.TextBox();
             this.lblRUC = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +66,7 @@
             // 
             // bntAceptar
             // 
-            this.bntAceptar.Location = new System.Drawing.Point(317, 80);
+            this.bntAceptar.Location = new System.Drawing.Point(347, 80);
             this.bntAceptar.Name = "bntAceptar";
             this.bntAceptar.Size = new System.Drawing.Size(109, 28);
             this.bntAceptar.TabIndex = 40;
@@ -126,12 +126,12 @@
             this.txtRazonSocial.Size = new System.Drawing.Size(563, 20);
             this.txtRazonSocial.TabIndex = 44;
             // 
-            // textBox1
+            // txtRuc
             // 
-            this.textBox1.Location = new System.Drawing.Point(457, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(232, 20);
-            this.textBox1.TabIndex = 45;
+            this.txtRuc.Location = new System.Drawing.Point(457, 20);
+            this.txtRuc.Name = "txtRuc";
+            this.txtRuc.Size = new System.Drawing.Size(232, 20);
+            this.txtRuc.TabIndex = 45;
             // 
             // lblRUC
             // 
@@ -146,27 +146,32 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // RazonSocial
             // 
             this.RazonSocial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.RazonSocial.HeaderText = "Razon Social";
             this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
             // 
             // Ruc
             // 
             this.Ruc.HeaderText = "Ruc";
             this.Ruc.Name = "Ruc";
+            this.Ruc.ReadOnly = true;
             // 
             // Direccion
             // 
             this.Direccion.HeaderText = "Direccion";
             this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
             // 
             // PaginaWeb
             // 
             this.PaginaWeb.HeaderText = "Pagina Web";
             this.PaginaWeb.Name = "PaginaWeb";
+            this.PaginaWeb.ReadOnly = true;
             // 
             // ModificarEliminarProveedor
             // 
@@ -174,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(745, 351);
             this.Controls.Add(this.lblRUC);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtRuc);
             this.Controls.Add(this.txtRazonSocial);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnCancelar);
@@ -201,7 +206,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.TextBox txtRazonSocial;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtRuc;
         private System.Windows.Forms.Label lblRUC;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
