@@ -10,7 +10,7 @@ namespace Gestores
     public class GestorUsuario
     {
 
-        string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source="+Directory.GetCurrentDirectory()+"\\";
+        string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source=" + Directory.GetCurrentDirectory() + "\\..\\..\\DB\\ComprasDB.accdb";
         private int sigId;
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;

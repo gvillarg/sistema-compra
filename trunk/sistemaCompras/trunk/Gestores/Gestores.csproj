@@ -50,10 +50,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Base de Datos\ComprasDB.laccdb" />
+    <None Include="DB\ComprasDB.laccdb" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Base de Datos\ComprasDB.accdb">
+    <Content Include="DB\ComprasDB.accdb">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
