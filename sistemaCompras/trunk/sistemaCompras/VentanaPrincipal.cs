@@ -87,11 +87,13 @@ namespace sistemaCompras
             ventanaUsuarioDlg.Show();
         }
 
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void VentanaPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
-            
+            Application.Exit();
         }
 
+    
 
+       
     }
 }
