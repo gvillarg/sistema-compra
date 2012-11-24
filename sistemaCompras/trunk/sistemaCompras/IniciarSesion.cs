@@ -14,8 +14,9 @@ namespace sistemaCompras
     {
         public IniciarSesion()
         {
+            //C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB
             InitializeComponent();
-            //label3.Text=Directory.GetCurrentDirectory()+"\\..\\..\\";
+            //label3.Text=Directory.GetCurrentDirectory()+"\\..\\..\\";              
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
