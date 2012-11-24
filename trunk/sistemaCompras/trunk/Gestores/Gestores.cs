@@ -286,15 +286,15 @@ namespace Gestores
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(2);
-            tu.setDescripcion("Jefe de Proyecto");
+            tu.setDescripcion("Gerente de Logística");
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(3);
-            tu.setDescripcion("Responsable de Compras");
+            tu.setDescripcion("Jefe de Proyecto");
             ltipousuario.Add(tu);
             tu = new TipoUsuario();
             tu.setId(4);
-            tu.setDescripcion("Gerente de Logística");
+            tu.setDescripcion("Responsable de Compras");
             ltipousuario.Add(tu);
         }
         static public GestorTipoUsuario Instancia()
