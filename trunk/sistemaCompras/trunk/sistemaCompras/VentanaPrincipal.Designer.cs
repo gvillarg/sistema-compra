@@ -92,7 +92,7 @@
             this.modificarToolStripMenuItem,
             this.eliminarToolStripMenuItem});
             this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
-            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.usuarioToolStripMenuItem.Text = "Usuario";
             // 
             // registrarToolStripMenuItem
@@ -123,7 +123,7 @@
             this.modificarToolStripMenuItem1,
             this.eliminarToolStripMenuItem1});
             this.proyectoToolStripMenuItem.Name = "proyectoToolStripMenuItem";
-            this.proyectoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.proyectoToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.proyectoToolStripMenuItem.Text = "Proyecto";
             // 
             // agregarToolStripMenuItem1
@@ -152,7 +152,7 @@
             this.modificarToolStripMenuItem2,
             this.eliminarToolStripMenuItem2});
             this.productoToolStripMenuItem.Name = "productoToolStripMenuItem";
-            this.productoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.productoToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.productoToolStripMenuItem.Text = "Producto";
             // 
             // agregarToolStripMenuItem2
@@ -183,7 +183,7 @@
             this.modificarToolStripMenuItem3,
             this.eliminarToolStripMenuItem3});
             this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
-            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.proveedorToolStripMenuItem.Text = "Proveedor";
             // 
             // agregarToolStripMenuItem3
@@ -300,6 +300,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "VentanaPrincipal";
             this.Text = "Sistema de Compras ITEMSA";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.VentanaPrincipal_FormClosed);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
