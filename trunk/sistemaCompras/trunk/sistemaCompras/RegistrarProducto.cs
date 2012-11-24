@@ -29,7 +29,7 @@ namespace sistemaCompras
             if (this.validaCampos())
             {
                 Producto p = new Producto();
-                p.setId(int.Parse(this.txtId.Text));
+                //p.setId(int.Parse(this.txtId.Text));
                 p.setDescripcion(this.txtDescrip.Text);
                 p.setFabricante(this.txtFab.Text);
                 p.setNombre(this.txtNombre.Text);
@@ -50,7 +50,7 @@ namespace sistemaCompras
         }
         public bool validaCampos()
         {
-            return !this.txtId.Text.Equals("") && !this.txtDescrip.Text.Equals("") && !this.txtFab.Text.Equals("") && !txtNombre.Text.Equals("");
+            return !this.txtDescrip.Text.Equals("") && !this.txtFab.Text.Equals("") && !txtNombre.Text.Equals("");
         }
         private void button2_Click(object sender, EventArgs e)
         {

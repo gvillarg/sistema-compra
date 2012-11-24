@@ -56,6 +56,7 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(133, 20);
             this.txtId.TabIndex = 1;
+            this.txtId.Visible = false;
             // 
             // txtNombre
             // 
@@ -86,6 +87,7 @@
             this.label1.Size = new System.Drawing.Size(18, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "ID";
+            this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
