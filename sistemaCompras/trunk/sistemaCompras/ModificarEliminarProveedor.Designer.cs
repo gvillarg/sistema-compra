@@ -38,20 +38,35 @@
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblRUC = new System.Windows.Forms.Label();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ruc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaginaWeb = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvProveedor
             // 
+            this.dgvProveedor.AllowUserToAddRows = false;
+            this.dgvProveedor.AllowUserToDeleteRows = false;
+            this.dgvProveedor.AllowUserToOrderColumns = true;
             this.dgvProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProveedor.Location = new System.Drawing.Point(12, 153);
+            this.dgvProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.RazonSocial,
+            this.Ruc,
+            this.Direccion,
+            this.PaginaWeb});
+            this.dgvProveedor.Location = new System.Drawing.Point(20, 128);
             this.dgvProveedor.Name = "dgvProveedor";
-            this.dgvProveedor.Size = new System.Drawing.Size(528, 182);
+            this.dgvProveedor.ReadOnly = true;
+            this.dgvProveedor.Size = new System.Drawing.Size(708, 211);
             this.dgvProveedor.TabIndex = 41;
             // 
             // bntAceptar
             // 
-            this.bntAceptar.Location = new System.Drawing.Point(267, 107);
+            this.bntAceptar.Location = new System.Drawing.Point(317, 80);
             this.bntAceptar.Name = "bntAceptar";
             this.bntAceptar.Size = new System.Drawing.Size(109, 28);
             this.bntAceptar.TabIndex = 40;
@@ -61,7 +76,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(126, 107);
+            this.btnBuscar.Location = new System.Drawing.Point(126, 80);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(100, 28);
             this.btnBuscar.TabIndex = 39;
@@ -73,7 +88,7 @@
             // 
             this.txtId.Location = new System.Drawing.Point(126, 17);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(117, 20);
+            this.txtId.Size = new System.Drawing.Size(210, 20);
             this.txtId.TabIndex = 33;
             // 
             // lblNombre
@@ -87,7 +102,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(416, 107);
+            this.btnCancelar.Location = new System.Drawing.Point(583, 80);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(106, 28);
             this.btnCancelar.TabIndex = 42;
@@ -108,30 +123,56 @@
             // 
             this.txtRazonSocial.Location = new System.Drawing.Point(126, 43);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(284, 20);
+            this.txtRazonSocial.Size = new System.Drawing.Size(563, 20);
             this.txtRazonSocial.TabIndex = 44;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(126, 69);
+            this.textBox1.Location = new System.Drawing.Point(457, 20);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(117, 20);
+            this.textBox1.Size = new System.Drawing.Size(232, 20);
             this.textBox1.TabIndex = 45;
             // 
             // lblRUC
             // 
             this.lblRUC.AutoSize = true;
-            this.lblRUC.Location = new System.Drawing.Point(26, 72);
+            this.lblRUC.Location = new System.Drawing.Point(380, 23);
             this.lblRUC.Name = "lblRUC";
             this.lblRUC.Size = new System.Drawing.Size(30, 13);
             this.lblRUC.TabIndex = 46;
             this.lblRUC.Text = "RUC";
             // 
+            // ID
+            // 
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.RazonSocial.HeaderText = "Razon Social";
+            this.RazonSocial.Name = "RazonSocial";
+            // 
+            // Ruc
+            // 
+            this.Ruc.HeaderText = "Ruc";
+            this.Ruc.Name = "Ruc";
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            // 
+            // PaginaWeb
+            // 
+            this.PaginaWeb.HeaderText = "Pagina Web";
+            this.PaginaWeb.Name = "PaginaWeb";
+            // 
             // ModificarEliminarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(552, 351);
+            this.ClientSize = new System.Drawing.Size(745, 351);
             this.Controls.Add(this.lblRUC);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.txtRazonSocial);
@@ -162,5 +203,10 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblRUC;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ruc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaginaWeb;
     }
 }
