@@ -30,6 +30,7 @@ namespace sistemaCompras
             int i = this.dgvProductos.SelectedCells[0].RowIndex;
             int id = (int) this.dgvProductos.Rows[i].Cells[0].Value;
             Gestores.GestorProducto.Instancia().eliminarProducto(id);
+            this.refrescarTabla();
         }                  
 
         private void button2_Click(object sender, EventArgs e)
