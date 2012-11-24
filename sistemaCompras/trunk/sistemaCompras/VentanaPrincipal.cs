@@ -35,8 +35,10 @@ namespace sistemaCompras
 
         private void eliminarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            EliminarProducto ep = new EliminarProducto();
-            ep.Show();
+            //EliminarProducto ep = new EliminarProducto();
+            //ep.Show();
+            ModificarEliminarProducto mep = new ModificarEliminarProducto(0);
+            mep.Show();
         }
 
         private void agregarToolStripMenuItem3_Click(object sender, EventArgs e)
@@ -64,6 +66,8 @@ namespace sistemaCompras
         {
             //ModificarProducto mp = new ModificarProducto();
             //mp.Show();
+            ModificarEliminarProducto mep = new ModificarEliminarProducto(1);
+            mep.Show();
         }
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -85,8 +89,7 @@ namespace sistemaCompras
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ModificarEliminarProducto mep = new ModificarEliminarProducto(1);
-            mep.Show();
+            
         }
 
 

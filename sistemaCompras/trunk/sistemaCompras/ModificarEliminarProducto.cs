@@ -56,6 +56,9 @@ namespace sistemaCompras
 
         private void button2_Click(object sender, EventArgs e)
         {
+            int i = this.dgvProductos.SelectedCells[0].RowIndex;
+            int id = (int)this.dgvProductos.Rows[i].Cells[0].Value;
+
             if (this.tipo == 1)
             {
                 Producto p = new Producto();
@@ -63,17 +66,22 @@ namespace sistemaCompras
                 p.setDescripcion(this.txtDescrip.Text);
                 p.setFabricante(this.txtFab.Text);
 
-                int i = this.dgvProductos.SelectedCells[0].RowIndex;
-                int id = (int)this.dgvProductos.Rows[i].Cells[0].Value;
-
                 ModificarProducto mp = new ModificarProducto(id);
                 mp.Show();
+                
+                
             }
             else
             {
-
+                if (MessageBox.Show("¿Está seguro que desea eliminar el producto " + this.dgvProductos.Rows[i].Cells[1].Value + "?", "Eliminar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    Gestores.GestorProducto.Instancia().eliminarProducto(id);
+                    //this.refrescarTabla(Gestores.GestorProducto.Instancia().getProductosLikeNombre(this.txtNombre.Text));
+                }
+               
             }
-            this.Close();
+            this.refrescarTabla(Gestores.GestorProducto.Instancia().getProductosLikeNombre(this.txtNombre.Text));
+           // this.Close();
         }
 
         

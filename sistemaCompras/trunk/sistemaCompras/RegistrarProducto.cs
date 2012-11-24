@@ -26,21 +26,31 @@ namespace sistemaCompras
        
         private void button1_Click(object sender, EventArgs e)
         {
-            Producto p = new Producto();
-            p.setId(int.Parse(this.txtId.Text));
-            p.setDescripcion(this.txtDescrip.Text);
-            p.setFabricante(this.txtFab.Text);
-            p.setNombre(this.txtNombre.Text);
-            p.setEliminado(false);
-            GestorProducto.Instancia().agregarProducto(p);
+            if (this.validaCampos())
+            {
+                Producto p = new Producto();
+                p.setId(int.Parse(this.txtId.Text));
+                p.setDescripcion(this.txtDescrip.Text);
+                p.setFabricante(this.txtFab.Text);
+                p.setNombre(this.txtNombre.Text);
+                p.setEliminado(false);
+                GestorProducto.Instancia().agregarProducto(p);
+                MessageBox.Show("Se registró en el sistema la información sobre el producto. Para dejar de registrar productos haga clic en Cancelar.", "Producto nuevo: " + this.txtNombre.Text);
+                this.blankFields();
+
+            }
+            else
+            {
+                MessageBox.Show("Información del producto es insuficiente.", "Datos");
+            }
             
+         
 
 
         }
         public bool validaCampos()
         {
-
-            return true;
+            return !this.txtId.Text.Equals("") && !this.txtDescrip.Text.Equals("") && !this.txtFab.Text.Equals("") && !txtNombre.Text.Equals("");
         }
         private void button2_Click(object sender, EventArgs e)
         {
