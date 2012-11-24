@@ -382,6 +382,7 @@ namespace Gestores
             OleDbCommand comando = new OleDbCommand("select id, nombre, descripcion, fabricante, eliminado from producto where eliminado=false");
             comando.Connection = conn;
             OleDbDataReader r = null;
+            
             try
             {
                 Console.WriteLine(connectionString);
@@ -399,6 +400,8 @@ namespace Gestores
                     p.setEliminado(r.GetBoolean(4));
                     lista.Add(p);
                 }
+
+                
             }
             catch (Exception e)
             {
