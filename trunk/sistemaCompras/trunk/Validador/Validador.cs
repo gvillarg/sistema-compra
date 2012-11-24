@@ -15,6 +15,16 @@ namespace Validadores
         {
             this.errorProvider = errorProvider;
         }
+        public bool validarCampoNoVacio(TextBox txtBox)
+        {
+            bool error=false;
+            if (txtBox.TextLength == 0)
+            {
+                error = true;
+                errorProvider.SetError(txtBox, "Llenar Campo");
+            }
+            return error;
+        }
         public bool validarNumeroEntero(TextBox txtBox)
         {
             bool error;

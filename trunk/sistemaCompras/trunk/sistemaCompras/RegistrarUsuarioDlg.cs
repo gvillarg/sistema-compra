@@ -85,9 +85,10 @@ namespace sistemaCompras
         {
             bool error;
             error = validador.validarEmail(txtEmail);
-            error = error || validador.validarNumeroEntero(txtDni);
-            error = error || validador.validarNumeroEntero(txtTelefono);
+            error = error || validador.validarNumeroEntero(txtDni)||validador.validarCampoNoVacio(txtNombre);
+            error = error || validador.validarNumeroEntero(txtTelefono)||validador.validarCampoNoVacio(txtDireccion);
             error = error || validador.validarNumeroReal(txtSueldo);
+            error = error || validador.validarCampoNoVacio(txtUsuario) || validador.validarCampoNoVacio(txtContrasena);
             error = error || validador.validarContrasena(txtContrasena, txtConfirmarContrasena);
 
             return error;

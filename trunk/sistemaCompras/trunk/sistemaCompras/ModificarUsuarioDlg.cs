@@ -59,10 +59,7 @@ namespace sistemaCompras
 
         private void botonAceptar_Click(object sender, EventArgs e)
         {
-            bool error = false;
-            error = error || validador.validarNumeroEntero(txtDni);
-            error = error || validador.validarNumeroEntero(txtTelefono)||validador.validarNumeroReal(txtSueldo);
-            error = error || validador.validarEmail(txtEmail)||validador.validarContrasena(txtConfirmarContrasena,txtContrasena);
+            bool error = validarDatos();
 
             
             if (!error)
@@ -123,6 +120,18 @@ namespace sistemaCompras
         private void txtSueldo_TextChanged(object sender, EventArgs e)
         {
             validador.validarNumeroReal(txtSueldo);
+        }
+        private bool validarDatos()
+        {
+            bool error;
+            error = validador.validarEmail(txtEmail);
+            error = error || validador.validarNumeroEntero(txtDni) || validador.validarCampoNoVacio(txtNombre);
+            error = error || validador.validarNumeroEntero(txtTelefono) || validador.validarCampoNoVacio(txtDireccion);
+            error = error || validador.validarNumeroReal(txtSueldo);
+            error = error || validador.validarCampoNoVacio(txtUsuario) || validador.validarCampoNoVacio(txtContrasena);
+            error = error || validador.validarContrasena(txtContrasena, txtConfirmarContrasena);
+
+            return error;
         }
     }
 }
