@@ -38,8 +38,8 @@ namespace sistemaCompras
             for (int i = 0; i < lusuario.Count; i++)
             {
                 u = lusuario[i];
-                fila = new String[] {""+u.getId(),u.getNombre(),u.getEmail(),
-                    ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
+                fila = new String[] {""+u.getId(),u.getNombre()};//,u.getEmail(),
+                   // ""+u.getTelefono(),""+u.getSueldo(),u.getTipoUsuario().getDescripcion() };
                 tablaUsuario.Rows.Add(fila);
             }
         }

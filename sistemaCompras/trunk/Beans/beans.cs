@@ -15,7 +15,7 @@ namespace Beans
         private DateTime fechaNacimiento;
         private string email;
         private int telefono;
-        private float sueldo;
+        private double sueldo;
         private DateTime fechaIngreso;
         private String nombreUsuario;
         private String contrasena;
@@ -78,11 +78,11 @@ namespace Beans
         {
             this.telefono = telefono;
         }
-        public float getSueldo()
+        public double getSueldo()
         {
             return sueldo;
         }
-        public void setSueldo(float sueldo)
+        public void setSueldo(double sueldo)
         {
             this.sueldo = sueldo;
         }
