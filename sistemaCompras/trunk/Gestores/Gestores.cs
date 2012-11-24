@@ -77,7 +77,6 @@ namespace Gestores
                 Console.WriteLine("Error!");
             }
             finally { conn.Close(); }
-            int x = System.Console.Read();
             resultado = res == 1;
             return resultado;
         }
@@ -130,7 +129,6 @@ namespace Gestores
                 Console.WriteLine("Error!");
             }
             finally { conn.Close(); }
-            int x = System.Console.Read();
             return resultado;
         }
         public bool eliminarUsuario(Usuario u)
