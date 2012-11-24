@@ -59,11 +59,10 @@ namespace sistemaCompras
             {
                 fila = dgvProveedor.Rows.Add();
                 dgvProveedor.Rows[fila].Cells[0].Value = reader.GetInt32(0);
-                dgvProveedor.Rows[fila].Cells[1].Value = reader.GetString(1);
-                dgvProveedor.Rows[fila].Cells[2].Value = reader.GetInt32(5);
-                dgvProveedor.Rows[fila].Cells[3].Value = reader.GetInt32(2);
-                dgvProduct.Rows[reglon].Cells["gpriceV"].Value = productReader.GetDecimal(3);
-                dgvProduct.Rows[reglon].Cells["gPriceC"].Value = productReader.GetDecimal(4);                
+                dgvProveedor.Rows[fila].Cells[1].Value = reader.GetString(2);
+                dgvProveedor.Rows[fila].Cells[2].Value = reader.GetInt32(1);
+                dgvProveedor.Rows[fila].Cells[3].Value = reader.GetString(3);
+                dgvProveedor.Rows[fila].Cells[4].Value = reader.GetString(4);                
             }
         }
     }
