@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Beans;
 using System.IO;
+using System.Data.OleDb;
 
 namespace Gestores
 {
@@ -28,10 +29,42 @@ namespace Gestores
         public bool agregarUsuario(Usuario u)
         {
             bool resultado = true;
-            u.setId(sigId++);
+            //u.setId(sigId++);
             u.setEliminado(false);
             u.setFechaIngreso(System.DateTime.Now);
-            lusuario.Add(u);
+            //lusuario.Add(u);
+
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario)"+
+                                                        "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@dni",u.getDni()),
+                new OleDbParameter("@nombre",u.getNombre()),
+                new OleDbParameter("@fechaNacimiento",u.getFechaNacimiento()),
+                new OleDbParameter("@email",u.getEmail()),
+                new OleDbParameter("@telefono",u.getTelefono()),
+                new OleDbParameter("@sueldo",u.getSueldo()),
+                new OleDbParameter("@fechaIngreso",u.getFechaIngreso()),
+                new OleDbParameter("@nombreUsuario",u.getNombreUsuario()),
+                new OleDbParameter("@contrasena",u.getContrasena()),
+                new OleDbParameter("@eliminado",u.getEliminado()),
+                new OleDbParameter("@tipoUsuario",u.getTipoUsuario().getId()),
+            });
+            comando.Connection = conn;
+            int res=0;
+            try
+            {
+                conn.Open();
+                res = comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error");
+            }
+            int x = System.Console.Read();
+            resultado = res == 1;
             return resultado;
         }
         public bool modificarUsuario(Usuario u)
