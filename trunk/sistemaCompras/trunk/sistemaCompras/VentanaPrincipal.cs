@@ -62,8 +62,8 @@ namespace sistemaCompras
 
         private void modificarToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            ModificarProducto mp = new ModificarProducto();
-            mp.Show();
+            //ModificarProducto mp = new ModificarProducto();
+            //mp.Show();
         }
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -81,6 +81,12 @@ namespace sistemaCompras
         {
             UsuarioDlg ventanaUsuarioDlg = new UsuarioDlg(1);
             ventanaUsuarioDlg.Show();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ModificarEliminarProducto mep = new ModificarEliminarProducto(1);
+            mep.Show();
         }
 
 
