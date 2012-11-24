@@ -10,15 +10,16 @@ namespace Gestores
 {
     public class GestorUsuario
     {
+        //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\alulab11\Downloads\ComprasDB.accdb
+        //string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\..\\..\\..\\Gestores\\DB\\ComprasDB.accdb";
+        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\alulab11.INF\Documents\Visual Studio 2010\Projects\sistemaCompras(1)\Gestores\DB\ComprasDB.accdb";
 
-        string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.4.0;Data Source=" + Directory.GetCurrentDirectory() + "\\..\\..\\DB\\ComprasDB.accdb";
-        private int sigId;
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
         private GestorUsuario()
         {
             lusuario = new List<Usuario>();
-            sigId = 1;
+
         }
         static public GestorUsuario Instancia()
         {
@@ -29,13 +30,13 @@ namespace Gestores
         public bool agregarUsuario(Usuario u)
         {
             bool resultado = true;
-            //u.setId(sigId++);
+
             u.setEliminado(false);
             u.setFechaIngreso(System.DateTime.Now);
             //lusuario.Add(u);
 
             OleDbConnection conn = new OleDbConnection(connectionString);
-            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario)"+
+            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
                                                         "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
 
             comando.Parameters.AddRange(new OleDbParameter[]
@@ -56,12 +57,15 @@ namespace Gestores
             int res=0;
             try
             {
+                Console.WriteLine(connectionString);
                 conn.Open();
+                Console.WriteLine("Conexion hecha");
                 res = comando.ExecuteNonQuery();
+                Console.WriteLine("Usuario Insertado: "+res);
             }
             catch (Exception)
             {
-                Console.WriteLine("Error");
+                Console.WriteLine("Error!");
             }
             int x = System.Console.Read();
             resultado = res == 1;
