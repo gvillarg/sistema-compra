@@ -52,7 +52,7 @@ namespace sistemaCompras
                 //if(txtNombre.Text!="" && txtDescripcion.Text!=""){
                     p.setNombre(nombre);
                     p.setDescripcion(descripcion);
-                    p.setFechaInicio(fechaInicio);
+                  //  p.setFechaInicio(fechaInicio);
                     p.setFechaFin(fechaFin);
                 
                 gestorProyecto.agregarProyecto(p);

@@ -379,7 +379,7 @@ namespace Gestores
             //    if (!lusuario[i].getEliminado())
             //        lista.Add(lusuario[i]);
             OleDbConnection conn = new OleDbConnection(connectionString);
-            OleDbCommand comando = new OleDbCommand("select id, nombre, descripcion, fabricante, eliminado from producto");
+            OleDbCommand comando = new OleDbCommand("select id, nombre, descripcion, fabricante, eliminado from producto where eliminado=false");
             comando.Connection = conn;
             OleDbDataReader r = null;
             try
@@ -458,6 +458,43 @@ namespace Gestores
 
         public void eliminarProducto(int id)
         {
+            bool resultado = true;
+
+            //u.setFechaIngreso(System.DateTime.Now);
+            //Console.WriteLine(u.getFechaNacimiento());
+            //Console.WriteLine(u.getFechaIngreso());
+            //lusuario.Add(u);
+
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            //OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
+            //                                            "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
+
+            OleDbCommand comando = new OleDbCommand("UPDATE producto SET eliminado=true where id=@id");
+
+
+            //OleDbParameter paramDni0
+            //comando.Parameters.Add(new OleDbParameter("@dni",u.getDni()));
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@id",id),
+               
+            });
+            comando.Connection = conn;
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                resultado = comando.ExecuteNonQuery() == 1;
+                Console.WriteLine("Usuario Eliminado ");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+            finally { conn.Close(); }
+            this.lproducto = this.getLproducto();
+            /*
             int i;
             for (i = 0; i < this.lproducto.Count; i++)
             {
@@ -466,11 +503,51 @@ namespace Gestores
                     this.lproducto[i].setEliminado(true);
                     break;
                 }
-            }
+            }*/
         }
 
-        public void modificarProducto(Producto prod)
+        public void modificarProducto(Producto u)
         {
+            bool resultado = true;
+
+            //u.setFechaIngreso(System.DateTime.Now);
+            //Console.WriteLine(u.getFechaNacimiento());
+            //Console.WriteLine(u.getFechaIngreso());
+            //lusuario.Add(u);
+
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            //OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
+            //                                            "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
+
+            OleDbCommand comando = new OleDbCommand("UPDATE producto SET nombre=@nombre,fabricante=@fabricante,descripcion=@descripcion where id=@id");
+
+
+            //OleDbParameter paramDni0
+            //comando.Parameters.Add(new OleDbParameter("@dni",u.getDni()));
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombre",u.getNombre()),
+                new OleDbParameter("@fabricante",u.getFabricante()),
+                new OleDbParameter("@descripcion",u.getDescripcion()),
+                new OleDbParameter("@id",u.getId()),
+            });
+            comando.Connection = conn;
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                resultado = comando.ExecuteNonQuery() == 1;
+                Console.WriteLine("Usuario Eliminado ");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+            finally { conn.Close(); }
+
+            this.lproducto = this.getLproducto();
+            /*
             int i;
             for (i = 0; i < this.lproducto.Count; i++)
             {
@@ -483,7 +560,7 @@ namespace Gestores
                     break;
                 }
             }
-
+            */
 
         }
 
@@ -519,7 +596,7 @@ namespace Gestores
             }
             else
             {
-                lp = this.lproducto;
+                lp = this.getLproducto();
             }
 
             return lp;
