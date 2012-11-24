@@ -310,9 +310,13 @@ namespace Gestores
     }
     public class GestorProyecto
     {
+        //String connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./DB/ComprasDB.accdb";
+        //C:\Users\user\Documents\Access\ComprasDB.accdb
+        String connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Access\ComprasDB.accdb";
+
         private List<Proyecto> lproyecto;
         static GestorProyecto gestorProyecto = null;
-        private int id = 0;
+        //private int id = 0;
 
         private GestorProyecto()
         {
@@ -321,9 +325,35 @@ namespace Gestores
 
         public void agregarProyecto(Proyecto p)
         {
-            p.setId(id++);
-            p.setEliminado(false);
-            lproyecto.Add(p);
+            //if ((p.getNombre()!="") &&(p.getDescripcion()!="")) {  
+            ;
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            OleDbCommand comando = new OleDbCommand("insert into Proyecto(nombre,descripcion,eliminadon) " +//,eliminado,fechaInicio,fechaFi
+                                                       "values(@nombre,@descripcion,false)");//+,@eliminado,@fechaInicio,@fechaFin
+
+            comando.Parameters.AddRange(new OleDbParameter[]
+            {
+                new OleDbParameter("@nombre", p.getNombre()),
+                new OleDbParameter("@descripcion", p.getDescripcion()),
+                //new OleDbParameter("@eliminado", p.getEliminado()),
+                //new OleDbParameter("@fechaInicio", p.getFechaInicio()),
+                //new OleDbParameter("@fechaFin", p.getFechaFin()),
+
+            });
+
+            comando.Connection = conn;
+            int res = 0;
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                res = comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+                Console.WriteLine("Error!");
+            }
+            //}
         }
 
         public void modificarProyecto(Proyecto p)
