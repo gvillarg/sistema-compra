@@ -365,7 +365,8 @@ namespace Gestores
         private string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=./DB/ComprasDB.accdb";
         private GestorProducto()
         {
-            lproducto = new List<Producto>();
+            //lproducto = new List<Producto>();
+            lproducto = getLproducto();
         }
 
         public List<Producto> getLproducto()
@@ -373,43 +374,40 @@ namespace Gestores
             //return this.lproducto;
 
             //this.lproducto.Add(prod);
-            bool resultado = true;
-
-            //Producto prod = new Producto()            .setEliminado(false);
-
-
-            OleDbConnection conn = new OleDbConnection(this.connectionString);
-            OleDbCommand comando = new OleDbCommand("select nombre, descripcion, fabricante from productos", conn);
-           
+            List<Producto> lista = new List<Producto>();
+            //for (int i = 0; i < lusuario.Count; i++)
+            //    if (!lusuario[i].getEliminado())
+            //        lista.Add(lusuario[i]);
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            OleDbCommand comando = new OleDbCommand("select id, nombre, descripcion, fabricante, eliminado from producto");
             comando.Connection = conn;
-            int res = 0;
+            OleDbDataReader r = null;
             try
             {
-
+                Console.WriteLine(connectionString);
                 conn.Open();
-                OleDbDataReader lector = comando.ExecuteReader();
-                res = comando.ExecuteNonQuery();
-
-                while (lector.Read())
+                Console.WriteLine("Conexion hecha");
+                r = comando.ExecuteReader();
+                Console.WriteLine("Seleccionar Usuario: ");
+                while (r.Read())
                 {
                     Producto p = new Producto();
-                    
-                    p.setNombre(lector.GetValue(0).ToString());
-                    p.setFabricante(lector.GetValue(2).ToString());
-                    p.setDescripcion(lector.GetValue(1).ToString());
-                    p.setEliminado(false);
-                    this.lproducto.Add(p);
+                    p.setId(r.GetInt32(0));
+                    p.setNombre(r.GetString(1));
+                    p.setDescripcion(r.GetString(2));
+                    p.setFabricante(r.GetString(3));
+                    p.setEliminado(r.GetBoolean(4));
+                    lista.Add(p);
                 }
             }
             catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 Console.WriteLine("Error!");
             }
-            finally { conn.Close(); }
-            resultado = res == 1;
-            //return resultado;
-
-            return this.lproducto;
+            finally { r.Close(); conn.Close(); }
+            this.lproducto = lista;
+            return lista;
         }
 
         static public GestorProducto Instancia()
@@ -424,7 +422,7 @@ namespace Gestores
             //this.lproducto.Add(prod);
             bool resultado = true;
 
-            prod.setEliminado(false);
+           
             
 
             OleDbConnection conn = new OleDbConnection(this.connectionString);
@@ -505,6 +503,7 @@ namespace Gestores
         public List<Producto> getProductosLikeNombre(String nombre)
         {
             List<Producto> lp = new List<Producto>();
+            lp = this.getLproducto();
             if (!nombre.Equals(""))
             {
                 

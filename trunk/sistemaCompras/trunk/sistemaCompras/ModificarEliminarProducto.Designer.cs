@@ -47,6 +47,7 @@
             this.txtFab.Name = "txtFab";
             this.txtFab.Size = new System.Drawing.Size(100, 20);
             this.txtFab.TabIndex = 17;
+            this.txtFab.Visible = false;
             // 
             // txtDescrip
             // 
@@ -54,6 +55,7 @@
             this.txtDescrip.Name = "txtDescrip";
             this.txtDescrip.Size = new System.Drawing.Size(100, 20);
             this.txtDescrip.TabIndex = 16;
+            this.txtDescrip.Visible = false;
             // 
             // txtNombre
             // 
@@ -70,6 +72,7 @@
             this.label4.Size = new System.Drawing.Size(57, 13);
             this.label4.TabIndex = 14;
             this.label4.Text = "Fabricante";
+            this.label4.Visible = false;
             // 
             // label3
             // 
@@ -79,6 +82,7 @@
             this.label3.Size = new System.Drawing.Size(63, 13);
             this.label3.TabIndex = 13;
             this.label3.Text = "Descripcion";
+            this.label3.Visible = false;
             // 
             // label2
             // 
@@ -96,6 +100,7 @@
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(502, 150);
             this.dgvProductos.TabIndex = 18;
+            this.dgvProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
             // 
             // button1
             // 
@@ -125,6 +130,7 @@
             this.button3.TabIndex = 21;
             this.button3.Text = "Cancelar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ModificarEliminarProducto
             // 
