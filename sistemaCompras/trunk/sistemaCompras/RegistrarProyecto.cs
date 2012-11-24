@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Validadores;
+using Beans;
 using System.Data.OleDb;
+using Gestores;
 
 namespace sistemaCompras
 {
@@ -15,6 +17,7 @@ namespace sistemaCompras
     {
         private DataSet ds;
         private Validador validador;
+        private GestorProyecto gestorProyecto = GestorProyecto.Instancia();
 
         public RegistrarProyecto()
         {
@@ -22,50 +25,39 @@ namespace sistemaCompras
             validador = new Validador(errorProvider1);
         }
 
-        //private DataSet ds;
-
         private void proyectoBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.proyectoBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.sistemas);
-
         }
 
         private void RegistrarProyecto_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'sistemas.Proyecto' table. You can move, or remove it, as needed.
-            //this.proyectoTableAdapter.Fill(this.sistemas.Proyecto);
-             ds = new DataSet();
+              ds = new DataSet();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            // =@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Access\Sistemas.accdb";
-            if (txtNombre.Text != "" && txtDescripcion.Text != "")
-            {
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Access\Sistemas.accdb");
+            //OleDbConnection conn = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\user\Documents\Access\ComprasDB.accdb");
+            Beans.Proyecto p = new Beans.Proyecto();               
+                
+                String nombre = txtNombre.Text;
+                String descripcion = txtDescripcion.Text;
+                DateTime fechaInicio = dtInicio.Value;
+                DateTime fechaFin = dtFin.Value;
 
-                if (txtDescripcion.Text != "")
-                {
-                    try
-                    {
-                        OleDbDataAdapter da = new OleDbDataAdapter("INSERT INTO Proyecto(Nombre,Descripcion)" + "'%" + txtNombre.Text + "%'", con);
-
-                        da.Fill(ds, "Proyecto");
-                        //dataGridView1.DataSource = ds.Tables["proyecto"];
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.ToString());
-                    }
-                    MessageBox.Show("Proyecto Agregado");
-                }
-                else
-                {
-                    MessageBox.Show("Datos no validos");
-                }
-            }
+                //if (txtNombre.Text == "" || txtDescripcion.Text=="") MessageBox.Show("Rellenar todos los campos");
+                
+                //if(txtNombre.Text!="" && txtDescripcion.Text!=""){
+                    p.setNombre(nombre);
+                    p.setDescripcion(descripcion);
+                    p.setFechaInicio(fechaInicio);
+                    p.setFechaFin(fechaFin);
+                
+                gestorProyecto.agregarProyecto(p);
+                MessageBox.Show("Proyecto Registrado");
+                //}
         }
 
         private void nombreTextBox_TextChanged(object sender, EventArgs e)

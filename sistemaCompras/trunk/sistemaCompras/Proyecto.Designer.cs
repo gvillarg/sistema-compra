@@ -72,7 +72,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(257, 128);
+            this.btnCancelar.Location = new System.Drawing.Point(258, 151);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(104, 29);
             this.btnCancelar.TabIndex = 23;
@@ -82,13 +82,13 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(113, 128);
+            this.btnRegistrar.Location = new System.Drawing.Point(114, 151);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(104, 29);
             this.btnRegistrar.TabIndex = 22;
             this.btnRegistrar.Text = "&Aceptar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            //this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // Proyecto
             // 

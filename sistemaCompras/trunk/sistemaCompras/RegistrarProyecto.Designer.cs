@@ -40,6 +40,10 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.FechaInicio = new System.Windows.Forms.Label();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dtFin = new System.Windows.Forms.DateTimePicker();
             nombreLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sistemas)).BeginInit();
@@ -67,9 +71,9 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(242, 122);
+            this.btnCancelar.Location = new System.Drawing.Point(241, 167);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(104, 29);
+            this.btnCancelar.Size = new System.Drawing.Size(103, 44);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "&Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -77,9 +81,9 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(98, 122);
+            this.btnRegistrar.Location = new System.Drawing.Point(97, 167);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(104, 29);
+            this.btnRegistrar.Size = new System.Drawing.Size(105, 44);
             this.btnRegistrar.TabIndex = 17;
             this.btnRegistrar.Text = "&Registrar";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -110,7 +114,7 @@
             this.txtNombre.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectoBindingSource, "Nombre", true));
             this.txtNombre.Location = new System.Drawing.Point(124, 23);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(145, 20);
+            this.txtNombre.Size = new System.Drawing.Size(200, 20);
             this.txtNombre.TabIndex = 20;
             this.txtNombre.TextChanged += new System.EventHandler(this.nombreTextBox_TextChanged);
             // 
@@ -119,18 +123,56 @@
             this.txtDescripcion.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proyectoBindingSource, "Descripcion", true));
             this.txtDescripcion.Location = new System.Drawing.Point(124, 54);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(145, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(200, 20);
             this.txtDescripcion.TabIndex = 21;
             // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // FechaInicio
+            // 
+            this.FechaInicio.AutoSize = true;
+            this.FechaInicio.Location = new System.Drawing.Point(38, 93);
+            this.FechaInicio.Name = "FechaInicio";
+            this.FechaInicio.Size = new System.Drawing.Size(62, 13);
+            this.FechaInicio.TabIndex = 22;
+            this.FechaInicio.Text = "FechaInicio";
+            // 
+            // dtInicio
+            // 
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInicio.Location = new System.Drawing.Point(124, 87);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(110, 20);
+            this.dtInicio.TabIndex = 23;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(38, 131);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(51, 13);
+            this.label1.TabIndex = 24;
+            this.label1.Text = "FechaFin";
+            // 
+            // dtFin
+            // 
+            this.dtFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFin.Location = new System.Drawing.Point(124, 125);
+            this.dtFin.Name = "dtFin";
+            this.dtFin.Size = new System.Drawing.Size(110, 20);
+            this.dtFin.TabIndex = 25;
+            // 
             // RegistrarProyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 461);
+            this.ClientSize = new System.Drawing.Size(681, 261);
+            this.Controls.Add(this.dtFin);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtInicio);
+            this.Controls.Add(this.FechaInicio);
             this.Controls.Add(descripcionLabel);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(nombreLabel);
@@ -159,5 +201,9 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.DateTimePicker dtInicio;
+        private System.Windows.Forms.Label FechaInicio;
+        private System.Windows.Forms.DateTimePicker dtFin;
+        private System.Windows.Forms.Label label1;
 	}
 }

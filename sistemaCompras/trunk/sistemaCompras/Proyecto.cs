@@ -39,11 +39,6 @@ namespace sistemaCompras
 
 
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
 
-
-
-        }
     }
 }
