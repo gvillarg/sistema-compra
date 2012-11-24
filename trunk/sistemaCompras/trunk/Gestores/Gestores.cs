@@ -33,24 +33,32 @@ namespace Gestores
 
             u.setEliminado(false);
             u.setFechaIngreso(System.DateTime.Now);
+            Console.WriteLine(u.getFechaNacimiento());
+            Console.WriteLine(u.getFechaIngreso());
             //lusuario.Add(u);
 
             OleDbConnection conn = new OleDbConnection(connectionString);
-            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
-                                                        "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
+            //OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,telefono,sueldo,fechaIngreso,nombreUsuario,contrasena,eliminado,tipoUsuario) "+
+            //                                            "values(@dni,@nombre,@fechaNacimiento,@email,@telefono,@sueldo,@fechaIngreso,@nombreUsuario,@contrasena,@eliminado,@tipoUsuario)");
 
+            OleDbCommand comando = new OleDbCommand("insert into Usuario(dni,nombre,fechaNacimiento,email,fechaIngreso,nombreUsuario,contrasena,tipoUsuario) "+
+                                                        "values(@dni,@nombre,@fechaNacimiento,@email,@fechaIngreso,@nombreUsuario,@contrasena,@tipoUsuario)");
+
+            
+            //OleDbParameter paramDni0
+            //comando.Parameters.Add(new OleDbParameter("@dni",u.getDni()));
             comando.Parameters.AddRange(new OleDbParameter[]
             {
                 new OleDbParameter("@dni",u.getDni()),
                 new OleDbParameter("@nombre",u.getNombre()),
                 new OleDbParameter("@fechaNacimiento",u.getFechaNacimiento()),
                 new OleDbParameter("@email",u.getEmail()),
-                new OleDbParameter("@telefono",u.getTelefono()),
-                new OleDbParameter("@sueldo",u.getSueldo()),
+                //new OleDbParameter("@telefono",u.getTelefono()),
+                ////new OleDbParameter("@sueldo",u.getSueldo()),
                 new OleDbParameter("@fechaIngreso",u.getFechaIngreso()),
                 new OleDbParameter("@nombreUsuario",u.getNombreUsuario()),
                 new OleDbParameter("@contrasena",u.getContrasena()),
-                new OleDbParameter("@eliminado",u.getEliminado()),
+                ////new OleDbParameter("@eliminado",u.getEliminado()),
                 new OleDbParameter("@tipoUsuario",u.getTipoUsuario().getId()),
             });
             comando.Connection = conn;
@@ -63,8 +71,9 @@ namespace Gestores
                 res = comando.ExecuteNonQuery();
                 Console.WriteLine("Usuario Insertado: "+res);
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                Console.WriteLine(e.ToString());
                 Console.WriteLine("Error!");
             }
             int x = System.Console.Read();
@@ -101,9 +110,35 @@ namespace Gestores
         public List<Usuario> seleccionarUsuarios()
         {
             List<Usuario> lista = new List<Usuario>();
-            for (int i = 0; i < lusuario.Count; i++)
-                if (!lusuario[i].getEliminado())
-                    lista.Add(lusuario[i]);
+            //for (int i = 0; i < lusuario.Count; i++)
+            //    if (!lusuario[i].getEliminado())
+            //        lista.Add(lusuario[i]);
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            OleDbCommand comando = new OleDbCommand("select * from Usuario, TipoUsuario WHERE Usuario.tipoUsuario=TipoUsuario.ID");
+            comando.Connection = conn;
+            OleDbDataReader r=null;
+            try
+            {
+                Console.WriteLine(connectionString);
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                r = comando.ExecuteReader();
+                Console.WriteLine("Seleccionar Usuario: ");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+            while (r.Read())
+            {
+                Usuario u = new Usuario();
+                u.setId(r.GetInt32(0));
+                u.setDni(r.GetInt32(1));
+                u.setNombre(r.GetString(2));
+                lista.Add(u);
+            }
+
             return lista;
         }
 
