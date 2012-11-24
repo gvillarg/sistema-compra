@@ -12,8 +12,7 @@ namespace Gestores
     {
         //Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\alulab11\Downloads\ComprasDB.accdb
         //string connectionString = @"PROVIDER=Microsoft.Jet.OLEDB.12.0;Data Source=" + Directory.GetCurrentDirectory() + "\\..\\..\\..\\Gestores\\DB\\ComprasDB.accdb";
-        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Guti\Documents\Visual Studio 2010\Projects\sistemaCompras\Gestores\DB\ComprasDB.accdb";
-
+        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Guti\Documents\Visual Studio 2010\Projects\sistemaCompras\Gestores\DB\ComprasDB.accdb";        
         private List<Usuario> lusuario;
         static GestorUsuario gestorUsuario = null;
         private GestorUsuario()
@@ -162,6 +161,7 @@ namespace Gestores
             OleDbConnection conn = new OleDbConnection(connectionString);
             OleDbCommand comando = new OleDbCommand("select * from Usuario, TipoUsuario WHERE Usuario.tipoUsuario=TipoUsuario.ID and Usuario.eliminado=false");
             comando.Connection = conn;
+
             OleDbDataReader r=null;
             try
             {
@@ -407,7 +407,7 @@ namespace Gestores
     public class GestorProveedor
     {
         private int sigId;
-        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";        
+        string connectionString = @"PROVIDER=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\Jonatan\Documents\Visual Studio 2010\Projects\sistemaCompras(7)\Gestores\DB\ComprasDB.accdb";
         static GestorProveedor gestorProveedor = null;
         private GestorProveedor()
         {            
@@ -468,6 +468,18 @@ namespace Gestores
         {
 
 
+        }
+
+        public OleDbDataReader filtrarProveedores(int id, int ruc, string razonSocial)
+        {
+            OleDbConnection conn = new OleDbConnection(connectionString);
+
+            OleDbCommand comando = new OleDbCommand("SELECT (ID, ruc, razonSocial, direccion, paginaWeb, rubro, nombreContacto, emailContacto, telefonoContacto, eliminado) "+ 
+                                                    "FROM Proveedor WHERE ID = "+ id.ToString()+ " AND ruc = " + ruc  + " AND razonSocial LIKE " + razonSocial);
+            conn.Open();
+            OleDbDataReader reader = comando.ExecuteReader();
+            conn.Close();
+            return reader;
         }
 
         public List<Proveedor> seleccionarProveedores()
