@@ -32,7 +32,7 @@ namespace Gestores
             bool resultado = true;
 
             u.setEliminado(false);
-            u.setFechaIngreso(System.DateTime.Now);
+            //u.setFechaIngreso(System.DateTime.Now);
             Console.WriteLine(u.getFechaNacimiento());
             Console.WriteLine(u.getFechaIngreso());
             //lusuario.Add(u);
@@ -76,6 +76,7 @@ namespace Gestores
                 Console.WriteLine(e.ToString());
                 Console.WriteLine("Error!");
             }
+            finally { conn.Close(); }
             int x = System.Console.Read();
             resultado = res == 1;
             return resultado;
@@ -103,8 +104,24 @@ namespace Gestores
         }
         public bool eliminarUsuario(Usuario u)
         {
-            bool resultado = true;
-            u.setEliminado(true);
+            bool resultado = false;
+            OleDbConnection conn = new OleDbConnection(connectionString);
+            OleDbCommand comando = new OleDbCommand("UPDATE Usuario SET Usuario.eliminado = True WHERE ID=@id");
+            comando.Parameters.Add(new OleDbParameter("@id",u.getId()));
+            comando.Connection = conn;
+            try
+            {
+                conn.Open();
+                Console.WriteLine("Conexion hecha");
+                resultado = comando.ExecuteNonQuery() == 1;
+                Console.WriteLine("Usuario Eliminado ");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.WriteLine("Error!");
+            }
+            finally { conn.Close(); }
             return resultado;
         }
         public List<Usuario> seleccionarUsuarios()
@@ -114,7 +131,7 @@ namespace Gestores
             //    if (!lusuario[i].getEliminado())
             //        lista.Add(lusuario[i]);
             OleDbConnection conn = new OleDbConnection(connectionString);
-            OleDbCommand comando = new OleDbCommand("select * from Usuario, TipoUsuario WHERE Usuario.tipoUsuario=TipoUsuario.ID");
+            OleDbCommand comando = new OleDbCommand("select * from Usuario, TipoUsuario WHERE Usuario.tipoUsuario=TipoUsuario.ID and Usuario.eliminado=false");
             comando.Connection = conn;
             OleDbDataReader r=null;
             try
@@ -124,36 +141,36 @@ namespace Gestores
                 Console.WriteLine("Conexion hecha");
                 r = comando.ExecuteReader();
                 Console.WriteLine("Seleccionar Usuario: ");
+                while (r.Read())
+                {
+                    Usuario u = new Usuario();
+                    u.setId(r.GetInt32(0));
+                    u.setDni(r.GetInt32(1));
+                    u.setNombre(r.GetString(2));
+                    u.setFechaNacimiento(r.GetDateTime(3));
+                    u.setEmail(r.GetString(4));
+                    u.setTelefono(r.GetInt32(5));
+                    u.setSueldo(r.GetDouble(6));
+                    u.setFechaIngreso(r.GetDateTime(7));
+                    u.setNombreUsuario(r.GetString(8));
+                    u.setContrasena(r.GetString(9));
+                    u.setEliminado(r.GetBoolean(10));
+
+                    TipoUsuario tu = new TipoUsuario();
+                    tu.setId(r.GetInt32(11));
+                    tu.setDescripcion(r.GetString(13));
+
+                    u.setTipoUsuario(tu);
+
+                    lista.Add(u);
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine(e.ToString());
                 Console.WriteLine("Error!");
             }
-            while (r.Read())
-            {
-                Usuario u = new Usuario();
-                u.setId(r.GetInt32(0));
-                u.setDni(r.GetInt32(1));
-                u.setNombre(r.GetString(2));
-                u.setFechaNacimiento(r.GetDateTime(3));
-                u.setEmail(r.GetString(4));
-                u.setTelefono(r.GetInt32(5));
-                u.setSueldo(r.GetDouble(6));
-                u.setFechaIngreso(r.GetDateTime(7));
-                u.setNombreUsuario(r.GetString(8));
-                u.setContrasena(r.GetString(9));
-                u.setEliminado(r.GetBoolean(10));
-
-                TipoUsuario tu = new TipoUsuario();
-                tu.setId(r.GetInt32(11));
-                tu.setDescripcion(r.GetString(13));
-
-                u.setTipoUsuario(tu);
-
-                lista.Add(u);
-            }
-
+            finally { r.Close(); conn.Close(); }
             return lista;
         }
 
@@ -161,6 +178,7 @@ namespace Gestores
         {
             throw new NotImplementedException();
         }
+
     }
     public class GestorTipoUsuario
     {

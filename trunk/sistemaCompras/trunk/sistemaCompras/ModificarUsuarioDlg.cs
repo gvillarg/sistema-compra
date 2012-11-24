@@ -17,17 +17,21 @@ namespace sistemaCompras
         private Usuario usuario;
         private Validador validador;
         private GestorUsuario gestorUsuario = GestorUsuario.Instancia();
+        private GestorTipoUsuario gestorTipoUsuario = GestorTipoUsuario.Instancia();
         List<TipoUsuario> listaTipoUsuario;
         private UsuarioDlg padre;
+
         public ModificarUsuarioDlg(UsuarioDlg padre, Usuario usuario)
         {
             InitializeComponent();
+            validador = new Validador(errorProvider);
             this.padre = padre;
             this.usuario = usuario;
-            listaTipoUsuario = GestorTipoUsuario.Instancia().SeleccionarListaTipoUsuarios();
+            listaTipoUsuario = gestorTipoUsuario.SeleccionarListaTipoUsuarios();
             llenarCmbTipoUsuario();
             llenarCampos();
-            validador = new Validador(errorProvider);
+            gestorUsuario = GestorUsuario.Instancia();
+            
         }
 
         private void llenarCampos()
@@ -87,14 +91,14 @@ namespace sistemaCompras
 
 
 
-                //if (gestorUsuario.modificarUsuario(usuario))
-                //{
-                //    padre.actualizarTabla();
-                //    MessageBox.Show("UsuarioModificado");
-                //    this.Close();
-                //}
-                //else
-                //    MessageBox.Show("Ha ocurrido un error");
+                if (gestorUsuario.modificarUsuario(usuario))
+                {
+                    padre.actualizarTabla();
+                    MessageBox.Show("UsuarioModificado");
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Ha ocurrido un error");
             }
             else
                 MessageBox.Show("Los datos no son correctos");

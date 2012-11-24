@@ -83,11 +83,11 @@ namespace sistemaCompras
                     if (MessageBox.Show("Está seguro que desea eliminar el Usuario?\n",
                         "Eliminar Usuario", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
-                        //if (gestorUsuario.eliminarUsuario(seleccionado))
-                        //{
-                        //    MessageBox.Show("Usuario Eliminado");
-                        //    actualizarTabla();
-                        //}
+                        if (gestorUsuario.eliminarUsuario(seleccionado))
+                        {
+                            MessageBox.Show("Usuario Eliminado");
+                            actualizarTabla();
+                        }
                     }
                 }
                 else
